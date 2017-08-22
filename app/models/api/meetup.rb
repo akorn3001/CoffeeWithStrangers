@@ -1,2 +1,0 @@
-class Meetup < ApplicationRecord
-end
