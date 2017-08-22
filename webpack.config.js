@@ -2,9 +2,11 @@
 var path = require('path');
 
 module.exports = {
+  context: __dirname,
   entry: './frontend/cws_entry.jsx',
   output: {
-    filename: '.app/assets/javascripts/bundle.js',
+    path: path.resolve(__dirname, './app/assets/javascripts'),
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
