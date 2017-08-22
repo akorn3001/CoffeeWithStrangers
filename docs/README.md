@@ -1,6 +1,6 @@
 # Coffee With Strangers (Development README)
 [Trello](https://trello.com/b/UCKW7d5g/tea-with-strangers-clone)
-[Heroku Link](https://www.heroku.com/)
+[Heroku Link](https://coffee-with-strangers.herokuapp.com/)
 
 ## Minimum Viable Product
 Coffee with Strangers is inspired by Tea With Strangers - a web application allowing total strangers to meet up with one another over coffee. In order to be adequately functional, CWS will fully implement the follow features:
