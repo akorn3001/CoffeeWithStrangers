@@ -12,3 +12,21 @@ Coffee with Strangers is inspired by Tea With Strangers - a web application allo
 - [ ] Production State README
 
 ## DESIGN DOCS
+[Wireframes](./wireframes)
+[API Endpoints](./api-endpoints.md)
+[Component Hierarchy](./component-hierarchy.md)
+[Sample State](./sample-state.md)
+[Schema](./schema.md)
+
+## Tentative Features Timeline
+### Phase 1 - Backend set up including auth and MVC setup: (1 - 2 days)
+
+### Phase 2 - Setting up routes and front-end auth: (2  days)
+
+### Phase 2: Creating the cities component and setting a home city: (2 days)
+
+### Phase 3: Hosting a meetup: (2 days)
+
+### Phase 4: Joining someone else's meetup: (2 - 3 days)
+
+### Phase 5: Dashboard of joined/hosted events: (2 - 3 days)
