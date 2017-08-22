@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+div.signup-form-div {
+  border: 1px solid gray;
+  width: 500px;
+  margin: auto;
+}
+
+div.signup-form-div > * {
+  margin: 5px;
+  padding: 3px;
+}
+
+
+div.login-form-div {
+  border: 1px solid gray;
+  width: 500px;
+  margin: auto;
+}
+
+div.main-content {
+  background-color: #FAF6E8;
+}
+
+.auth-form-header {
+  color: #EF6236;
+}
+
+.auth-form-submit {
+  border-radius: 3px;
+  background-color: #EF6236;
+  color: white;
+  font-weight: 600;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  margin 5px;
+}

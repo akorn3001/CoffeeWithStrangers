@@ -21,7 +21,7 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => {
   return (
-    <div>
+    <div className="main-content">
       <header>
         <h1>Coffee With Strangersss</h1>
         <GreetingContainer />

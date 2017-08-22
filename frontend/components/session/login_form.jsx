@@ -34,10 +34,10 @@ class LoginForm extends React.Component {
     );
 
     return (
-      <div>
+      <div className="login-form-div">
         {link}
-        <form onSubmit={this.handleSubmit}>
-          <h2>Hey there, stranger!</h2>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <h2 className="auth-form-header">Hey there, stranger!</h2>
 
           <p>It's good to have you back. Sign in here and sign up for your next meetup!</p>
 
@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
 
           <br/>
 
-          <input type="submit" value="SIGN IN" />
+          <input className="auth-form-submit" type="submit" value="SIGN IN" />
         </form>
       </div>
     );

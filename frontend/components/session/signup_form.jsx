@@ -35,10 +35,10 @@ class SignupForm extends React.Component {
     );
 
     return (
-      <div>
+      <div className="signup-form-div">
         {link}
-        <form onSubmit={this.handleSubmit}>
-          <h2>Join for coffee</h2>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <h2 className="auth-form-header">Join for coffee</h2>
 
           <p>Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
             <input
@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
 
           <br/>
 
-          <input type="submit" value="LET'S GET COFFEE" />
+          <input className="auth-form-submit" type="submit" value="LET'S GET COFFEE" />
         </form>
       </div>
     );
