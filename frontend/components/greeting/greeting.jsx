@@ -4,7 +4,6 @@ import { Redirect, Link } from 'react-router-dom';
 class Greeting extends React.Component {
 
   handleClick() {
-    debugger
     return (event) => {
       event.preventDefault();
       this.props.history.push('/login')
