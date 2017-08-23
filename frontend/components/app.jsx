@@ -23,7 +23,7 @@ const App = () => {
   return (
       <div>
         <header>
-          <h1>Coffee With Strangersss</h1>
+          <h1>Coffee With Strangers</h1>
           <GreetingContainer />
         </header>
 

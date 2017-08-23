@@ -8,7 +8,16 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    return (event) => {
+      event.preventDefault();
+      this.props.login({email: 'guest-user', password: 'guest-user'});
+    };
+  };
+
 
   handleSubmit(event) {
     event.preventDefault();
@@ -27,6 +36,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    debugger
     let errorBanner;
     if (this.props.errors.length) {
       errorBanner = <div className="error-banner"><p>{this.props.errors}</p></div>
@@ -67,11 +77,15 @@ class LoginForm extends React.Component {
             <div className="redirect-below-submit-button">
               <Link className="login-signup-redirect-link" to="/signup">If you've never signed up before, click here and do that</Link>
             </div>
+
+            <div className="guest-login-div">
+              <button onClick={this.handleClick()} className="guest-login-button">Click here to log-in as Guest</button>
+            </div>
           </form>
         </div>
       </div>
     );
   }
 }
-
+// onClick={this.handleClick()}
 export default LoginForm;

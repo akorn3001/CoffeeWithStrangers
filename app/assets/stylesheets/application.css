@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ /*@import "reset.scss";*/
 
  body {
    background-color: #FAF6E8;
@@ -61,7 +62,7 @@ div.auth-form-div > * {
   spacing: 10px;
 }
 
-.auth-form-submit {
+.auth-form-submit, .guest-login-button {
   display: inline-block;
   margin-bottom: 30px;
   margin-top: 16px;
@@ -118,6 +119,14 @@ button:focus {
 .login-signup-redirect-link {
   color: #EF6236;
   text-decoration: none;
+}
+
+.guest-login-div {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .error-banner {
