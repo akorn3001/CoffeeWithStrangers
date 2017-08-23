@@ -21,15 +21,16 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => {
   return (
-    <div className="main-content">
-      <header>
-        <h1>Coffee With Strangersss</h1>
-        <GreetingContainer />
-      </header>
+      <div>
+        <header>
+          <h1>Coffee With Strangersss</h1>
+          <GreetingContainer />
+        </header>
 
-      <AuthRoute path='/login' component={LoginFormContainer} />
-      <AuthRoute path='/signup' component={SignupFormContainer} />
-    </div>
+        <AuthRoute path='/login' component={LoginFormContainer} />
+        <AuthRoute path='/signup' component={SignupFormContainer} />
+      </div>
+
   );
 };
 

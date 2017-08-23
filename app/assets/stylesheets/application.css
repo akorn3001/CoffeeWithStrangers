@@ -14,43 +14,89 @@
  *= require_self
  */
 
-div.signup-form-div {
+ body {
+   background-color: #FAF6E8;
+ }
+
+form.auth-form {
+  width: 100%;
+}
+
+div.auth-form-div {
+  width: 648.27px;
+  display: flex;
   border: 1px solid gray;
-  width: 500px;
-  margin: auto;
-}
-
-div.signup-form-div > * {
-  margin: 5px;
-  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 
-div.login-form-div {
-  border: 1px solid gray;
-  width: 500px;
-  margin: auto;
-}
-
-div.main-content {
-  background-color: #FAF6E8;
+div.auth-form-div > * {
+  /*margin: 5px;*/
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue"
 }
 
 .auth-form-header {
+  font-size: 1.5em;
   color: #EF6236;
+  margin-top: 0;
+}
+
+.auth-form-p {
+  line-height: 1.625;
+  font-size: 18px;
+  spacing: 10px;
 }
 
 .auth-form-submit {
-  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 16px;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
   background-color: #EF6236;
+  border-color: #EF6236;
   color: white;
   font-weight: 600;
+  border-style: solid;
 }
 
 input:focus {
   outline: none;
+  background-color: #FAFFBD;
 }
 
-input {
-  margin 5px;
+.auth-input-field, .auth-form-submit {
+  width: 100%;
+  height: 59px;
+}
+
+.auth-input-field {
+  border-radius: 3px;
+  padding: 10px;
+  padding-left:15px;
+  margin-top: 8px;
+  margin-bottom:8px;
+  border-width: 0.5px;
+  box-sizing: border-box;
+  font-size: 17px;
+  letter-spacing: 3px;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue"
+  /*box-shadow: none;*/
+}
+
+.redirect-below-submit-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-signup-redirect-link {
+  color: #EF6236;
+  text-decoration: none;
 }

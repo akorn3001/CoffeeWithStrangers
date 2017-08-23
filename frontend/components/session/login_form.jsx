@@ -27,21 +27,16 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    let link = (
-      <header>
-        <Link to='/signup'>Sign Up</Link>
-      </header>
-    );
 
     return (
-      <div className="login-form-div">
-        {link}
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <h2 className="auth-form-header">Hey there, stranger!</h2>
+      <div className="auth-form-div">
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          <h2 className="auth-form-header">Hey stranger!</h2>
 
-          <p>It's good to have you back. Sign in here and sign up for your next meetup!</p>
+          <p className="auth-form-p">It's good to have you back. Sign in here and sign up for your next meetup!</p>
 
           <input
+            className="auth-input-field"
             onChange={this.handleChange('email')}
             type="text"
             value={this.state.email}
@@ -50,6 +45,7 @@ class LoginForm extends React.Component {
           <br/>
 
           <input
+            className="auth-input-field"
             onChange={this.handleChange('password')}
             type="password"
             value={this.state.password }
@@ -59,6 +55,10 @@ class LoginForm extends React.Component {
           <br/>
 
           <input className="auth-form-submit" type="submit" value="SIGN IN" />
+
+          <div className="redirect-below-submit-button">
+            <Link className="login-signup-redirect-link" to="/signup">If you've never signed up before, click here and do that</Link>
+          </div>
         </form>
       </div>
     );

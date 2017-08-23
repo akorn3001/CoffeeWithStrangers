@@ -28,20 +28,15 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    let link = (
-      <header>
-        <Link to='/login'>Log In</Link>
-      </header>
-    );
 
     return (
-      <div className="signup-form-div">
-        {link}
-        <form className="signup-form" onSubmit={this.handleSubmit}>
+      <div className="auth-form-div">
+        <form className="auth-form" onSubmit={this.handleSubmit}>
           <h2 className="auth-form-header">Join for coffee</h2>
 
-          <p>Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
+          <p classname="auth-form-p">Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
             <input
+              className="auth-input-field"
               onChange={this.handleChange('username')}
               type="text"
               value={this.state.username}
@@ -51,6 +46,7 @@ class SignupForm extends React.Component {
           <br/>
 
           <input
+            className="auth-input-field"
             onChange={this.handleChange('email')}
             type="text"
             value={this.state.email}
@@ -60,6 +56,7 @@ class SignupForm extends React.Component {
           <br/>
 
           <input
+            className="auth-input-field"
             onChange={this.handleChange('password')}
             type="password"
             value={this.state.password }
@@ -69,6 +66,10 @@ class SignupForm extends React.Component {
           <br/>
 
           <input className="auth-form-submit" type="submit" value="LET'S GET COFFEE" />
+
+          <div className="redirect-below-submit-button">
+            <Link className="login-signup-redirect-link" to="/login">If you've already done this before, click here to log in</Link>
+          </div>
         </form>
       </div>
     );
