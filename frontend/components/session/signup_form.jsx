@@ -11,6 +11,10 @@ class SignupForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillMount(){
+    this.props.clearErrors();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const user = Object.assign({}, this.state);
