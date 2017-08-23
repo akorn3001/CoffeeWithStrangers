@@ -148,7 +148,7 @@ button:focus {
 .nav-links {
   margin: 0;
   padding: 0;
-  width: 20%;
+  width: 30%;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -157,4 +157,15 @@ button:focus {
 
 .nav-links > * {
 
+}
+
+#navbar-logo {
+  width: 65px;
+  height: 65px;
+}
+
+#logo-and-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

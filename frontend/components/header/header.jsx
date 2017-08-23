@@ -7,7 +7,7 @@ class Header extends React.Component {
     let navigation;
 
     if (this.props.currentUser) {
-      if (this.props.city) {
+      if (this.props.currentUser.city_id) {
         navigation =
         <ul className="nav-links">
           <li>**City Will Go Here**</li>
@@ -38,7 +38,11 @@ class Header extends React.Component {
 
     return (
       <header>
-        <span>Coffee With Strangers</span>
+        <div id="logo-and-name">
+          <img id="navbar-logo" src={window.staticImages.coffeeBeans}/>
+          <span>Coffee With Strangers</span>
+        </div>
+
         {navigation}
       </header>
     );
