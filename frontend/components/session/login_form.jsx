@@ -11,6 +11,10 @@ class LoginForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentWillMount(){
+    this.props.clearErrors();
+  }
+
   handleClick() {
     return (event) => {
       event.preventDefault();

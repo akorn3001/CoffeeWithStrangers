@@ -6,7 +6,6 @@ class Greeting extends React.Component {
   handleClick() {
     return (event) => {
       event.preventDefault();
-      this.props.history.push('/login')
       this.props.logout();
     }
   }
