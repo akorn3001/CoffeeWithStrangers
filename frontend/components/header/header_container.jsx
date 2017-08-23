@@ -5,7 +5,7 @@ import Header from './header';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    city: state.entities.cities[state.session.currentUser.city_id]
+    // city: state.entities.cities[state.session.currentUser.city_id]
   };
 };
 

@@ -20,9 +20,12 @@
  }
 
 header {
+  justify-content: space-around;
   display: flex;
+  align-items: center;
+  flex-direction: row;
   background-color: #F7C661;
-  height: 120px;
+  height: 76px;
   box-sizing: border-box;
 }
 
@@ -140,4 +143,18 @@ button:focus {
 .error-banner > * {
   padding: 8px;
   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue"
+}
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-links > * {
+
 }
