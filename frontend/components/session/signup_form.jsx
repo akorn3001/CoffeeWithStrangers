@@ -31,10 +31,14 @@ class SignupForm extends React.Component {
 
     return (
       <div className="auth-form-div">
+        <div className="error-banner">
+          <p>{this.props.errors}</p>
+        </div>
+
         <form className="auth-form" onSubmit={this.handleSubmit}>
           <h2 className="auth-form-header">Join for coffee</h2>
 
-          <p classname="auth-form-p">Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
+          <p className="auth-form-p">Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
             <input
               className="auth-input-field"
               onChange={this.handleChange('username')}
@@ -60,7 +64,7 @@ class SignupForm extends React.Component {
             onChange={this.handleChange('password')}
             type="password"
             value={this.state.password }
-            placeholder="Password"
+            placeholder="Password (at least 8 characters!)"
           />
 
           <br/>

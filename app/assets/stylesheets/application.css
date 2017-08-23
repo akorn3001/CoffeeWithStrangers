@@ -18,16 +18,28 @@
    background-color: #FAF6E8;
  }
 
+header {
+  display: flex;
+  background-color: #F7C661;
+  height: 120px;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #F7C661;
+  height: 333.25px;
+  box-sizing: border-box;
+}
+
 form.auth-form {
   width: 100%;
 }
 
 div.auth-form-div {
   width: 648.27px;
+  margin: 55px auto 55px auto;
   display: flex;
-  border: 1px solid gray;
-  margin-left: auto;
-  margin-right: auto;
+  /*border: 1px solid gray;*/
   box-sizing: border-box;
 }
 
@@ -62,6 +74,10 @@ div.auth-form-div > * {
   color: white;
   font-weight: 600;
   border-style: solid;
+}
+
+.auth-form-submit:hover {
+  background-color: #ED501E;
 }
 
 input:focus {
