@@ -28,53 +28,58 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    let errorBanner;
+    if (this.props.errors.length) {
+      errorBanner = <div className="error-banner"><p>{this.props.errors}</p></div>
+    } else {
+      errorBanner = null;
+    }
 
     return (
-      <div className="auth-form-div">
-        <div className="error-banner">
-          <p>{this.props.errors}</p>
-        </div>
+      <div>
+        {errorBanner}
+        <div className="auth-form-div">
+          <form className="auth-form" onSubmit={this.handleSubmit}>
+            <h2 className="auth-form-header">Join for coffee</h2>
 
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          <h2 className="auth-form-header">Join for coffee</h2>
+            <p className="auth-form-p">Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
+              <input
+                className="auth-input-field"
+                onChange={this.handleChange('username')}
+                type="text"
+                value={this.state.username}
+                placeholder="First name (or nickname)"
+              />
 
-          <p className="auth-form-p">Thousands of strangers across the world have sat together for conversations. We can't wait for you to join them.</p>
+            <br/>
+
             <input
               className="auth-input-field"
-              onChange={this.handleChange('username')}
+              onChange={this.handleChange('email')}
               type="text"
-              value={this.state.username}
-              placeholder="First name (or nickname)"
+              value={this.state.email}
+              placeholder="Email Address"
             />
 
-          <br/>
+            <br/>
 
-          <input
-            className="auth-input-field"
-            onChange={this.handleChange('email')}
-            type="text"
-            value={this.state.email}
-            placeholder="Email Address"
-          />
+            <input
+              className="auth-input-field"
+              onChange={this.handleChange('password')}
+              type="password"
+              value={this.state.password }
+              placeholder="Password (at least 8 characters!)"
+            />
 
-          <br/>
+            <br/>
 
-          <input
-            className="auth-input-field"
-            onChange={this.handleChange('password')}
-            type="password"
-            value={this.state.password }
-            placeholder="Password (at least 8 characters!)"
-          />
+            <button className="auth-form-submit" type="submit">LET'S GET COFFEE</button>
 
-          <br/>
-
-          <input className="auth-form-submit" type="submit" value="LET'S GET COFFEE" />
-
-          <div className="redirect-below-submit-button">
-            <Link className="login-signup-redirect-link" to="/login">If you've already done this before, click here to log in</Link>
-          </div>
-        </form>
+            <div className="redirect-below-submit-button">
+              <Link className="login-signup-redirect-link" to="/login">If you've already done this before, click here to log in</Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

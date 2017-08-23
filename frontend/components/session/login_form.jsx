@@ -27,39 +27,48 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    let errorBanner;
+    if (this.props.errors.length) {
+      errorBanner = <div className="error-banner"><p>{this.props.errors}</p></div>
+    } else {
+      errorBanner = null;
+    }
 
     return (
-      <div className="auth-form-div">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          <h2 className="auth-form-header">Hey stranger!</h2>
+      <div>
+        {errorBanner}
+        <div className="auth-form-div">
+          <form className="auth-form" onSubmit={this.handleSubmit}>
+            <h2 className="auth-form-header">Hey stranger!</h2>
 
-          <p className="auth-form-p">It's good to have you back. Sign in here and sign up for your next meetup!</p>
+            <p className="auth-form-p">It's good to have you back. Sign in here and sign up for your next meetup!</p>
 
-          <input
-            className="auth-input-field"
-            onChange={this.handleChange('email')}
-            type="text"
-            value={this.state.email}
-            placeholder="Email Address" />
+            <input
+              className="auth-input-field"
+              onChange={this.handleChange('email')}
+              type="text"
+              value={this.state.email}
+              placeholder="Email Address" />
 
-          <br/>
+            <br/>
 
-          <input
-            className="auth-input-field"
-            onChange={this.handleChange('password')}
-            type="password"
-            value={this.state.password }
-            placeholder="Password"
-          />
+            <input
+              className="auth-input-field"
+              onChange={this.handleChange('password')}
+              type="password"
+              value={this.state.password }
+              placeholder="Password"
+            />
 
-          <br/>
+            <br/>
 
-          <input className="auth-form-submit" type="submit" value="SIGN IN" />
+            <button className="auth-form-submit" type="submit">SIGN IN</button>
 
-          <div className="redirect-below-submit-button">
-            <Link className="login-signup-redirect-link" to="/signup">If you've never signed up before, click here and do that</Link>
-          </div>
-        </form>
+            <div className="redirect-below-submit-button">
+              <Link className="login-signup-redirect-link" to="/signup">If you've never signed up before, click here and do that</Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
