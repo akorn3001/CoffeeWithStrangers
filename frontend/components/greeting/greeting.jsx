@@ -16,7 +16,6 @@ class Greeting extends React.Component {
        element = (
         <div>
           <h1>{`Welcome, ${this.props.currentUser.username}`}</h1>
-          <button onClick={this.handleClick()}>Log Out</button>
         </div>
       );
     } else {

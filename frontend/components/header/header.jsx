@@ -3,46 +3,71 @@ import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    return (event) => {
+      event.preventDefault();
+      this.props.logout();
+    }
+  }
+
   render() {
     let navigation;
+
+    // BASIC NAVIGATION LINKS
+    const citiesLink = <Link to="/cities">CITIES</Link>;
+    const hostingLink = <Link to="/hosting">HOSTING</Link>;
+    const dashboardLink = <Link to="/dashboard">DASHBOARD</Link>;
+    const signoutLink = <Link onClick={this.handleLogout()} to="/login">SIGN OUT</Link>;
+    const aboutLink = <Link to="/about">ABOUT</Link>;
+    const signinLink = <Link to="/login">SIGN IN</Link>;
+    const homeCityLink = <Link to="/cities/:cityId">~HOME CITY HERE~</Link>;
+
+  // FAKE BUTTON LINKS
+    const setCityLink = <Link to="/cities" className="fake-button">SET HOME CITY</Link>
+    const signupLink = <Link to="/signup" className="fake-button">SIGN UP</Link>
+
 
     if (this.props.currentUser) {
       if (this.props.currentUser.city_id) {
         navigation =
         <ul className="nav-links">
-          <li>**City Will Go Here**</li>
-          <li>CITIES</li>
-          <li>HOSTING</li>
-          <li>DASHBOARD</li>
-          <li>SIGN OUT</li>
-        </ul>
-      } else {
+          <li className="nav-link-item">{homeCityLink}</li>
+          <li className="nav-link-item">{citiesLink}</li>
+          <li className="nav-link-item">{hostingLink}</li>
+          <li className="nav-link-item">{dashboardLink}</li>
+          <li className="nav-link-item">{signoutLink}</li>
+        </ul> } else {
         navigation =
-        <ul className="nav-links">
-          <li><button>SET HOME CITY</button></li>
-          <li>HOSTING</li>
-          <li>DASHBOARD</li>
-          <li>SIGN OUT</li>
-        </ul>
-      }
-    } else {
-      navigation =
-      <ul className="nav-links">
-        <li>CITIES</li>
-        <li>HOSTING</li>
-        <li>ABOUT</li>
-        <li>SIGN IN</li>
-        <li><button>SIGN UP</button></li>
-      </ul>
-    }
+          <ul className="nav-links">
+            <li className="nav-link-item">{setCityLink}</li>
+            <li className="nav-link-item">{hostingLink}</li>
+            <li className="nav-link-item">{dashboardLink}</li>
+            <li className="nav-link-item">{signoutLink}</li>
+          </ul>
+        }
+      } else {
+          navigation =
+          <ul className="nav-links">
+            <li className="nav-link-item">{citiesLink}</li>
+            <li className="nav-link-item">{hostingLink}</li>
+            <li className="nav-link-item">{aboutLink}</li>
+            <li className="nav-link-item">{signinLink}</li>
+            <li className="nav-link-item">{signupLink}</li>
+          </ul>
+        }
 
     return (
       <header>
         <div id="logo-and-name">
-          <img id="navbar-logo" src={window.staticImages.coffeeBeans}/>
-          <span>Coffee With Strangers</span>
+          <img id="navbar-logo-image" src={window.staticImages.coffeeBeans}/>
+          <span id="navbar-logo-text">Coffee With Strangers</span>
         </div>
-
         {navigation}
       </header>
     );

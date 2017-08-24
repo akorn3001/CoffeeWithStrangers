@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './header/header_container';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <AuthRoute path='/login' exact component={LoginFormContainer} />
         <AuthRoute path='/signup' exact component={SignupFormContainer} />
 
-        <footer>STUFF TO COME</footer>
+        <Footer />
       </div>
 
   );

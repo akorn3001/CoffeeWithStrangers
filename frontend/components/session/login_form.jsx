@@ -40,7 +40,6 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    debugger
     let errorBanner;
     if (this.props.errors.length) {
       errorBanner = <div className="error-banner"><p>{this.props.errors}</p></div>

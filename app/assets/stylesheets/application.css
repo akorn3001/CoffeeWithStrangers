@@ -20,8 +20,9 @@
  }
 
 header {
-  justify-content: space-around;
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   background-color: #F7C661;
@@ -30,9 +31,48 @@ header {
 }
 
 footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
   background-color: #F7C661;
   height: 333.25px;
   box-sizing: border-box;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue";
+  color: white;
+}
+
+#footer-links {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.footer-link-item {
+  margin-top: 10px;
+}
+
+.footer-link-item > a {
+  font: inherit;
+  text-decoration: none;
+  color: white;
+}
+
+#footer-paragraphs {
+  width: 60%;
+  line-height: 20px;
+}
+
+.footer-components > * {
+  font: inherit;
+}
+
+#footer-components {
+  display: flex;
+  margin: auto;
+  width: 40%;
+  justify-content: space-between;
 }
 
 form.auth-form {
@@ -62,7 +102,6 @@ div.auth-form-div > * {
 .auth-form-p {
   line-height: 1.625;
   font-size: 18px;
-  spacing: 10px;
 }
 
 .auth-form-submit, .guest-login-button {
@@ -107,7 +146,7 @@ button:focus {
   border-width: 0.5px;
   box-sizing: border-box;
   font-size: 17px;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue"
   /*box-shadow: none;*/
 }
@@ -155,11 +194,19 @@ button:focus {
   justify-content: space-around;
 }
 
-.nav-links > * {
-
+.nav-link-item > a  {
+  color: white;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-#navbar-logo {
+
+#navbar-logo-image {
   width: 65px;
   height: 65px;
 }
@@ -168,4 +215,37 @@ button:focus {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#navbar-logo-text {
+  font-size: 22px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: bold;
+  color: white;
+}
+
+.fake-button {
+  border: 2px solid white;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
+  background-color: white;
+  color: #F7C661;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 3px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.fake-button:hover {
+  background-color: #F7C661;
+  color: white;
+  transition-duration: 0.25s;
+}
+
+#nav-div-test {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
