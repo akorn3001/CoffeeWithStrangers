@@ -6,14 +6,14 @@ import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './header/header_container';
 import Footer from './footer/footer';
+import CitiesContainer from './cities/cities_container';
 
 const App = () => {
   return (
       <div>
         <HeaderContainer />
 
-        <GreetingContainer />
-
+        <ProtectedRoute path="/cities" exact component={CitiesContainer}/>
         <AuthRoute path='/login' exact component={LoginFormContainer} />
         <AuthRoute path='/signup' exact component={SignupFormContainer} />
 

@@ -20,6 +20,12 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :meetups,
+    primary_key: :id,
+    foreign_key: :meetup_id,
+    class_name: 'Meetup'
+
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)

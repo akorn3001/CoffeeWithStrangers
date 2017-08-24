@@ -17,10 +17,11 @@
 
  body {
    background-color: #FAF6E8;
+   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue";
  }
 
 header {
-  width: 100%;
+  margin-top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -31,7 +32,6 @@ header {
 }
 
 footer {
-  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -51,9 +51,10 @@ footer {
 
 .footer-link-item {
   margin-top: 10px;
+  font-weight: 500;
 }
 
-.footer-link-item > a {
+.footer-link-item > * {
   font: inherit;
   text-decoration: none;
   color: white;
@@ -61,7 +62,8 @@ footer {
 
 #footer-paragraphs {
   width: 60%;
-  line-height: 20px;
+  line-height: 23px;
+  font-size: 17px;
 }
 
 .footer-components > * {
@@ -97,6 +99,7 @@ div.auth-form-div > * {
   font-size: 1.5em;
   color: #EF6236;
   margin-top: 0;
+  font-weight: 600;
 }
 
 .auth-form-p {
@@ -194,7 +197,7 @@ button:focus {
   justify-content: space-around;
 }
 
-.nav-link-item > a  {
+.nav-link-item > * {
   color: white;
   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue", sans-serif;
   font-size: 14px;
@@ -248,4 +251,16 @@ button:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+#set-city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#set-city-header {
+  font-size: 50px;
+  font-weight: bold;
+  color: #5C5C5C;
 }

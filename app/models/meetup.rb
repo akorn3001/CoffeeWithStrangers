@@ -13,4 +13,20 @@
 #
 
 class Meetup < ApplicationRecord
+  validates :date, :time, :address, :city, :host, :host_city, presence: true
+
+  belongs_to :host,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: 'User'
+
+  has_many :attendances,
+    primary_key: :id,
+    foreign_key: :meetup_id,
+    class_name: 'Attendance'
+
+  has_one :host_city,
+    through: :host,
+    source: :city
+
 end
