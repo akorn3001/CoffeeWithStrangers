@@ -44,9 +44,11 @@ footer {
 }
 
 #footer-links {
+  justify-content: center;
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  padding-top: 0;
 }
 
 .footer-link-item {
@@ -61,6 +63,8 @@ footer {
 }
 
 #footer-paragraphs {
+  justify-content: 0;
+  padding-top: 0;
   width: 60%;
   line-height: 23px;
   font-size: 17px;
@@ -288,7 +292,7 @@ button:focus {
 }
 
 .city-photo {
-  filter: sepia(50%);
+  filter: sepia(60%);
   min-width: 100%;
   min-height: 100%;
   position: relative;
@@ -298,7 +302,7 @@ button:focus {
   position: absolute;
   color: white;
   font-size: 25px;
-  z-index: 3;
+
 }
 
 .city-link {
@@ -320,7 +324,7 @@ button:focus {
   overflow: hidden;
 }
 
-.city-show-banner span {
+.city-show-banner > span {
   position: absolute;
   font-size: 50px;
   font-weight: 500;
@@ -333,4 +337,8 @@ button:focus {
   min-width: 100%;
   min-height: 100%;
   position: relative;
+}
+
+.change-city-button {
+  text-transform: uppercase;
 }

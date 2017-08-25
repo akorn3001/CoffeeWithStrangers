@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       delete :unattend, :on => :member
     end
 
-    resources :cities, only: [:show] do
+    resources :cities, only: [:index, :show] do
       resources :meetups, only: [:show]
     end
   end
