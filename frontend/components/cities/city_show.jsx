@@ -57,9 +57,8 @@ class CityShow extends React.Component {
           </button>
         </div>;
       }
-    } 
+    }
 
-    debugger
     return (
       <div>
         <div className="city-show-banner">
