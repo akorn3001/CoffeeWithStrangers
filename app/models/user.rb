@@ -10,6 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  city_id         :integer
+#  host_status     :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord

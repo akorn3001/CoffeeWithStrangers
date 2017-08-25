@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HeaderContainer from './header/header_container';
 import Footer from './footer/footer';
 import CitiesContainer from './cities/cities_container';
-import CityShow from './cities/city_show'
+import CityShowContainer from './cities/city_show_container'
 
 
 const App = () => {
@@ -16,8 +16,8 @@ const App = () => {
         <HeaderContainer />
 
         <Switch>
-          <Route path={`/cities/:cityId`} exact component={CityShow}/>
-          <ProtectedRoute path="/cities" component={CitiesContainer}/>
+          <Route path={`/cities/:cityId`} exact component={CityShowContainer}/>
+          <Route path="/cities" component={CitiesContainer}/>
         </Switch>
 
         <AuthRoute path='/login' exact component={LoginFormContainer} />
