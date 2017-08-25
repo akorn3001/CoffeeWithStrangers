@@ -288,7 +288,7 @@ button:focus {
 }
 
 .city-photo {
-  opacity: 0.5;
+  filter: sepia(50%);
   min-width: 100%;
   min-height: 100%;
   position: relative;
@@ -308,4 +308,29 @@ button:focus {
 
 .city-link:hover {
   text-decoration: underline;
+}
+
+.city-show-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 318.5px;
+  overflow: hidden;
+}
+
+.city-show-banner span {
+  position: absolute;
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.city-show-photo {
+  opacity: 0.5;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
 }

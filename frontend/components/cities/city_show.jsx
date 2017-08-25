@@ -3,28 +3,45 @@ import DUMMY_CITIES from '../dummy_cities'
 
 class CityShow extends React.Component {
   constructor(props) {
-
     super(props)
   }
 
   render() {
-    debugger
-    let message;
-    if (this.props.currentUser) {
-       message = (
-        <div>
-          <h1>This is your city, {`${this.props.currentUser.username}`}</h1>
-        </div>
-      );
-    } else {
-      message = (
-        <div>
-          <h1>Welcome</h1>
-        </div>
-      );
+    let thisCity;
+    let cityId = parseInt(this.props.match.params.cityId)
+    let homeCityMessage;
+
+    function extractCity (city_id) {
+      for (let i = 0; i < DUMMY_CITIES.length; i++) {
+        if (DUMMY_CITIES[i].id === city_id) {
+          return thisCity = DUMMY_CITIES[i]
+        }
+      }
+
+      return "whoops";
     }
 
-    return message;
+    let cityName = extractCity(cityId).name
+
+    if (this.props.currentUser) {
+      if (this.props.currentUser.city_id === cityId) {
+        homeCityMessage = <span>{cityName} is your home city, {this.props.currentUser.username}</span>
+      } else {
+        homeCityMessage = null;
+      }
+    }
+
+    debugger
+    return (
+      <div>
+        <div className="city-show-banner">
+          <img className="city-show-photo" src={extractCity(cityId).url} />
+          <span>{cityName}</span>
+        </div>
+
+        {homeCityMessage}
+      </div>
+    )
   }
 }
 

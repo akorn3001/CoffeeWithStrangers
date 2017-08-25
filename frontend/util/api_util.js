@@ -1,29 +1,15 @@
-export const fetchAllTweets = () => (
+// FETCH ALL
+export const fetchAllCities = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/tweets'
+    url: '/api/cities'
   })
 );
-
-export const createTweet = (tweet) => {
-  return $.ajax({
-    method: 'POST',
-    url: 'api/tweets/',
-    data: { tweet }
-  });
-};
 
 export const fetchAllMeetups = () => (
   $.ajax({
     method: 'GET',
     url: 'api/meetups'
-  })
-);
-
-export const fetchSingleMeetup = (meetupId) => (
-  $.ajax({
-    method: 'GET',
-    url: `/api/lists/${meetupId}`
   })
 );
 
@@ -34,9 +20,49 @@ export const fetchAllUsers = () => (
   })
 );
 
+// FETCH SINGLE
+export const fetchSingleMeetup = (meetupId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/meetups/${meetupId}`
+  })
+);
+
 export const fetchSingleUser = (userId) => (
   $.ajax({
     method: 'GET',
     url: `/api/users/${userId}`
   })
 );
+
+export const fetchSingleCity = (cityId) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${cityId}`
+  })
+);
+
+// CREATE
+export const createMeetup = (meetup) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/meetups/',
+    data: { meetup }
+  });
+};
+
+// ATTEND / UNATTEND MEETUPS
+export const attendMeetup = (meetup) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/meetups/${meetup.id}/attend`,
+    data: { meetup }
+  });
+};
+
+export const unattendMeetup = (meetupId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/meetups/${meetupId}/unattend`
+  });
+};

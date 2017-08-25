@@ -16,8 +16,12 @@ class Cities extends React.Component {
     const cityLis = DUMMY_CITIES.map(city => {
       return (
         <div className="active-city" key={city.id}>
-          <img className="city-photo "src={city.url} />
-          <span className="city-name">{<Link className="city-link" to={`/cities/${city.id}`}>{city.name}</Link>}</span>
+          <img className="city-photo" src={city.url} />
+          <span className="city-name">{
+              <Link className="city-link" to={`/cities/${city.id}`}>{
+                  city.name.toUpperCase()
+                }</Link>
+            }</span>
         </div>
       );
     })
@@ -25,7 +29,7 @@ class Cities extends React.Component {
 
     return (
       <div>
-        <span>Welcome {this.props.currentUser.username}</span>
+
         <div id="set-city-container">
           <h1 id="set-city-header">Set your home city</h1>
           <p id="set-city-p">I pity the fool who doesn't set their home city! Choose a city to know about future meetups by you!</p>

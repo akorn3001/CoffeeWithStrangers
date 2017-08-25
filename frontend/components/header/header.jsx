@@ -29,7 +29,6 @@ class Header extends React.Component {
     const signoutLink = <Link onClick={this.handleLogout()} to="/login">SIGN OUT</Link>;
     const aboutLink = <Link to="/about">ABOUT</Link>;
     const signinLink = <Link to="/login">SIGN IN</Link>;
-    const homeCityLink = <Link to="/cities/:cityId">~HOME CITY HERE~</Link>;
 
   // FAKE BUTTON LINKS
     const setCityLink = <Link to="/cities" className="fake-button">SET HOME CITY</Link>
@@ -40,7 +39,7 @@ class Header extends React.Component {
       if (this.props.currentUser.city_id) {
         navigation =
         <ul className="nav-links">
-          <li className="nav-link-item">{homeCityLink}</li>
+          <li className="nav-link-item"><Link to={`/cities/${this.props.currentUser.city_id}`}>HOME CITY</Link></li>
           <li className="nav-link-item">{citiesLink}</li>
           <li className="nav-link-item">{hostingLink}</li>
           <li className="nav-link-item">{dashboardLink}</li>

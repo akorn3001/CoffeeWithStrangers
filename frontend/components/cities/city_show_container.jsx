@@ -4,7 +4,7 @@ import CityShow from './city_show';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    // userCity: state.entities.cities[state.session.currentUser.city_id]
+    // city: state.entities.cities[state.session.currentUser.city_id]
 
   };
 };
