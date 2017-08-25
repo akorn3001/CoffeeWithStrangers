@@ -264,3 +264,48 @@ button:focus {
   font-weight: bold;
   color: #5C5C5C;
 }
+
+#active-cities {
+  width: 53%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.active-city {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 312px;
+  height: 160px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 11px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.city-photo {
+  opacity: 0.5;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.city-name {
+  position: absolute;
+  color: white;
+  font-size: 25px;
+  z-index: 3;
+}
+
+.city-link {
+  color: white;
+  text-decoration: none;
+}
+
+.city-link:hover {
+  text-decoration: underline;
+}
