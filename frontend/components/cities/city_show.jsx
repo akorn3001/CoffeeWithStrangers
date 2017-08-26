@@ -37,15 +37,20 @@ class CityShow extends React.Component {
     }
 
     let thisCityName = extractCity(cityId).name
+    let homeCityName;
+    let homeCityId;
 
     if (this.props.currentUser) {
-      if (this.props.currentUser.city_id){
+      if (this.props.currentUser.city_id) {
+
+        homeCityName = extractCity(this.props.currentUser.city_id).name
+        homeCityId = extractCity(this.props.currentUser.city_id).id
+
         if (this.props.currentUser.city_id === cityId) {
 
-          let homeCityName = extractCity(this.props.currentUser.city_id).name
-          let homeCityId = extractCity(this.props.currentUser.city_id).id
 
-          
+
+
           cityMessage =
           <div className="city-message">
             <span>
