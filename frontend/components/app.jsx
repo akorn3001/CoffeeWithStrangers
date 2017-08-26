@@ -8,6 +8,7 @@ import HeaderContainer from './header/header_container';
 import Footer from './footer/footer';
 import CitiesContainer from './cities/cities_container';
 import CityShowContainer from './cities/city_show_container'
+import About from './about_page'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Switch>
           <Route path={`/cities/:cityId`} exact component={CityShowContainer}/>
           <Route path="/cities" component={CitiesContainer}/>
+          <Route path="/about" component={About}/>
         </Switch>
 
         <AuthRoute path='/login' exact component={LoginFormContainer} />

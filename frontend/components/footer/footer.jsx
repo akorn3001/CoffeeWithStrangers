@@ -8,7 +8,7 @@ class Footer extends React.Component {
     const aboutLink = <Link to="/about">ABOUT</Link>;
     const hostingLink = <Link to="/hosting">HOSTING</Link>;
     const citiesLink = <Link to="/cities">CITIES</Link>;
-    const facebookLink = <a href="https://www.google.com/">FACEBOOK</a>
+    const facebookLink = <a href="https://www.facebook.com/Coffee-With-Strangers-102801160456622/">FACEBOOK</a>
     const twitterLink = <a href="https://www.google.com/">TWITTER</a>
 
     let navigation =

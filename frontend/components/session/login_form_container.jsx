@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: state.currentUser !== null,
     errors: state.session.errors,
-    // formType: `${ownProps.location.pathname}`,
   };
 };
 

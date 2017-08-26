@@ -46,7 +46,7 @@ class Header extends React.Component {
           <li className="nav-link-item">{signoutLink}</li>
         </ul> } else {
         navigation =
-          <ul className="nav-links">
+          <ul className="nav-links ">
             <li className="nav-link-item">{setCityLink}</li>
             <li className="nav-link-item">{hostingLink}</li>
             <li className="nav-link-item">{dashboardLink}</li>

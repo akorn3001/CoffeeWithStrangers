@@ -20,3 +20,11 @@ export const logout = () => (
     url: '/api/session'
   })
 );
+
+export const changeUserCity = (userId, cityId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${userId}`,
+    data: { user: {city_id: cityId} }
+  });
+};

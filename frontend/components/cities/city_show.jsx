@@ -1,16 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import DUMMY_CITIES from '../dummy_cities'
+import { Link } from 'react-router-dom';
+import DUMMY_CITIES from '../dummy_cities';
 
 class CityShow extends React.Component {
   constructor(props) {
     super(props)
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  // componentWillReceiveProps(nextProps) {
+  //   debugger
+  //   return;
+  // }
+
+  handleClick(cityId) {
     return (event) => {
       event.preventDefault();
-      this.props.changeCity();
+      this.props.changeUserCity(this.props.currentUser.id, cityId);
     };
   };
 
@@ -45,18 +52,24 @@ class CityShow extends React.Component {
           cityMessage =
           <div>
             <span><strong>Do you live in {cityName} now?</strong></span>
-            <button onClick={this.handleClick()} className="change-city-button">yup!</button>
+            <button onClick={this.handleClick(cityId)} className="change-city-button">yup!</button>
           </div>;
         }
       } else {
         cityMessage =
         <div>
           <span><strong>You have no home city yet!</strong></span>
-          <button onClick={this.handleClick()} className="change-city-button">
+          <button onClick={this.handleClick(cityId)} className="change-city-button">
             Set {cityName} as my home city
           </button>
         </div>;
       }
+    } else {
+      cityMessage =
+      <div>
+        <span><strong>You can set your home city once you sign up!</strong></span>
+        <Link to="/signup" className="city-page-fake-button">SIGN UP</Link>
+      </div>
     }
 
     return (

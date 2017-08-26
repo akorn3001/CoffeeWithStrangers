@@ -65,7 +65,7 @@ footer {
 #footer-paragraphs {
   justify-content: 0;
   padding-top: 0;
-  width: 60%;
+  width: 70%;
   line-height: 23px;
   font-size: 17px;
 }
@@ -194,7 +194,7 @@ button:focus {
 .nav-links {
   margin: 0;
   padding: 0;
-  width: 30%;
+  width: 35%;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -333,12 +333,25 @@ button:focus {
 }
 
 .city-show-photo {
-  opacity: 0.5;
+  filter: sepia(60%);
   min-width: 100%;
   min-height: 100%;
   position: relative;
 }
 
-.change-city-button {
+.change-city-button, .city-show-banner span {
   text-transform: uppercase;
+}
+
+.city-page-fake-button {
+  border-radius: 5px;
+  border: 1px solid #EF6236;
+  padding: 5px;
+  color: white;
+  background-color: #EF6236;
+  text-decoration: none;
+}
+
+.city-page-fake-button:hover {
+  background-color: #ED501E;
 }
