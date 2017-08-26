@@ -292,7 +292,7 @@ button:focus {
 }
 
 .city-photo {
-  filter: sepia(60%);
+  filter: sepia(50%);
   min-width: 100%;
   min-height: 100%;
   position: relative;
@@ -329,7 +329,7 @@ button:focus {
   font-size: 50px;
   font-weight: 500;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
 }
 
 .city-show-photo {
@@ -339,19 +339,59 @@ button:focus {
   position: relative;
 }
 
-.change-city-button, .city-show-banner span {
+.city-page-button {
   text-transform: uppercase;
-}
-
-.city-page-fake-button {
-  border-radius: 5px;
+  margin: 5px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 8px;
   border: 1px solid #EF6236;
-  padding: 5px;
+  padding: 15px 20px 15px 20px;
   color: white;
   background-color: #EF6236;
   text-decoration: none;
+  border-style: solid;
+  cursor: pointer;
 }
 
-.city-page-fake-button:hover {
-  background-color: #ED501E;
+.city-show-below-photo {
+  width: 650px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city-page-button:hover {
+  background-color: #C93C10;
+}
+
+.city-show-link {
+  text-decoration: none;
+  color: #EF6236;
+}
+
+.city-show-link:hover {
+  color: #C93C10;
+}
+
+.city-message {
+  padding:5px;
+  width: 100%;
+  background-color: #F1E9C6;
+  margin: 10px auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-message > span {
+  color: #EDA20B;
+}
+
+.city-show-host-header {
+  font-size: 30px;
+  font-weight: 500;
+  color: #EF6236;
 }

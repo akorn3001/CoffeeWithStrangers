@@ -36,59 +36,74 @@ class CityShow extends React.Component {
       return "whoops";
     }
 
-    let cityName = extractCity(cityId).name
+    let thisCityName = extractCity(cityId).name
 
     if (this.props.currentUser) {
       if (this.props.currentUser.city_id){
         if (this.props.currentUser.city_id === cityId) {
+
+          let homeCityName = extractCity(this.props.currentUser.city_id).name
+          let homeCityId = extractCity(this.props.currentUser.city_id).id
+
+          
           cityMessage =
-          <div>
+          <div className="city-message">
             <span>
-              <strong>{cityName} is your home city!</strong> If you've moved, <Link to="/cities">change your home city here.</Link>
+              <strong>{thisCityName} is your home city!</strong> If you've moved, <Link to="/cities" className="city-show-link">change your home city here.</Link>
             </span>
           </div>
 
         } else {
           cityMessage =
-          <div>
-            <span><strong>Do you live in {cityName} now?</strong></span>
-            <button onClick={this.handleClick(cityId)} className="change-city-button">yup!</button>
+          <div className="city-message">
+            <span>
+              <strong>Do you live in {thisCityName} now?</strong>
+            </span>
+
+            <button onClick={this.handleClick(cityId)} className="city-page-button">yup!</button>
+
+            <span><Link className="city-show-link"to={`/cities/${homeCityId}`}>{homeCityName}</Link> is your home city right now. The big button will change that!</span>
           </div>;
         }
       } else {
         cityMessage =
-        <div>
-          <span><strong>You have no home city yet!</strong></span>
-          <button onClick={this.handleClick(cityId)} className="change-city-button">
-            Set {cityName} as my home city
+        <div className="city-message">
+          <span>
+            <strong>You have no home city yet!</strong>
+          </span>
+          <button onClick={this.handleClick(cityId)} className="city-page-button">
+            Set {thisCityName} as my home city
           </button>
         </div>;
       }
     } else {
       cityMessage =
-      <div>
+      <div className="city-message">
         <span><strong>You can set your home city once you sign up!</strong></span>
-        <Link to="/signup" className="city-page-fake-button">SIGN UP</Link>
+        <Link to="/signup" className="city-page-button">SIGN UP</Link>
+        <Link to="/login" className="city-show-link">Log in if you've signed up before</Link>
       </div>
     }
 
     return (
-      <div>
+      <div className="city-show-container">
         <div className="city-show-banner">
           <img className="city-show-photo" src={extractCity(cityId).url} />
-          <span>{cityName}</span>
+          <span>{thisCityName}</span>
         </div>
+        <div className="city-show-below-photo">
+          <div>~~Message to come about upcoming meetups~~</div>
+          {cityMessage}
 
-        {cityMessage}
-
-        <div>
-          <h2>The host community is great!</h2>
-          <p>How else would someone end up regularly
-            bringing strangers together for conversations?
-            Before each of them were invited to community,
-            they were attendees that fed their tea times with
-            their questions, open-mindedness, and presence.
-          </p>
+          <div className="city-show-host-message">
+            <h2 className="city-show-host-header">The host community is great!</h2>
+            <p>How else would someone end up regularly
+              bringing strangers together for conversations?
+              Before each of them were invited to community,
+              they were attendees that fed their tea times with
+              their questions, open-mindedness, and presence.
+            </p>
+          </div>
         </div>
       </div>
     )
