@@ -179,7 +179,7 @@ button:focus {
 }
 
 .error-banner {
-  margin: 0;
+  margin-top: 3px;
   background-color: #EF6236;
   color: white;
   font-weight: 600;
@@ -419,4 +419,15 @@ button:focus {
   min-width: 100%;
   min-height: 100%;
   position: relative;
+}
+
+.meetup-index-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-show-meetups-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

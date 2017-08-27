@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DUMMY_CITIES from '../dummy_cities';
+import MeetupIndexContainer from '../meetups/meetup_index_container';
 
 class CityShow extends React.Component {
   constructor(props) {
@@ -47,9 +48,6 @@ class CityShow extends React.Component {
         homeCityId = extractCity(this.props.currentUser.city_id).id
 
         if (this.props.currentUser.city_id === cityId) {
-
-
-
 
           cityMessage =
           <div className="city-message">
@@ -110,6 +108,8 @@ class CityShow extends React.Component {
             </p>
           </div>
         </div>
+
+        <MeetupIndexContainer className="city-show-meetups-index"/>
       </div>
     )
   }
