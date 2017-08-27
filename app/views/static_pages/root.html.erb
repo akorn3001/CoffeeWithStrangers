@@ -1,6 +1,9 @@
 
 <script id="bootstrap-current-user" type="text/javascript">
-  window.staticImages = { coffeeBeans: "<%= asset_path("coffee_beans.png") %>"}
+  window.staticImages = {
+    coffeeBeans: "<%= asset_path("coffee_beans.png") %>",
+    aboutBanner: "<%= asset_path("about-banner-photo.jpg") %>"
+  }
 
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder",

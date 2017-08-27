@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ActiveCities from './active_cities';
 import DUMMY_CITIES from '../dummy_cities';
 
 

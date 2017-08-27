@@ -6,7 +6,10 @@ class About extends React.Component {
 
     return (
       <div>
-        Welcome to the about page
+        <div className="about-banner">
+          <img src={window.staticImages.aboutBanner}/>
+          <span>About Coffee With Strangers</span>
+        </div>
       </div>
     )
   }

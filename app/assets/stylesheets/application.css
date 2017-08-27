@@ -395,3 +395,28 @@ button:focus {
   font-weight: 500;
   color: #EF6236;
 }
+
+.about-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 318.5px;
+  overflow: hidden;
+}
+
+.about-banner > span {
+  position: absolute;
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+}
+
+.about-banner > img {
+  filter: sepia(60%);
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
