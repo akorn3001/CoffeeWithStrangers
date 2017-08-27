@@ -10,7 +10,7 @@ const MeetupsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_MEETUPS:
-      return merge({}, state, action.meetups);
+      return action.meetups;
     case RECEIVE_SINGLE_MEETUP:
       const meetup = action.payload.meetup;
       // poke.item_ids = action.payload.items.map(item => item.id);

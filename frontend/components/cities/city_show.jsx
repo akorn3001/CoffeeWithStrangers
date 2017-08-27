@@ -10,10 +10,16 @@ class CityShow extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   debugger
-  //   return;
-  // }
+  componentDidMount() {
+    this.props.requestAllMeetups(this.props.match.params.cityId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (this.props.match.params.cityId !== nextProps.match.params.cityId) {
+      this.props.requestAllMeetups(nextProps.city);
+    }
+  }
 
   handleClick(cityId) {
     return (event) => {
@@ -109,7 +115,7 @@ class CityShow extends React.Component {
           </div>
         </div>
 
-        <MeetupIndexContainer className="city-show-meetups-index"/>
+        <MeetupIndexContainer city={cityId} className="city-show-meetups-index"/>
       </div>
     )
   }

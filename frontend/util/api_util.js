@@ -6,10 +6,11 @@ export const fetchAllCities = () => (
   })
 );
 
-export const fetchAllMeetups = () => (
+export const fetchCityMeetups = (city_id) => (
   $.ajax({
     method: 'GET',
-    url: 'api/meetups'
+    url: 'api/meetups',
+    data: { meetup: {city_id} }
   })
 );
 

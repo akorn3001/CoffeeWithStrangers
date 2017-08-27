@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CityShow from './city_show';
 import { changeUserCity } from '../../actions/session_actions';
+import { requestAllMeetups } from '../../actions/meetup_actions';
 
 const mapStateToProps = state => {
   return {
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return  ({
-    changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId))
+    changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
+    requestAllMeetups: (city_id) => dispatch(requestAllMeetups(city_id))
   });
 };
 

@@ -1,6 +1,6 @@
 class Api::MeetupsController < ApplicationController
   def index
-    @meetups = Meetup.all
+    @meetups = Meetup.where(city_id: params[:meetup][:city_id])
     render "api/meetups/index"
   end
 

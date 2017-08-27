@@ -7,7 +7,7 @@ const MeetupIndexItem = ({ meetup }) => {
       <span>Address: {meetup.address}</span>
       <span>Host Id: {meetup.host_id}</span>
       <span>City Id: {meetup.city_id}</span>
-      <span>Date: {meetup.date}</span>
+      <span>Date: {new Date(meetup.date).toLocaleString()}</span>
     </li>
   );
 }

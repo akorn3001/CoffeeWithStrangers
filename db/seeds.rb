@@ -23,7 +23,7 @@ c5 = City.create!(name: 'Melbourne')
 c6 = City.create!(name: 'London')
 
 Meetup.destroy_all
-m1 = Meetup.create!(date: DateTime.new(2017, 10, 31, 8, 0), address: "666 Spooky Lane", city_id: 1000, host_id: u1.id)
+m1 = Meetup.create!(date: DateTime.new(2017, 10, 31, 8, 0), address: "666 Spooky Lane", city_id: 7, host_id: u1.id)
 m2 = Meetup.create!(date: DateTime.new(2017, 12, 24, 6, 30), address: "3 McClean Ave", city_id: 1000, host_id: u1.id)
 m3 = Meetup.create!(date: DateTime.new(2018, 5, 18, 5, 0), address: "123 Fake St", city_id: 1000, host_id: u1.id)
 m4 = Meetup.create!(date: DateTime.new(2018, 2, 2, 2, 30), address: "259 W 29th St", city_id: 1000, host_id: u1.id)
