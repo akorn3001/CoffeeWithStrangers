@@ -422,12 +422,64 @@ button:focus {
 }
 
 .meetup-index-item {
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  background-color: #FEFEFE;
+}
+
+.city-show-meetups{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.meetup-item {
+  border: 1px solid lightgray;
+}
+
+.meetup-time-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  line-height: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.meetup-day-name {
+  color: #9A9A9A;
+  font-size: 14px;
+}
+
+.meetup-date {
+  font-size: 20px;
+}
+
+.meetup-time {
+  font-size: 17px;
+}
+
+.meetup-extra-info {
   display: flex;
   flex-direction: column;
 }
 
-.city-show-meetups-list{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.meetup-join-button {
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.green {
+  background-color: white;
+  color: green;
+  border: 2px solid green;
 }

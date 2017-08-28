@@ -19,13 +19,13 @@ class Meetup < ApplicationRecord
     foreign_key: :host_id,
     class_name: 'User'
 
-  has_many :attendees,
+  has_many :attendances,
     primary_key: :id,
     foreign_key: :meetup_id,
     class_name: 'Attendance'
 
   has_many :guests,
-    through: :attendees,
+    through: :attendances,
     source: :attendee
 
   # has_one :city,

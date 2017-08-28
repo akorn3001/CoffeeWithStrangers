@@ -1,6 +1,5 @@
 import React from 'react';
-
-import MeetupIndexItem from './meetup_index_item';
+import MeetupIndexItemContainer from './meetup_index_item_container';
 
 class MeetupIndex extends React.Component {
 
@@ -17,10 +16,8 @@ class MeetupIndex extends React.Component {
   render() {
     const { meetups } = this.props;
     return (
-      <div>
-        <ul className="city-show-meetups-list">
-          {meetups.map(meetup => <MeetupIndexItem key={meetup.id} meetup={meetup} />)}
-        </ul>
+      <div className="city-show-meetups">
+        {meetups.map(meetup => <MeetupIndexItemContainer key={meetup.id} meetup={meetup} />)}
       </div>
     );
   }

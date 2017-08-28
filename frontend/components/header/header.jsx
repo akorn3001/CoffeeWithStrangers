@@ -14,7 +14,7 @@ class Header extends React.Component {
       event.preventDefault();
       this.props.logout()
       .then(() => this.props.history.push('/login'));
-    }
+    };
 
 
   }
@@ -31,8 +31,8 @@ class Header extends React.Component {
     const signinLink = <Link to="/login">SIGN IN</Link>;
 
   // FAKE BUTTON LINKS
-    const setCityLink = <Link to="/cities" className="fake-button">SET HOME CITY</Link>
-    const signupLink = <Link to="/signup" className="fake-button">SIGN UP</Link>
+    const setCityLink = <Link to="/cities" className="fake-button">SET HOME CITY</Link>;
+    const signupLink = <Link to="/signup" className="fake-button">SIGN UP</Link>;
 
 
     if (this.props.currentUser) {
@@ -44,14 +44,14 @@ class Header extends React.Component {
           <li className="nav-link-item">{hostingLink}</li>
           <li className="nav-link-item">{dashboardLink}</li>
           <li className="nav-link-item">{signoutLink}</li>
-        </ul> } else {
+        </ul>; } else {
         navigation =
           <ul className="nav-links ">
             <li className="nav-link-item">{setCityLink}</li>
             <li className="nav-link-item">{hostingLink}</li>
             <li className="nav-link-item">{dashboardLink}</li>
             <li className="nav-link-item">{signoutLink}</li>
-          </ul>
+          </ul>;
         }
       } else {
           navigation =
@@ -61,7 +61,7 @@ class Header extends React.Component {
             <li className="nav-link-item">{aboutLink}</li>
             <li className="nav-link-item">{signinLink}</li>
             <li className="nav-link-item">{signupLink}</li>
-          </ul>
+          </ul>;
         }
 
     return (

@@ -10,6 +10,6 @@ const DUMMY_CITIES = [
   {id: 7, name: 'Gravity Falls', url: 'https://vignette4.wikia.nocookie.net/gravityfalls/images/0/08/Opening_Main_characters_of_Gravity_Falls.png/revision/latest?cb=20160119145809'},
   {id: 8, name: 'Ba Sing Se', url: 'https://vignette2.wikia.nocookie.net/avatar/images/f/f7/Modern_Ba_Sing_Se.png/revision/latest?cb=20140730154445'},
   {id: 1000, name: 'New New York', url: 'http://vignette2.wikia.nocookie.net/en.futurama/images/5/55/160_planet-express-building_1024.png/revision/latest?cb=20090521203416'}
-]
+];
 
 export default DUMMY_CITIES;

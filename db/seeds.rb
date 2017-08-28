@@ -13,8 +13,8 @@ u2 = User.create!(username: 'Bertrand', password: 'russell2', email: 'example2@h
 u3 = User.create!(username: 'Calvin', password: 'hobbes3', email: 'example3@hotmail.com')
 u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com')
 u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user')
-u6 = User.create!(username: 'Glenn', password: 'megaloft', email: 'megaloftG')
-u7 = User.create!(username: 'Kyle', password: 'megaloft', email: 'megaloftK', city_id: 1, host_status: true)
+u6 = User.create!(username: 'Glenn', password: 'megaloft', email: 'megaloftG', city_id: 7)
+u7 = User.create!(username: 'Kyle', password: 'megaloft', email: 'megaloftK', city_id: 1000)
 u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloftR', city_id: 2, host_status: true)
 u9 = User.create!(username: 'Diony', password: 'curtis', email: 'curtisD', city_id: 3, host_status: true)
 u10 = User.create!(username: 'Brittany', password: 'curtis', email: 'curtisB', city_id: 4, host_status: true)
@@ -42,3 +42,7 @@ m5 = Meetup.create!(date: DateTime.new(2018, 2, 4, 18, 30), address: "259 W 29th
 m6 = Meetup.create!(date: DateTime.new(2018, 3, 19, 16, 30), address: "333 Cherry Orchard Lane", city_id: 3, host_id: u3.id)
 m7 = Meetup.create!(date: DateTime.new(2018, 4, 22, 14, 30), address: "4 Dock Street", city_id: 4, host_id: u4.id)
 m8 = Meetup.create!(date: DateTime.new(2018, 5, 6, 12, 30), address: "18 Hylan Blvd", city_id: 5, host_id: u5.id)
+
+Attendance.destroy_all
+a1 = Attendance.create!(meetup_id: m1.id, attendee_id: u6.id)
+a2 = Attendance.create!(meetup_id: m2.id, attendee_id: u7.id)
