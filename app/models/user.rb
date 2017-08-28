@@ -21,10 +21,20 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :meetups,
+  has_many :hosted_meetups,
     primary_key: :id,
-    foreign_key: :meetup_id,
+    foreign_key: :host_id,
     class_name: 'Meetup'
+
+  has_many :attended_meetups,
+    primary_key: :id,
+    foreign_key: :attendee_id,
+    class_name: 'Attendance'
+
+  has_many :invitations,
+    through: :attended_meetups,
+    source: :meetup
+
 
 
   after_initialize :ensure_session_token

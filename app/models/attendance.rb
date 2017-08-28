@@ -10,4 +10,15 @@
 #
 
 class Attendance < ApplicationRecord
+
+  belongs_to :meetup,
+    primary_key: :id,
+    foreign_key: :meetup_id,
+    class_name: 'Meetup'
+
+  belongs_to :attendee,
+    primary_key: :id,
+    foreign_key: :attendee_id,
+    class_name: 'User'
+
 end

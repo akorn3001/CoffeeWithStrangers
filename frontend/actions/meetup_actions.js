@@ -5,19 +5,19 @@ export const RECEIVE_SINGLE_MEETUP = 'RECEIVE_SINGLE_MEETUP';
 export const CREATE_MEETUP = 'CREATE_MEETUP';
 export const RECEIVE_MEETUP_ERRORS = 'RECEIVE_MEETUP_ERRORS';
 
-export const requestAllMeetups = (city_id) => (dispatch) => {
-  return MeetupAPIUtil.fetchCityMeetups(city_id)
+export const requestAllMeetups = (cityId) => (dispatch) => {
+  return MeetupAPIUtil.fetchCityMeetups(cityId)
     .then(meetups => {
-      dispatch(receiveAllMeetups(meetups))
+      dispatch(receiveAllMeetups(meetups));
     });
-}
+};
 
 export const requestSingleMeetup = (id) => (dispatch) => {
   return MeetupAPIUtil.fetchSingleMeetup(id).then(meetup => {
     dispatch(receiveSingleMeetup(meetup));
     return meetup;
   });
-}
+};
 
 export const createMeetup = meetup => dispatch => (
   MeetupAPIUtil.createMeetup(meetup).then(meetup => {

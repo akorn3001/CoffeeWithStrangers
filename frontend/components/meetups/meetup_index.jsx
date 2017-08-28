@@ -9,7 +9,6 @@ class MeetupIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.city !== nextProps.city) {
       this.props.requestAllMeetups(nextProps.city);
     }

@@ -9,7 +9,6 @@
 #  host_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  guest_id   :integer
 #
 
 class Meetup < ApplicationRecord
@@ -20,14 +19,17 @@ class Meetup < ApplicationRecord
     foreign_key: :host_id,
     class_name: 'User'
 
+  has_many :attendees,
+    primary_key: :id,
+    foreign_key: :meetup_id,
+    class_name: 'Attendance'
+
+  has_many :guests,
+    through: :attendees,
+    source: :attendee
+
   # has_one :city,
   #   through: :host,
   #   source: :city
-
-  has_many :guests,
-    primary_key: :id,
-    foreign_key: :guest_id,
-    class_name: 'User'
-
 
 end

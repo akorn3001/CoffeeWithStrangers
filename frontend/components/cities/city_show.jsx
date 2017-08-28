@@ -5,7 +5,7 @@ import MeetupIndexContainer from '../meetups/meetup_index_container';
 
 class CityShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -15,7 +15,6 @@ class CityShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.match.params.cityId !== nextProps.match.params.cityId) {
       this.props.requestAllMeetups(nextProps.city);
     }
@@ -26,32 +25,32 @@ class CityShow extends React.Component {
       event.preventDefault();
       this.props.changeUserCity(this.props.currentUser.id, cityId);
     };
-  };
+  }
 
   render() {
     let thisCity;
-    let cityId = parseInt(this.props.match.params.cityId)
+    let cityId = parseInt(this.props.match.params.cityId);
     let cityMessage;
 
     function extractCity (city_id) {
       for (let i = 0; i < DUMMY_CITIES.length; i++) {
         if (DUMMY_CITIES[i].id === city_id) {
-          return thisCity = DUMMY_CITIES[i]
+          return thisCity = DUMMY_CITIES[i];
         }
       }
 
       return "whoops";
     }
 
-    let thisCityName = extractCity(cityId).name
+    let thisCityName = extractCity(cityId).name;
     let homeCityName;
     let homeCityId;
 
     if (this.props.currentUser) {
       if (this.props.currentUser.city_id) {
 
-        homeCityName = extractCity(this.props.currentUser.city_id).name
-        homeCityId = extractCity(this.props.currentUser.city_id).id
+        homeCityName = extractCity(this.props.currentUser.city_id).name;
+        homeCityId = extractCity(this.props.currentUser.city_id).id;
 
         if (this.props.currentUser.city_id === cityId) {
 
@@ -60,7 +59,7 @@ class CityShow extends React.Component {
             <span>
               <strong>{thisCityName} is your home city!</strong> If you've moved, <Link to="/cities" className="city-show-link">change your home city here.</Link>
             </span>
-          </div>
+          </div>;
 
         } else {
           cityMessage =
@@ -91,7 +90,7 @@ class CityShow extends React.Component {
         <span><strong>You can set your home city once you sign up!</strong></span>
         <Link to="/signup" className="city-page-button">SIGN UP</Link>
         <Link to="/login" className="city-show-link">Log in if you've signed up before</Link>
-      </div>
+      </div>;
     }
 
     return (
@@ -101,7 +100,6 @@ class CityShow extends React.Component {
           <span>{thisCityName}</span>
         </div>
         <div className="city-show-below-photo">
-          <div>~~Message to come about upcoming meetups~~</div>
           {cityMessage}
 
           <div className="city-show-host-message">
@@ -117,7 +115,7 @@ class CityShow extends React.Component {
 
         <MeetupIndexContainer city={cityId} className="city-show-meetups-index"/>
       </div>
-    )
+    );
   }
 }
 
