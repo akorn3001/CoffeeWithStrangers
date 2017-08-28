@@ -12,9 +12,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return  ({
-    changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
-    requestAllMeetups: (cityId) => dispatch(requestAllMeetups(cityId))
+  return  ({ changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
+             requestAllMeetups: (cityId) => dispatch(requestAllMeetups(cityId))
   });
 };
 

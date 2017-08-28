@@ -13,6 +13,13 @@ u2 = User.create!(username: 'Bertrand', password: 'russell2', email: 'example2@h
 u3 = User.create!(username: 'Calvin', password: 'hobbes3', email: 'example3@hotmail.com')
 u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com')
 u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user')
+u6 = User.create!(username: 'Glenn', password: 'megaloft', email: 'megaloft')
+u7 = User.create!(username: 'Kyle', password: 'megaloft', email: 'megaloft')
+u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloft')
+u9 = User.create!(username: 'Diony', password: 'curtis', email: 'curtis')
+u10 = User.create!(username: 'Brittany', password: 'curtis', email: 'curtis')
+u11 = User.create!(username: 'Elisabetta', password: 'curtissbu', email: 'curtissbu')
+
 
 City.destroy_all
 c1 = City.create!(name: 'Seattle')

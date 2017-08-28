@@ -21,7 +21,7 @@ export const logout = () => (
   })
 );
 
-export const changeUserCity = (user_id, cityId) => {
+export const changeUserCity = (userId, cityId) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${userId}`,
