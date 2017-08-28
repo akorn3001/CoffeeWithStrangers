@@ -6,7 +6,7 @@ const MeetupIndexItem = (props) => {
     return(event) => {
       event.preventDefault();
       props.attendMeetup(userId, meetupId)
-      .then(() => props.history.push(`/users/${currentUser.id}`));
+      .then(() => props.history.push(`/users/${props.currentUser.id}`));
     };
   };
 

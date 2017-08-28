@@ -12,8 +12,8 @@ const MeetupsReducer = (state = {}, action) => {
     case RECEIVE_ALL_MEETUPS:
       return action.meetups;
     case RECEIVE_SINGLE_MEETUP:
-      const meetup = action.payload.meetup;
 
+      const meetup = action.meetup;
       return merge({}, state, { [meetup.id]: meetup });
     default:
       return state;

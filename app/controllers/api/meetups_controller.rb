@@ -25,7 +25,8 @@ class Api::MeetupsController < ApplicationController
   def attend
     @attendance = Attendance.new(meetup_id: params[:id], attendee_id: current_user.id)
     if @attendance.save
-      render Meetup.find(@attendance.meetup_id)
+      @meetup = @attendance.meetup
+      render "/api/meetups/show"
     else
       render json: @attendance.errors.full_messages, status: 422
     end

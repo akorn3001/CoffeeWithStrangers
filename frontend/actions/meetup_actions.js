@@ -49,9 +49,9 @@ export const receiveAllMeetups = meetups => ({
   meetups
 });
 
-export const receiveSingleMeetup = payload => ({
+export const receiveSingleMeetup = meetup => ({
   type: RECEIVE_SINGLE_MEETUP,
-  payload,
+  meetup,
 });
 
 export const receiveErrors = errors => ({
