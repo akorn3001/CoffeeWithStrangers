@@ -23,7 +23,12 @@ class Api::MeetupsController < ApplicationController
   end
 
   def attend
-
+    @attendance = Attendance.new(meetup_id: params[:id], attendee_id: current_user.id)
+    if @attendance.save
+      render Meetup.find(@attendance.meetup_id)
+    else
+      render json: @attendance.errors.full_messages, status: 422
+    end
   end
 
   def unattend
@@ -33,6 +38,6 @@ class Api::MeetupsController < ApplicationController
   private
 
   def meetup_params
-    params.require(:meetup).permit(:date, :address, :host_id, :city_id)
+    params.require(:meetup).permit(:date, :address, :host_id, :city_id, :guests)
   end
 end

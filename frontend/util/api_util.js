@@ -53,15 +53,14 @@ export const createMeetup = (meetup) => {
 };
 
 // ATTEND / UNATTEND MEETUPS
-export const attendMeetup = (meetup) => {
+export const attendMeetup = (userId, meetupId) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/meetups/${meetup.id}/attend`,
-    data: { meetup }
+    url: `/api/meetups/${meetupId}/attend`,
   });
 };
 
-export const unattendMeetup = (meetupId) => {
+export const unattendMeetup = (userId, meetupId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/meetups/${meetupId}/unattend`

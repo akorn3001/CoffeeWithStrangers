@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MeetupIndexItem = (props) => {
-  debugger
+  const handleClick = (userId, meetupId) => {
+    return(event) => {
+      event.preventDefault();
+      props.attendMeetup(userId, meetupId)
+      .then(() => props.history.push(`/users/${currentUser.id}`));
+    };
+  };
+
   const DAYS = [
     'Sunday',
     'Monday',
@@ -39,7 +46,7 @@ const MeetupIndexItem = (props) => {
     let minutes = date.getMinutes();
     let ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12;
     minutes = minutes < 10 ? '0'+minutes : minutes;
     let strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
@@ -55,9 +62,9 @@ const MeetupIndexItem = (props) => {
       </button>;
     } else {
       meetupJoinButton =
-      <div>
-        HELLO
-      </div>;
+      <button className="meetup-join-button" onClick={handleClick(props.currentUser.id, props.meetup.id)}>
+        SIGN UP
+      </button>;
     }
   } else {
     meetupJoinButton =
