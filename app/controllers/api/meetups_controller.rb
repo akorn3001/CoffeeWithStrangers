@@ -33,7 +33,13 @@ class Api::MeetupsController < ApplicationController
   end
 
   def unattend
-
+    @attendance = Attendance.where(meetup_id: params[:id], attendee_id: current_user.id).first
+    if @attendance
+      Attendance.destroy(@attendance.id)
+      render "api/meetups/show"
+    else
+      render json: @attendance.errors.full_messages, status: 422
+    end
   end
 
   private

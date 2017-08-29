@@ -25,7 +25,7 @@ class Header extends React.Component {
     // BASIC NAVIGATION LINKS
     const citiesLink = <Link to="/cities">CITIES</Link>;
     const hostingLink = <Link to="/hosting">HOSTING</Link>;
-    const dashboardLink = <Link to="/dashboard">DASHBOARD</Link>;
+    const dashboardLink = <Link to="/profile">DASHBOARD</Link>;
     const signoutLink = <Link onClick={this.handleLogout()} to="/login">SIGN OUT</Link>;
     const aboutLink = <Link to="/about">ABOUT</Link>;
     const signinLink = <Link to="/login">SIGN IN</Link>;

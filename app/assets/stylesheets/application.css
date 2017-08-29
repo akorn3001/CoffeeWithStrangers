@@ -483,3 +483,74 @@ button:focus {
   color: green;
   border: 2px solid green;
 }
+
+.dashboard-no-meetups {
+  width: 45%;
+  color: black;
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+  padding: 15px;
+  border: 2px dashed black;
+  flex-direction: row;
+}
+
+.dashboard-no-meetups h1 {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.dashboard-no-meetups h3 {
+  font-weight: 500;
+  margin: 0 20px 0 20px;
+  text-align: center;
+  font-size: 30px;
+  width: 70%;
+}
+
+.dashboard-el {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-el h2 {
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #EF6236;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.dashboard-container h2 {
+
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #EF6236;
+}
+
+.dashboard-welcome {
+  margin-right: 15px;
+  font-weight: 500;
+
+}
+
+.dashboard-welcome-join-meetup {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin-top: 40px;
+  background-color: #EF6236;
+  border-radius: 7px;
+  border: 1px solid #EF6236;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+
+}

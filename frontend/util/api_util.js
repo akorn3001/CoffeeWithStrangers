@@ -60,7 +60,7 @@ export const attendMeetup = (userId, meetupId) => {
   });
 };
 
-export const unattendMeetup = (userId, meetupId) => {
+export const unattendMeetup = () => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/meetups/${meetupId}/unattend`

@@ -1,39 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { DAYS, MONTHS, formatAMPM } from '../../util/meetups_util';
 
 const MeetupIndexItem = (props) => {
   const handleClick = (userId, meetupId) => {
     return(event) => {
       event.preventDefault();
       props.attendMeetup(userId, meetupId)
-      .then(() => props.history.push(`/users/${props.currentUser.id}`));
+      .then(() => props.history.push('/profile'));
     };
   };
 
-  const DAYS = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
-  ];
-
-  const MONTHS = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ];
+  // const DAYS = [
+  //   'Sunday',
+  //   'Monday',
+  //   'Tuesday',
+  //   'Wednesday',
+  //   'Thursday',
+  //   'Friday',
+  //   'Saturday'
+  // ];
+  //
+  // const MONTHS = [
+  //   'Jan',
+  //   'Feb',
+  //   'Mar',
+  //   'Apr',
+  //   'May',
+  //   'Jun',
+  //   'Jul',
+  //   'Aug',
+  //   'Sep',
+  //   'Oct',
+  //   'Nov',
+  //   'Dec'
+  // ];
 
   const meetupDate = new Date(props.meetup.date);
   const weekDayNumber = meetupDate.getDay();
@@ -41,16 +42,16 @@ const MeetupIndexItem = (props) => {
   const monthNumber = meetupDate.getMonth();
   const monthName = MONTHS[monthNumber];
 
-  function formatAMPM(date) {
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    let strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
-  }
+  // function formatAMPM(date) {
+  //   let hours = date.getHours();
+  //   let minutes = date.getMinutes();
+  //   let ampm = hours >= 12 ? 'pm' : 'am';
+  //   hours = hours % 12;
+  //   hours = hours ? hours : 12;
+  //   minutes = minutes < 10 ? '0'+minutes : minutes;
+  //   let strTime = hours + ':' + minutes + ' ' + ampm;
+  //   return strTime;
+  // }
 
   let meetupJoinButton;
 
