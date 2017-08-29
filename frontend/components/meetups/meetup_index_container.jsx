@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MeetupIndex from './meetup_index';
-import { requestAllMeetups } from '../../actions/meetup_actions';
+import { requestAllCityMeetups, requestAllUserMeetups } from '../../actions/meetup_actions';
 import { selectAllMeetups } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return { requestAllMeetups: (cityId) => dispatch(requestAllMeetups(cityId)) };
+  return { requestAllCityMeetups: (cityId) => dispatch(requestAllCityMeetups(cityId))};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MeetupIndex);

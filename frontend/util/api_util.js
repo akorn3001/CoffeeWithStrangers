@@ -6,13 +6,13 @@ export const fetchAllCities = () => (
   })
 );
 
-// export const fetchUserMeetups = (user_id) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: 'api/meetups',
-//     data: { meetup: {}}
-//   })
-// );
+export const fetchCurrentUserMeetups = (user_id) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/meetups',
+    data: { meetup: {user_id} }
+  })
+);
 
 export const fetchCityMeetups = (city_id) => (
   $.ajax({

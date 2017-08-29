@@ -11,12 +11,12 @@ class CityShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllMeetups(this.props.match.params.cityId);
+    this.props.requestAllCityMeetups(this.props.match.params.cityId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.cityId !== nextProps.match.params.cityId) {
-      this.props.requestAllMeetups(nextProps.city);
+      this.props.requestAllCityMeetups(nextProps.city);
     }
   }
 

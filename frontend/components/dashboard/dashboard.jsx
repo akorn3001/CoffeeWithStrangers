@@ -1,21 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MeetupIndexItemContainer from '../meetups/meetup_index_item_container';
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllMeetups(this.props.match.params.cityId);
-  // }
-
-  handleClick() {
-    return(event) => {
-      event.preventDefault();
-      this.props.unattendMeetup();
-    };
+  componentDidMount() {
+    this.props.requestAllUserMeetups(this.props.currentUser.id);
   }
+
 
   render() {
     let dashboardEl;
@@ -37,10 +32,13 @@ class Dashboard extends React.Component {
         <div className="dashboard-container">
           {aboutMessage}
 
-          <div className="dashboard-meetups">
-            {this.props.currentUser.meetups.map(meetup => <div className="dashboard-meetup-item" key={meetup.id}>
-              <MeetupIndexItemContainer meetup={meetup}/>
-            </div>)}
+          <div className="dashboard-joined-meetups">
+            <h1>Meetups you're attending</h1>
+            <div className="dashboard-meetups">
+              {this.props.meetups.map(meetup => <div className="dashboard-meetup-item" key={meetup.id}>
+                <MeetupIndexItemContainer meetup={meetup}/>
+              </div>)}
+            </div>
           </div>
 
         </div>;
@@ -78,6 +76,8 @@ class Dashboard extends React.Component {
     //   {meetups.map(meetup => <DashboardMeetupIndexItemContainer key={meetup.id} meetup={meetup} />)}
     // </div>
     // this.props.currentUser.meetups.map(meetup => )
+
+    debugger
     return (
       <div>
         {dashboardEl}

@@ -4,12 +4,12 @@ import MeetupIndexItemContainer from './meetup_index_item_container';
 class MeetupIndex extends React.Component {
 
   componentDidMount() {
-    this.props.requestAllMeetups(this.props.city);
+    this.props.requestAllCityMeetups(this.props.city);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.city !== nextProps.city) {
-      this.props.requestAllMeetups(nextProps.city);
+      this.props.requestAllCityMeetups(nextProps.city);
     }
   }
 

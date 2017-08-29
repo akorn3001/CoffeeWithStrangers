@@ -1,6 +1,11 @@
 class Api::MeetupsController < ApplicationController
   def index
-    @meetups = Meetup.where(city_id: params[:meetup][:city_id])
+    if params[:meetup][:city_id]
+      @meetups = Meetup.where(city_id: params[:meetup][:city_id])
+    else
+      @meetups = current_user.invitations
+    end
+
     render "api/meetups/index"
   end
 

@@ -428,6 +428,9 @@ button:focus {
   display: flex;
   flex-direction: column;
   background-color: #FEFEFE;
+  min-width: 200px;
+  width: 200px;
+  height: 230px;
 }
 
 .city-show-meetups{
@@ -485,6 +488,7 @@ button:focus {
   border-style: solid;
   border-radius: 5px;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .green {
@@ -532,7 +536,7 @@ button:focus {
 .dashboard-container {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-bottom: 20px;
 }
@@ -569,7 +573,15 @@ button:focus {
 }
 
 .dashboard-meetup-item {
+  margin: 15px;
   display: inline-block;
   width: 200px;
   max-width: 200px;
+}
+
+.dashboard-joined-meetups h1 {
+  text-align: left;
+  font-weight: 500;
+  font-size: 2em;
+  color: #EF6236;
 }

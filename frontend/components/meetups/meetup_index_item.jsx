@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import { DAYS, MONTHS, formatAMPM } from '../../util/meetups_util';
 
 const MeetupIndexItem = (props) => {
-  const handleClick = (userId, meetupId) => {
+
+  const handleAttend = (userId, meetupId) => {
     return(event) => {
       event.preventDefault();
       props.attendMeetup(userId, meetupId)
       .then(() => props.history.push('/profile'));
+    };
+  };
+
+  const handleUnattend = () => {
+    return(event) => {
+      event.preventDefault();
+      props.unattendMeetup();
     };
   };
 
@@ -18,6 +26,7 @@ const MeetupIndexItem = (props) => {
   const monthName = MONTHS[monthNumber];
 
   let meetupJoinButton;
+  let meetupCancelButton;
 
   if (props.currentUser) {
     if (props.meetup.guest_ids.includes(props.currentUser.id)) {
@@ -25,11 +34,18 @@ const MeetupIndexItem = (props) => {
       <button className="meetup-join-button green">
         YOU JOINED THIS MEETUP
       </button>;
+
+      meetupCancelButton =
+      <button className="meetup-cancel-button" >
+        CANCEL YOUR SPOT
+      </button>;
     } else {
       meetupJoinButton =
-      <button className="meetup-join-button" onClick={handleClick(props.currentUser.id, props.meetup.id)}>
+      <button className="meetup-join-button" onClick={handleAttend(props.currentUser.id, props.meetup.id)}>
         SIGN UP
       </button>;
+
+
     }
   } else {
     meetupJoinButton =
@@ -47,12 +63,13 @@ const MeetupIndexItem = (props) => {
       </ul>
 
       <div className="meetup-extra-info">
-        <span>Address: {props.meetup.address}</span>
-        <span>Host: <Link to={`/users/${props.meetup.host_id}`}>{props.meetup.host_name}</Link></span>
-        <span>City Id: {props.meetup.city_id}</span>
+        <span><strong>Address</strong> {props.meetup.address}</span>
+        <span><strong>Host</strong> <Link to={`/users/${props.meetup.host_id}`}>{props.meetup.host_name}</Link></span>
+        <span><strong>City Id</strong> {props.meetup.city_id}</span>
       </div>
 
       {meetupJoinButton}
+      {meetupCancelButton}
     </div>
   );
 };

@@ -5,8 +5,15 @@ export const RECEIVE_SINGLE_MEETUP = 'RECEIVE_SINGLE_MEETUP';
 export const CREATE_MEETUP = 'CREATE_MEETUP';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-export const requestAllMeetups = (cityId) => (dispatch) => {
+export const requestAllCityMeetups = (cityId) => (dispatch) => {
   return MeetupAPIUtil.fetchCityMeetups(cityId)
+    .then(meetups => {
+      dispatch(receiveAllMeetups(meetups));
+  });
+};
+
+export const requestAllUserMeetups = (userId) => (dispatch) => {
+  return MeetupAPIUtil.fetchCurrentUserMeetups(userId)
     .then(meetups => {
       dispatch(receiveAllMeetups(meetups));
   });
