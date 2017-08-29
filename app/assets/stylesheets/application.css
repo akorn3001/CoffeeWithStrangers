@@ -472,6 +472,15 @@ button:focus {
   flex-direction: column;
 }
 
+.meetup-extra-info span a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.meetup-extra-info span a:hover {
+  text-decoration: underline;
+}
+
 .meetup-join-button {
   border-style: solid;
   border-radius: 5px;

@@ -16,7 +16,7 @@ const Dashboard = (props) => {
     <h2>Welcome home, {props.currentUser.username}!</h2>
     <h3>What are you happy about today?</h3>
 
-    <Link className="dashboard-welcome-join-meetup" to={`/cities/${props.currentUser.city_id}`}>
+    <Link className="dashboard-welcome-join-meetup" to={'/cities'}>
       Sign up for a meetup!
     </Link>
   </div>;
