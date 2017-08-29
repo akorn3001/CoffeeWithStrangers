@@ -4,7 +4,8 @@ import Dashboard from './dashboard';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    // meetups: state.session.currentUser.invitations
   };
 };
 

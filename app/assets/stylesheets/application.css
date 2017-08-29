@@ -494,7 +494,7 @@ button:focus {
 }
 
 .dashboard-no-meetups {
-  width: 45%;
+  width: 55%;
   color: black;
   align-items: center;
   display: flex;
@@ -538,7 +538,7 @@ button:focus {
 }
 
 .dashboard-container h2 {
-
+  flex-wrap: wrap;
   font-weight: 500;
   font-size: 1.5em;
   color: #EF6236;
@@ -547,7 +547,6 @@ button:focus {
 .dashboard-welcome {
   margin-right: 15px;
   font-weight: 500;
-
 }
 
 .dashboard-welcome-join-meetup {
@@ -561,5 +560,16 @@ button:focus {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
+  text-align: center;
+}
 
+.dashboard-meetups {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboard-meetup-item {
+  display: inline-block;
+  width: 200px;
+  max-width: 200px;
 }

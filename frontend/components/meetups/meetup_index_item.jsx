@@ -11,47 +11,11 @@ const MeetupIndexItem = (props) => {
     };
   };
 
-  // const DAYS = [
-  //   'Sunday',
-  //   'Monday',
-  //   'Tuesday',
-  //   'Wednesday',
-  //   'Thursday',
-  //   'Friday',
-  //   'Saturday'
-  // ];
-  //
-  // const MONTHS = [
-  //   'Jan',
-  //   'Feb',
-  //   'Mar',
-  //   'Apr',
-  //   'May',
-  //   'Jun',
-  //   'Jul',
-  //   'Aug',
-  //   'Sep',
-  //   'Oct',
-  //   'Nov',
-  //   'Dec'
-  // ];
-
   const meetupDate = new Date(props.meetup.date);
   const weekDayNumber = meetupDate.getDay();
   const weekDayName = DAYS[weekDayNumber];
   const monthNumber = meetupDate.getMonth();
   const monthName = MONTHS[monthNumber];
-
-  // function formatAMPM(date) {
-  //   let hours = date.getHours();
-  //   let minutes = date.getMinutes();
-  //   let ampm = hours >= 12 ? 'pm' : 'am';
-  //   hours = hours % 12;
-  //   hours = hours ? hours : 12;
-  //   minutes = minutes < 10 ? '0'+minutes : minutes;
-  //   let strTime = hours + ':' + minutes + ' ' + ampm;
-  //   return strTime;
-  // }
 
   let meetupJoinButton;
 
@@ -90,16 +54,6 @@ const MeetupIndexItem = (props) => {
 
       {meetupJoinButton}
     </div>
-
-    // <ul className="meetup-index-item">
-    //   <li>{formatAMPM(new Date(meetup.date))}</li>
-    //   <li><span>{weekDayName}</span></li>
-    //   <li><span>{monthName} {meetupDate.getDate()}</span></li>
-    //   <li><span>{meetupDate.toLocaleString()}</span></li>
-    //   <li><span>Address: {meetup.address}</span></li>
-    //   <li><span>Host: <Link to={`/users/${meetup.host_id}`}>{meetup.host_name}</Link></span></li>
-    //   <li><span>City Id: {meetup.city_id}</span></li>
-    // </ul>
   );
 };
 

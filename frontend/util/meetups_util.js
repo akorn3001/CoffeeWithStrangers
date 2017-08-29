@@ -7,7 +7,7 @@ export const formatAMPM = function (date) {
   minutes = minutes < 10 ? '0'+minutes : minutes;
   let strTime = hours + ':' + minutes + ' ' + ampm;
   return strTime;
-}
+};
 
 export const DAYS = [
   'Sunday',

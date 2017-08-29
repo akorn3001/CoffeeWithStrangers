@@ -18,6 +18,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user
+      @meetups = @user.attended_meetups
       render "api/users/show"
     else
       render json: ["User does not exist"], status: 404

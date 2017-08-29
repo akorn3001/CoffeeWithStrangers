@@ -9,7 +9,7 @@ export const requestAllMeetups = (cityId) => (dispatch) => {
   return MeetupAPIUtil.fetchCityMeetups(cityId)
     .then(meetups => {
       dispatch(receiveAllMeetups(meetups));
-    });
+  });
 };
 
 export const requestSingleMeetup = (id) => (dispatch) => {
