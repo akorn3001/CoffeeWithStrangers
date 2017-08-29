@@ -14,22 +14,6 @@ export const fetchCurrentUserMeetups = () => (
   })
 );
 
-export const fetchCurrentUserAttendedMeetups = (user_id) => (
-  $.ajax({
-    method: 'GET',
-    url: 'api/meetups',
-    data: { meetup: {user_id} }
-  })
-);
-
-export const fetchCurrentUserHostedMeetups = (user_id) => (
-  $.ajax({
-    method: 'GET',
-    url: 'api/meetups',
-    data: { meetup: {user_id} }
-  })
-);
-
 export const fetchCityMeetups = (city_id) => (
   $.ajax({
     method: 'GET',

@@ -11,7 +11,6 @@ class Dashboard extends React.Component {
     this.props.requestAllUserMeetups(this.props.currentUser.id);
   }
 
-
   render() {
     let dashboardEl;
 
@@ -26,18 +25,28 @@ class Dashboard extends React.Component {
     </div>;
 
     if (this.props.currentUser.city_id) {
-      if (this.props.currentUser.attended_meetup_ids.length) {
+      if (this.props.attended_meetups.length) {
 
         dashboardEl =
         <div className="dashboard-container">
           {aboutMessage}
+          <div>
+            <div className="dashboard-joined-meetups">
+              <h1>Meetups you're attending</h1>
+              <div className="dashboard-meetups attended">
+                {this.props.attended_meetups.map(meetup => <div className="dashboard-meetup-item" key={meetup.id}>
+                  <MeetupIndexItemContainer meetup={meetup}/>
+                </div>)}
+              </div>
+            </div>
 
-          <div className="dashboard-joined-meetups">
-            <h1>Meetups you're attending</h1>
-            <div className="dashboard-meetups">
-              {this.props.meetups.map(meetup => <div className="dashboard-meetup-item" key={meetup.id}>
-                <MeetupIndexItemContainer meetup={meetup}/>
-              </div>)}
+            <div className="dashboard-hosted-meetups">
+              <h1>Meetups you're hosting</h1>
+              <div className="dashboard-meetups attended">
+                {this.props.hosted_meetups.map(meetup => <div className="dashboard-meetup-item" key={meetup.id}>
+                  <MeetupIndexItemContainer meetup={meetup}/>
+                </div>)}
+              </div>
             </div>
           </div>
 
@@ -76,8 +85,6 @@ class Dashboard extends React.Component {
     //   {meetups.map(meetup => <DashboardMeetupIndexItemContainer key={meetup.id} meetup={meetup} />)}
     // </div>
     // this.props.currentUser.meetups.map(meetup => )
-
-    debugger
     return (
       <div>
         {dashboardEl}

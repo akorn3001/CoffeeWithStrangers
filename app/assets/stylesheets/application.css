@@ -579,7 +579,7 @@ button:focus {
   max-width: 200px;
 }
 
-.dashboard-joined-meetups h1 {
+.dashboard-joined-meetups h1, .dashboard-hosted-meetups h1 {
   text-align: left;
   font-weight: 500;
   font-size: 2em;

@@ -3,7 +3,7 @@ class Api::MeetupsController < ApplicationController
     if params[:city_id]
       @meetups = Meetup.where(city_id: params[:city_id])
     else
-      @meetups = Meetup.where(host_id: current_user.id)
+      @meetups = Meetup.joins(:guests).where("attendances.attendee_id = #{current_user.id}", host_id: current_user.id )
       # @meetups = current_user.invitations
     end
 
@@ -42,6 +42,7 @@ class Api::MeetupsController < ApplicationController
     @attendance = Attendance.find_by(meetup_id: params[:id], attendee_id: current_user.id)
     if @attendance
       Attendance.destroy(@attendance.id)
+      @meetup = @attendance.meetup
       render "api/meetups/show"
     else
       render json: @attendance.errors.full_messages, status: 422

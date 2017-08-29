@@ -1,6 +1,7 @@
 import * as MeetupAPIUtil from '../util/api_util';
 
 export const RECEIVE_ALL_MEETUPS = 'RECEIVE_ALL_MEETUPS';
+export const REMOVE_SINGLE_MEETUP = 'REMOVE_SINGLE_MEETUP';
 export const RECEIVE_SINGLE_MEETUP = 'RECEIVE_SINGLE_MEETUP';
 export const CREATE_MEETUP = 'CREATE_MEETUP';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -14,20 +15,6 @@ export const requestAllCityMeetups = (cityId) => (dispatch) => {
 
 export const requestAllUserMeetups = (userId) => (dispatch) => {
   return MeetupAPIUtil.fetchCurrentUserMeetups(userId)
-    .then(meetups => {
-      dispatch(receiveAllMeetups(meetups));
-  });
-};
-
-export const requestAllUserAttendedMeetups = (userId) => (dispatch) => {
-  return MeetupAPIUtil.fetchCurrentUserAttendedMeetups(userId)
-    .then(meetups => {
-      dispatch(receiveAllMeetups(meetups));
-  });
-};
-
-export const requestAllUserHostedMeetups = (userId) => (dispatch) => {
-  return MeetupAPIUtil.fetchCurrentUserHostedMeetups(userId)
     .then(meetups => {
       dispatch(receiveAllMeetups(meetups));
   });
@@ -47,8 +34,8 @@ export const createMeetup = meetup => dispatch => (
   }).fail(err => dispatch(receiveMeetupErrors(err.responseJSON)))
 );
 
-export const attendMeetup = (userId, meetupId) => dispatch => (
-  MeetupAPIUtil.attendMeetup(userId, meetupId).then(joinedMeetup => {
+export const attendMeetup = (meetupId) => dispatch => (
+  MeetupAPIUtil.attendMeetup(meetupId).then(joinedMeetup => {
     return(
         dispatch(receiveSingleMeetup(joinedMeetup))
     );
@@ -57,13 +44,16 @@ export const attendMeetup = (userId, meetupId) => dispatch => (
   ))
 );
 
-export const unattendMeetup = (userId, meetupId) => dispatch => (
-  MeetupAPIUtil.unattendMeetup(userId, meetupId).then(leftMeetup => (
-    dispatch(receiveSingleMeetup(leftMeetup))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+export const unattendMeetup = (meetupId) => dispatch => {
+  debugger
+  return (
+    MeetupAPIUtil.unattendMeetup(meetupId).then(leftMeetup => (
+      dispatch(removeSingleMeetup(leftMeetup))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+  );
+};
 
 export const receiveAllMeetups = meetups => ({
   type: RECEIVE_ALL_MEETUPS,
@@ -72,6 +62,11 @@ export const receiveAllMeetups = meetups => ({
 
 export const receiveSingleMeetup = meetup => ({
   type: RECEIVE_SINGLE_MEETUP,
+  meetup,
+});
+
+export const removeSingleMeetup = meetup => ({
+  type: REMOVE_SINGLE_MEETUP,
   meetup,
 });
 

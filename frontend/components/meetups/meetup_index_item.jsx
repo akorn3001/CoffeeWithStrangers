@@ -4,18 +4,18 @@ import { DAYS, MONTHS, formatAMPM } from '../../util/meetups_util';
 
 const MeetupIndexItem = (props) => {
 
-  const handleAttend = (userId, meetupId) => {
+  const handleAttend = (meetupId) => {
     return(event) => {
       event.preventDefault();
-      props.attendMeetup(userId, meetupId)
+      props.attendMeetup(meetupId)
       .then(() => props.history.push('/profile'));
     };
   };
 
-  const handleUnattend = (userId, meetupId) => {
+  const handleUnattend = (meetupId) => {
     return(event) => {
       event.preventDefault();
-      props.unattendMeetup(props.currentUser.id, props.meetup.id);
+      props.unattendMeetup(meetupId);
     };
   };
 
@@ -36,18 +36,20 @@ const MeetupIndexItem = (props) => {
       </button>;
 
       meetupCancelButton =
-      <button className="meetup-cancel-button" >
+      <button className="meetup-cancel-button" onClick={handleUnattend(props.meetup.id)}>
         CANCEL YOUR SPOT
       </button>;
     } else {
+
       meetupJoinButton =
-      <button className="meetup-join-button" onClick={handleAttend(props.currentUser.id, props.meetup.id)}>
+      <button className="meetup-join-button" onClick={handleAttend(props.meetup.id)}>
         SIGN UP
       </button>;
 
 
     }
   } else {
+    debugger
     meetupJoinButton =
     <Link to="/login">
       SIGN IN TO SCHEDULE
