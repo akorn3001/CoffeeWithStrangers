@@ -12,10 +12,10 @@ const MeetupIndexItem = (props) => {
     };
   };
 
-  const handleUnattend = () => {
+  const handleUnattend = (userId, meetupId) => {
     return(event) => {
       event.preventDefault();
-      props.unattendMeetup();
+      props.unattendMeetup(props.currentUser.id, props.meetup.id);
     };
   };
 

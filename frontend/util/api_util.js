@@ -6,7 +6,23 @@ export const fetchAllCities = () => (
   })
 );
 
-export const fetchCurrentUserMeetups = (user_id) => (
+export const fetchCurrentUserMeetups = () => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/meetups',
+    // data: { meetup: {user_id} }
+  })
+);
+
+export const fetchCurrentUserAttendedMeetups = (user_id) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/meetups',
+    data: { meetup: {user_id} }
+  })
+);
+
+export const fetchCurrentUserHostedMeetups = (user_id) => (
   $.ajax({
     method: 'GET',
     url: 'api/meetups',
@@ -17,8 +33,7 @@ export const fetchCurrentUserMeetups = (user_id) => (
 export const fetchCityMeetups = (city_id) => (
   $.ajax({
     method: 'GET',
-    url: 'api/meetups',
-    data: { meetup: {city_id} }
+    url: `api/cities/${city_id}/meetups`,
   })
 );
 
@@ -61,14 +76,14 @@ export const createMeetup = (meetup) => {
 };
 
 // ATTEND / UNATTEND MEETUPS
-export const attendMeetup = (userId, meetupId) => {
+export const attendMeetup = (meetupId) => {
   return $.ajax({
     method: 'POST',
     url: `/api/meetups/${meetupId}/attend`,
   });
 };
 
-export const unattendMeetup = () => {
+export const unattendMeetup = (meetupId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/meetups/${meetupId}/unattend`

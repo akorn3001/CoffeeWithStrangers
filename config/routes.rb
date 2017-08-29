@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
 
     resources :cities, only: [:index, :show] do
-      resources :meetups, only: [:show]
+      resources :meetups, only: [:show, :index]
     end
   end
 end

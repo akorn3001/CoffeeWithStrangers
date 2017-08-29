@@ -1,9 +1,10 @@
 class Api::MeetupsController < ApplicationController
   def index
-    if params[:meetup][:city_id]
-      @meetups = Meetup.where(city_id: params[:meetup][:city_id])
+    if params[:city_id]
+      @meetups = Meetup.where(city_id: params[:city_id])
     else
-      @meetups = current_user.invitations
+      @meetups = Meetup.where(host_id: current_user.id)
+      # @meetups = current_user.invitations
     end
 
     render "api/meetups/index"
@@ -38,7 +39,7 @@ class Api::MeetupsController < ApplicationController
   end
 
   def unattend
-    @attendance = Attendance.where(meetup_id: params[:id], attendee_id: current_user.id).first
+    @attendance = Attendance.find_by(meetup_id: params[:id], attendee_id: current_user.id)
     if @attendance
       Attendance.destroy(@attendance.id)
       render "api/meetups/show"

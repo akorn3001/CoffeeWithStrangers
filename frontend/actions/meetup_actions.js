@@ -19,6 +19,20 @@ export const requestAllUserMeetups = (userId) => (dispatch) => {
   });
 };
 
+export const requestAllUserAttendedMeetups = (userId) => (dispatch) => {
+  return MeetupAPIUtil.fetchCurrentUserAttendedMeetups(userId)
+    .then(meetups => {
+      dispatch(receiveAllMeetups(meetups));
+  });
+};
+
+export const requestAllUserHostedMeetups = (userId) => (dispatch) => {
+  return MeetupAPIUtil.fetchCurrentUserHostedMeetups(userId)
+    .then(meetups => {
+      dispatch(receiveAllMeetups(meetups));
+  });
+};
+
 export const requestSingleMeetup = (id) => (dispatch) => {
   return MeetupAPIUtil.fetchSingleMeetup(id).then(meetup => {
     dispatch(receiveSingleMeetup(meetup));
