@@ -23,7 +23,7 @@ class Cities extends React.Component {
             }</span>
         </div>
       );
-    })
+    });
 
 
     return (
@@ -38,7 +38,7 @@ class Cities extends React.Component {
           {cityLis}
         </div>
       </div>
-    )
+    );
   }
 }
 

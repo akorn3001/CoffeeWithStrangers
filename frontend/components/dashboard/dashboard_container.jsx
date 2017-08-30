@@ -14,7 +14,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return  {
-    // unattendMeetup: () => dispatch(attendMeetup()),
     requestAllUserMeetups: (userId) => dispatch(requestAllUserMeetups(userId)),
     unattendMeetup: (userId, meetupId) => dispatch(unattendMeetup(userId, meetupId))
   };

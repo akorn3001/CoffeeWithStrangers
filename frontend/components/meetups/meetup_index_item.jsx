@@ -15,7 +15,8 @@ const MeetupIndexItem = (props) => {
   const handleUnattend = (meetupId) => {
     return(event) => {
       event.preventDefault();
-      props.unattendMeetup(meetupId);
+      props.unattendMeetup(meetupId)
+      .then(() => props.history.push('/profile'));
     };
   };
 
@@ -29,7 +30,12 @@ const MeetupIndexItem = (props) => {
   let meetupCancelButton;
 
   if (props.currentUser) {
-    if (props.meetup.guest_ids.includes(props.currentUser.id)) {
+    if (props.meetup.host_id === props.currentUser.id) {
+      meetupJoinButton =
+      <button className="meetup-join-button">
+        YOU'RE HOSTING THIS EVENT
+      </button>;
+    } else if (props.meetup.guest_ids.includes(props.currentUser.id)) {
       meetupJoinButton =
       <button className="meetup-join-button green">
         YOU JOINED THIS MEETUP
@@ -49,7 +55,6 @@ const MeetupIndexItem = (props) => {
 
     }
   } else {
-    debugger
     meetupJoinButton =
     <Link to="/login">
       SIGN IN TO SCHEDULE

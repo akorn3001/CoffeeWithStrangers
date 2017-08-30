@@ -45,7 +45,6 @@ export const attendMeetup = (meetupId) => dispatch => (
 );
 
 export const unattendMeetup = (meetupId) => dispatch => {
-  debugger
   return (
     MeetupAPIUtil.unattendMeetup(meetupId).then(leftMeetup => (
       dispatch(removeSingleMeetup(leftMeetup))

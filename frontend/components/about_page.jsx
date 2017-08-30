@@ -3,7 +3,7 @@ import React from 'react';
 class About extends React.Component {
 
   render () {
-
+    debugger
     return (
       <div>
         <div className="about-banner">
@@ -11,7 +11,7 @@ class About extends React.Component {
           <span>About Coffee With Strangers</span>
         </div>
       </div>
-    )
+    );
   }
 }
 

@@ -7,12 +7,5 @@ const mapStateToProps = state => {
     // city: state.entities.cities[state.session.currentUser.city_id]
   };
 };
-//
-// const mapDispatchToProps = dispatch => {
-//   return  {
-//
-//   };
-// };
-
 
 export default connect(mapStateToProps, null)(Cities);

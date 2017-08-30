@@ -85,6 +85,7 @@ class Dashboard extends React.Component {
     //   {meetups.map(meetup => <DashboardMeetupIndexItemContainer key={meetup.id} meetup={meetup} />)}
     // </div>
     // this.props.currentUser.meetups.map(meetup => )
+
     return (
       <div>
         {dashboardEl}
