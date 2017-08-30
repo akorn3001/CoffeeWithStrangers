@@ -7,7 +7,7 @@ const UsersReducer = (state = {}, action) => {
       return Object.assign({}, state, action.users);
 
     case RECEIVE_SINGLE_USER:
-      const user = action.payload.user;
+      const user = action.user;
 
       return Object.assign({}, state, {[user.id]: user});
 

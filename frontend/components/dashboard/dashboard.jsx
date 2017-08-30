@@ -7,9 +7,11 @@ class Dashboard extends React.Component {
     super(props);
   }
 
+
   componentDidMount() {
     this.props.requestAllUserMeetups(this.props.currentUser.id);
   }
+
 
   render() {
     let dashboardEl;
@@ -25,7 +27,7 @@ class Dashboard extends React.Component {
     </div>;
 
     if (this.props.currentUser.city_id) {
-      if (this.props.attended_meetups.length) {
+      if (this.props.attended_meetups.length || this.props.hosted_meetups.length) {
 
         dashboardEl =
         <div className="dashboard-container">

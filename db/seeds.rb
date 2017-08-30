@@ -8,17 +8,24 @@
 
 
 User.destroy_all
-u1 = User.create!(username: 'Albert', password: 'einstein1', email: 'example1@hotmail.com', city_id: 1000, host_status: true)
-u2 = User.create!(username: 'Bertrand', password: 'russell2', email: 'example2@hotmail.com')
-u3 = User.create!(username: 'Calvin', password: 'hobbes3', email: 'example3@hotmail.com')
-u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com')
-u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user')
+u1 = User.create!(username: 'Albert', password: 'einstein1', email: 'example1@hotmail.com', city_id: 1000, host_status: "true")
+u2 = User.create!(username: 'Bertrand', password: 'russell2', email: 'example2@hotmail.com', city_id: 7, host_status: "true")
+u3 = User.create!(username: 'Calvin', password: 'hobbes3', email: 'example3@hotmail.com', city_id: 3, host_status: "true")
+u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com', city_id: 4, host_status: "true")
+u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user', city_id: 5, host_status: "true")
 u6 = User.create!(username: 'Glenn', password: 'megaloft', email: 'megaloftG', city_id: 7)
 u7 = User.create!(username: 'Kyle', password: 'megaloft', email: 'megaloftK', city_id: 1000)
-u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloftR', city_id: 2, host_status: true)
-u9 = User.create!(username: 'Diony', password: 'curtis', email: 'curtisD', city_id: 3, host_status: true)
-u10 = User.create!(username: 'Brittany', password: 'curtis', email: 'curtisB', city_id: 4, host_status: true)
-u11 = User.create!(username: 'Elisabetta', password: 'curtissbu', email: 'curtissbu', city_id: 5, host_status: true)
+u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloftR', city_id: 2, host_status: "true")
+u9 = User.create!(username: 'Diony', password: 'curtis', email: 'curtisD', city_id: 3, host_status: "true")
+u10 = User.create!(username: 'Brittany', password: 'curtis', email: 'curtisB', city_id: 4, host_status: "true")
+u11 = User.create!(username: 'Elisabetta', password: 'curtissbu', email: 'curtissbu', city_id: 5, host_status: "true")
+u12 = User.create!(username: 'Bimini', password: 'magnet', email: 'magnetB', city_id: 1)
+u13 = User.create!(username: 'Janelle', password: 'magnet', email: 'magnetJ')
+u14 = User.create!(username: 'Lizzy', password: 'magnet', email: 'magnetL', city_id: 3)
+u15 = User.create!(username: 'Mikey', password: 'magnet', email: 'magnetM')
+u16 = User.create!(username: 'Tim', password: 'magnet', email: 'magnetT', city_id: 5)
+u17 = User.create!(username: 'Nolan', password: 'magnet', email: 'magnetN')
+
 
 
 Meetup.destroy_all
@@ -52,3 +59,4 @@ c6 = City.create!(name: 'Chicago', url: 'http://s3.amazonaws.com/tws-production-
 c7 = City.create!(name: 'Gravity Falls', url: 'https://vignette4.wikia.nocookie.net/gravityfalls/images/0/08/Opening_Main_characters_of_Gravity_Falls.png/revision/latest?cb=20160119145809')
 c8 = City.create!(name: 'Ba Sing Se', url: 'https://vignette2.wikia.nocookie.net/avatar/images/f/f7/Modern_Ba_Sing_Se.png/revision/latest?cb=20140730154445')
 c9 = City.create!(name: 'New New York', url: 'http://vignette2.wikia.nocookie.net/en.futurama/images/5/55/160_planet-express-building_1024.png/revision/latest?cb=20090521203416')
+c10 = City.create!(name: 'Seattle', url: 'http://www.sustainableseattle.org/wp-content/uploads/2015/08/SeattleMunicipleArchive-e1488676312333.jpg')

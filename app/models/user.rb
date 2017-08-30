@@ -10,14 +10,17 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  city_id         :integer
-#  host_status     :boolean          default(FALSE)
+#  host_status     :string           default("false")
 #
 
 class User < ApplicationRecord
+  HOST_STATUS_STATES = %w(false true pending).freeze
+
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :host_status, inclusion: HOST_STATUS_STATES
 
   attr_reader :password
 
@@ -35,7 +38,10 @@ class User < ApplicationRecord
     through: :attended_meetups,
     source: :meetup
 
-
+  has_one :user_bio,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: 'UserBio'
 
   after_initialize :ensure_session_token
 

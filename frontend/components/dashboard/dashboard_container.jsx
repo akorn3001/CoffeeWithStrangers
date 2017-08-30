@@ -5,6 +5,7 @@ import { selectAllMeetups } from '../../reducers/selectors';
 // import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
+  
   return {
     currentUser: state.session.currentUser,
     attended_meetups: selectAllMeetups(state).filter((meetup) => meetup.host_id !== state.session.currentUser.id),

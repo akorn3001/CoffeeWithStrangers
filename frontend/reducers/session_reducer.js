@@ -6,12 +6,16 @@ import {
   CLEAR_ERRORS
 } from '../actions/session_actions';
 
+import { RECEIVE_SINGLE_USER } from '../actions/user_actions';
+
 const nullUser = Object.freeze({
   currentUser: null,
   errors: []
 });
 
 const SessionReducer = (state = nullUser, action) => {
+  let newState = merge({}, state);
+  
   Object.freeze(state);
   let errors;
   switch(action.type) {
@@ -20,6 +24,10 @@ const SessionReducer = (state = nullUser, action) => {
       return merge({}, nullUser, {
         currentUser
       });
+    case RECEIVE_SINGLE_USER:
+      newState.currentUser = action.user;
+      return newState;
+
     case RECEIVE_ERRORS:
       errors = action.errors;
       return merge({}, nullUser, {

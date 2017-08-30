@@ -43,6 +43,14 @@ export const fetchSingleUser = (userId) => (
   })
 );
 
+export const updateSingleUser = (user) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: user 
+  })
+);
+
 export const fetchSingleCity = (cityId) => (
   $.ajax({
     method: 'GET',

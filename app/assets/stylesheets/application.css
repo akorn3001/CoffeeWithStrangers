@@ -611,3 +611,103 @@ button:focus {
   font-size: 2em;
   color: #EF6236;
 }
+
+.hosting-schpiel {
+  color: #333333;
+  width: 34%;
+  margin: 20px auto 20px auto;
+}
+
+.hosting-below-banner h2 {
+  font-size: 1.5em;
+  color: #EF6236;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.hosting-below-banner h3 {
+  font-weight: bold;
+}
+
+.hosting-below-banner ol {
+  list-style-type: decimal;
+  padding-left: 8%;
+  line-height: 25px;
+}
+
+.hosting-become-host-button, .hosting-set-city-button, .hosting-finalize-become-host-button {
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 16px;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #EF6236;
+  border-color: #EF6236;
+  color: white;
+  font-weight: 600;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.hosting-become-host-button:hover, .hosting-set-city-button:hover, .hosting-finalize-become-host-button:hover {
+  background-color: #ED501E;
+  border-color: #ED501E;
+}
+
+.become-host-form {
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.become-host-form h2 {
+  font-size: 1.5em;
+  color: #EF6236;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.become-host-form span {
+  font-weight: 500;
+}
+
+.become-host-form-input-field {
+  width: 60%;
+  height: 120px;
+  border-radius: 3px;
+  padding: 10px;
+  padding-left:15px;
+  margin-top: 8px;
+  margin-bottom:8px;
+  border-width: 0.5px;
+  box-sizing: border-box;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-family: "canada-type-gibson", "Gibson", "Helvetica Neue"
+  /*box-shadow: none;*/
+}
+
+.become-host-form button {
+  width: 20%
+}
+
+.hosting-form {
+  width: 80%;
+  margin: auto;
+}
+
+textarea:focus {
+  outline: none;
+  background-color: #FAFFBD;
+}
+
+textarea {
+  resize: none;
+}
+
+.tagline {
+  height: 50px;
+}

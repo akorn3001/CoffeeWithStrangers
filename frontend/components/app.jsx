@@ -10,7 +10,7 @@ import CitiesContainer from './cities/cities_container';
 import CityShowContainer from './cities/city_show_container';
 import About from './about_page';
 import DashboardContainer from './dashboard/dashboard_container';
-import Hosting from './hosting/hosting';
+import HostingContainer from './hosting/hosting_container';
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/cities" component={CitiesContainer}/>
         </Switch>
 
-        <Route path="/hosting" component={Hosting}/>
+        <Route path="/hosting" component={HostingContainer}/>
         <Route path="/about" component={About}/>
         <ProtectedRoute path="/profile" component={DashboardContainer}/>
 
