@@ -3,7 +3,7 @@ class Api::MeetupsController < ApplicationController
     if params[:city_id]
       @meetups = Meetup.where(city_id: params[:city_id])
     else
-      @meetups = Meetup.joins(:guests).where("attendances.attendee_id = #{current_user.id}", host_id: current_user.id )
+      @meetups = Meetup.joins("LEFT OUTER JOIN attendances on attendances.meetup_id = meetups.id").where("attendances.attendee_id = #{current_user.id} or host_id = #{current_user.id}")
       # @meetups = current_user.invitations
     end
 
