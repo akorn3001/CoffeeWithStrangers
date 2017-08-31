@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { DAYS, MONTHS, formatAMPM } from '../../util/meetups_util';
+import DUMMY_CITIES from '../dummy_cities';
 
 const MeetupIndexItem = (props) => {
 
@@ -72,7 +73,7 @@ const MeetupIndexItem = (props) => {
       <div className="meetup-extra-info">
         <span><strong>Address</strong> {props.meetup.address}</span>
         <span><strong>Host</strong> <Link to={`/users/${props.meetup.host_id}`}>{props.meetup.host_name}</Link></span>
-        <span><strong>City Id</strong> {props.meetup.city_id}</span>
+        <span><strong>City</strong> {DUMMY_CITIES.find((city) => props.meetup.city_id === city.id).name}</span>
       </div>
 
       {meetupJoinButton}

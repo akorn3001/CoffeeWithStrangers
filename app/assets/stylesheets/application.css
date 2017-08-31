@@ -124,9 +124,10 @@ div.auth-form-div > * {
   color: white;
   font-weight: 600;
   border-style: solid;
+  cursor: pointer;
 }
 
-.auth-form-submit:hover {
+.auth-form-submit:hover, .guest-login-button:hover {
   background-color: #ED501E;
 }
 
@@ -639,18 +640,18 @@ button:focus {
   margin: 20px auto 20px auto;
 }
 
-.hosting-below-banner h2 {
+.hosting-schpiel h2 {
   font-size: 1.5em;
   color: #EF6236;
   font-weight: 500;
   line-height: 30px;
 }
 
-.hosting-below-banner h3 {
+.hosting-schpiel h3 {
   font-weight: bold;
 }
 
-.hosting-below-banner ol {
+.hosting-schpiel ol {
   list-style-type: decimal;
   padding-left: 8%;
   line-height: 25px;
@@ -670,6 +671,23 @@ button:focus {
   font-weight: 600;
   border-style: solid;
   cursor: pointer;
+}
+
+.hosting-sign-in-link {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.hosting-sign-in-link a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #EF6236;
+  text-decoration: none;
+}
+
+.hosting-sign-in-link a:hover {
+  color: #C93C10;
 }
 
 .hosting-become-host-button:hover, .hosting-set-city-button:hover, .hosting-finalize-become-host-button:hover {
@@ -780,11 +798,48 @@ textarea {
 }
 
 .create-meetup-form {
+  margin: 15px;
+  width: 35%;
   display: flex;
   flex-direction: column;
 }
 
-.create-meetup-form button {
-  margin: 10px;
+.hosting-create-meetup-button {
+  cursor: pointer;
+  font-size: 25px;
+  background-color: #EF6236;
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border: 2px solid #EF6236;
+  margin: 20px auto 10px auto;
   width: 50%;
+  letter-spacing: 1px;
+}
+
+.hosting-create-meetup-button:hover {
+  background-color: #ED501E;
+}
+
+.create-meetup-form h2 {
+  color: #EF6236;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.create-meetup-form span {
+  font-weight: bold;
+}
+
+.create-meetup-form-input-field {
+  height: 22px;
+  font-size: 18px;
+  border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px;
+  padding-left:15px;
+  margin-top: 8px;
+  margin-bottom:8px;
+  border-width: 0.5px;
+  letter-spacing: 1px;
 }
