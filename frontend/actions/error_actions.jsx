@@ -14,31 +14,3 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS,
   errors: []
 });
-
-// // Export asynchronous actions
-// export const signup = user => dispatch => (
-//   SessionAPIUtil.signup(user).then(user => (
-//     dispatch(receiveCurrentUser(user))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-//
-// export const login = user => dispatch => (
-//   SessionAPIUtil.login(user).then(user => (
-//     dispatch(receiveCurrentUser(user))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-//
-// export const logout = () => dispatch => (
-//   SessionAPIUtil.logout().then(user => (
-//     dispatch(receiveCurrentUser(null))
-//   ))
-// );
-//
-// export const changeUserCity = (userId, cityId) => (dispatch) => {
-//   return SessionAPIUtil.changeUserCity(userId, cityId)
-//     .then(user => dispatch(receiveCurrentUser(user)));
-// };

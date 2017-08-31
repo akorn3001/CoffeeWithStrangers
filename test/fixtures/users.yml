@@ -11,6 +11,10 @@
 #  updated_at      :datetime         not null
 #  city_id         :integer
 #  host_status     :string           default("false")
+#  description     :text
+#  background      :text
+#  topics          :text
+#  tagline         :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

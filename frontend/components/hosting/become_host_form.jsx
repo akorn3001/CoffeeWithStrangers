@@ -1,4 +1,5 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 class BecomeHostForm extends React.Component {
   constructor(props) {
@@ -9,14 +10,14 @@ class BecomeHostForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-
   handleSubmit(event) {
     event.preventDefault();
-    const bio = Object.assign({}, this.state);
+    const bio = merge({}, this.state);
     this.props.setBio(bio)
     .then(() => {
       this.setState({ description: "", background: "", topics: "", tagline: "" });
-    });
+    })
+    .then(() => this.props.becomeHost());
   }
 
   handleChange(attribute) {

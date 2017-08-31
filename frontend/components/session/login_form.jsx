@@ -44,6 +44,7 @@ class LoginForm extends React.Component {
     let individualErrors;
 
     if (this.props.errors.length) {
+
       individualErrors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
       errorBanner = <div className="error-banner"><ul>{individualErrors}</ul></div>;
     } else {

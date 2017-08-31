@@ -7,16 +7,8 @@ import {
 
 import { RECEIVE_SINGLE_USER } from '../actions/user_actions';
 
-let preloadedState = {
-  errors: [
-    
-  ]
-};
 
-
-
-
-const ErrorReducer = (preloadedState, action) => {
+const ErrorsReducer = (state = [], action) => {
   let newState = merge({}, state);
 
   Object.freeze(state);
@@ -24,17 +16,13 @@ const ErrorReducer = (preloadedState, action) => {
   switch(action.type) {
     case RECEIVE_ERRORS:
       errors = action.errors;
-      return merge({}, state, {
-        errors
-      });
+      return action.errors;
     case CLEAR_ERRORS:
       errors = action.errors;
-      return merge({}, state, {
-        errors
-      });
+      return [];
     default:
       return state;
   }
 };
 
-export default SessionReducer;
+export default ErrorsReducer;

@@ -11,6 +11,10 @@
 #  updated_at      :datetime         not null
 #  city_id         :integer
 #  host_status     :string           default("false")
+#  description     :text
+#  background      :text
+#  topics          :text
+#  tagline         :string
 #
 
 class User < ApplicationRecord
@@ -37,11 +41,6 @@ class User < ApplicationRecord
   has_many :invitations,
     through: :attended_meetups,
     source: :meetup
-
-  has_one :user_bio,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: 'UserBio'
 
   after_initialize :ensure_session_token
 

@@ -129,10 +129,6 @@ class Hosting extends React.Component {
         hostingContent =
         <div className="hosting-form">
           <BecomeHostFormContainer />
-
-          <button onClick={this.handleSubmitHostForm()} className="hosting-finalize-become-host-button">
-            SUBMIT TO BECOME HOST
-          </button>
         </div>;
 
       } else {

@@ -3,7 +3,6 @@ import React from 'react';
 class About extends React.Component {
 
   render () {
-    debugger
     return (
       <div>
         <div className="about-banner">

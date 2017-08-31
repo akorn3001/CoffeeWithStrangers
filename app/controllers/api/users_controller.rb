@@ -34,13 +34,19 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def bio
-
-  end 
+  def attend
+    @attendance = Attendance.new(meetup_id: params[:id], attendee_id: current_user.id)
+    if @attendance.save
+      @meetup = @attendance.meetup
+      render "/api/meetups/show"
+    else
+      render json: @attendance.errors.full_messages, status: 422
+    end
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :city_id, :host_status)
+    params.require(:user).permit(:username, :email, :password, :city_id, :host_status, :description, :background, :topics, :tagline)
   end
 end
