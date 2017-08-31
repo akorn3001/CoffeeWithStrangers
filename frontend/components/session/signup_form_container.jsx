@@ -5,8 +5,7 @@ import { signup, clearErrors } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: state.currentUser !== null,
-    errors: state.session.errors,
-    // formType: `${ownProps.location.pathname}`,
+    errors: state.errors
   };
 };
 

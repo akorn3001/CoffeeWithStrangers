@@ -36,6 +36,10 @@ class LoginForm extends React.Component {
     return (event) => {
       event.preventDefault();
       this.setState({[attribute]: event.currentTarget.value});
+
+      if (this.props.errors.length) {
+        this.props.clearErrors();
+      }
     };
   }
 

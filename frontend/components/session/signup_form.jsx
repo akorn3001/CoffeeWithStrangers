@@ -28,6 +28,10 @@ class SignupForm extends React.Component {
     return (event) => {
       event.preventDefault();
       this.setState({[attribute]: event.currentTarget.value});
+
+      if (this.props.errors.length) {
+        this.props.clearErrors();
+      }
     };
   }
 
@@ -36,8 +40,8 @@ class SignupForm extends React.Component {
     let individualErrors;
 
     if (this.props.errors.length) {
-      individualErrors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)
-      errorBanner = <div className="error-banner"><ul>{individualErrors}</ul></div>
+      individualErrors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+      errorBanner = <div className="error-banner"><ul>{individualErrors}</ul></div>;
     } else {
       errorBanner = null;
     }

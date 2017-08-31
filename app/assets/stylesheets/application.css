@@ -511,11 +511,18 @@ button:focus {
 }
 
 .meetup-button {
+  cursor: pointer;
   border-style: solid;
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.orange {
+  background-color: #EF6236;
+  color: white;
+  border: 2px solid #EF6236;
 }
 
 .red {
@@ -613,6 +620,10 @@ button:focus {
   color: white;
   text-transform: uppercase;
   text-align: center;
+}
+
+.dashboard-welcome-join-meetup:hover {
+  background-color: #ED501E;
 }
 
 .dashboard-meetups {

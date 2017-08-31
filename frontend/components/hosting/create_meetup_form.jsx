@@ -10,6 +10,10 @@ class CreateMeetupForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const meetup = merge({}, this.state);
@@ -26,14 +30,27 @@ class CreateMeetupForm extends React.Component {
     return (event) => {
       event.preventDefault();
       this.setState({[attribute]: event.currentTarget.value});
+
+      if (this.props.errors.length) {
+        this.props.clearErrors();
+      }
     };
   }
 
   render() {
+    let errorBanner;
+    let individualErrors;
+
+    if (this.props.errors.length) {
+      individualErrors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+      errorBanner = <div className="error-banner"><ul>{individualErrors}</ul></div>;
+    } else {
+      errorBanner = null;
+    }
 
     return (
       <div>
-
+        {errorBanner}
         <div className="create-meetup-form-div">
           <form className="create-meetup-form" onSubmit={this.handleSubmit}>
             <h2>Hey {this.props.currentUser.username} - let's create a meetup!</h2>
@@ -48,7 +65,7 @@ class CreateMeetupForm extends React.Component {
 
             <br/>
 
-            <span>Choose a date:</span>
+            <span>Choose a date and time:</span>
             <input
               className="create-meetup-form-input-field"
               onChange={this.handleChange('date')}
@@ -57,14 +74,6 @@ class CreateMeetupForm extends React.Component {
             />
 
             <br/>
-
-            <span>Choose a time:</span>
-            <input
-              className="create-meetup-form-input-field"
-              onChange={this.handleChange('date')}
-              type="time"
-              value={this.state.date}
-            />
 
             <button className="hosting-create-meetup-button" type="submit">CREATE MEETUP</button>
 

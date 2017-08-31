@@ -31,7 +31,7 @@ export const createMeetup = meetup => dispatch => (
   MeetupAPIUtil.createMeetup(meetup).then(meetup => {
     dispatch(receiveSingleMeetup(meetup));
     return meetup;
-  }).fail(err => dispatch(receiveMeetupErrors(err.responseJSON)))
+  }).fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const attendMeetup = (meetupId) => dispatch => (

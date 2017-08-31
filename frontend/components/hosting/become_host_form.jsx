@@ -10,6 +10,10 @@ class BecomeHostForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillMount(){
+    this.props.clearErrors();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const bio = merge({}, this.state);
@@ -28,10 +32,20 @@ class BecomeHostForm extends React.Component {
   }
 
   render() {
+    let errorBanner;
+    let individualErrors;
 
+    if (this.props.errors.length) {
+
+      individualErrors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+      errorBanner = <div className="error-banner"><ul>{individualErrors}</ul></div>;
+    } else {
+      errorBanner = null;
+    }
+    
     return (
       <div>
-
+        {errorBanner}
         <div className="become-host-form-div">
           <form className="become-host-form" onSubmit={this.handleSubmit}>
             <h2>Hey {this.props.currentUser.username} - fill out your host details!</h2>
