@@ -1,5 +1,6 @@
 import React from 'react';
 import BecomeHostFormContainer from './become_host_form_container';
+import CreateMeetupFormContainer from './create_meetup_form_container';
 
 class Hosting extends React.Component {
   constructor(props) {
@@ -134,7 +135,7 @@ class Hosting extends React.Component {
       } else {
         hostingContent =
         <div className="hosting-below-banner">
-          YOU'RE A HOST
+          <CreateMeetupFormContainer />
         </div>;
       }
     }
@@ -144,7 +145,7 @@ class Hosting extends React.Component {
       <div>
         <div className="hosting-banner">
           <img src={window.staticImages.hostingBanner}/>
-          <span>Become a CWS Host</span>
+          <span>Hosting</span>
         </div>
 
         {hostingContent}

@@ -32,23 +32,23 @@ const MeetupIndexItem = (props) => {
   if (props.currentUser) {
     if (props.meetup.host_id === props.currentUser.id) {
       meetupJoinButton =
-      <button className="meetup-join-button">
-        YOU'RE HOSTING THIS EVENT
+      <button className="meetup-button blue">
+        YOU'RE HOSTING THIS MEETUP
       </button>;
     } else if (props.meetup.guest_ids.includes(props.currentUser.id)) {
       meetupJoinButton =
-      <button className="meetup-join-button green">
+      <button className="meetup-button green">
         YOU JOINED THIS MEETUP
       </button>;
 
       meetupCancelButton =
-      <button className="meetup-cancel-button" onClick={handleUnattend(props.meetup.id)}>
+      <button className="meetup-button red" onClick={handleUnattend(props.meetup.id)}>
         CANCEL YOUR SPOT
       </button>;
     } else {
 
       meetupJoinButton =
-      <button className="meetup-join-button" onClick={handleAttend(props.meetup.id)}>
+      <button className="meetup-button" onClick={handleAttend(props.meetup.id)}>
         SIGN UP
       </button>;
 
