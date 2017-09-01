@@ -29,7 +29,7 @@ too many, and what is just enough to convey you are stoked to do something?!?!? 
   the world be in 10 years, or next week?"
 tgln = "The sky's the limit"
 u1_img_url = "https://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg"
-u2_img_url = "http://raynfall.com/wp-content/uploads/2016/04/brienne.jpg"
+u2_img_url = "https://pbs.twimg.com/profile_images/742764508960153600/84biTbZb.jpg"
 u3_img_url = "https://thegoodfight.s3.amazonaws.com/uploads/423632e9faa4e8187911e3736ee60b9a.jpg"
 u4_img_url = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/01/11/Untitled-3.jpg"
 u8_img_url = "http://cdn.playbuzz.com/cdn/11787fb1-61db-4b70-bf74-520d52d9547b/5905dfe8-fe4a-4f5f-86ee-354d43b70ea3.jpg"

@@ -12,6 +12,7 @@ import About from './about_page';
 import DashboardContainer from './dashboard/dashboard_container';
 import HostingContainer from './hosting/hosting_container';
 import UserShowContainer from './users/user_show_container';
+import SplashPage from './splash_page';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/cities" component={CitiesContainer}/>
         </Switch>
 
+        <Route path="/" exact component={SplashPage} />
         <Route path={`/users/:userId`} component={UserShowContainer} />
         <Route path="/hosting" component={HostingContainer}/>
         <Route path="/about" component={About}/>
