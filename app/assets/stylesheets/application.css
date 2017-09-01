@@ -934,8 +934,10 @@ textarea {
 }
 
 .user-show-profile-picture img {
-  width: 90%;
-  height: 90%;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
 
   margin: auto;
   border: 1px solid black;
