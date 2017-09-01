@@ -942,3 +942,9 @@ textarea {
   /*padding: 6px;*/
   background-color: white;
 }
+
+.sign-in-to-schedule {
+  text-align: center;
+  text-decoration: none;
+  color: #EF6236;
+}

@@ -57,8 +57,8 @@ const MeetupIndexItem = (props) => {
     }
   } else {
     meetupJoinButton =
-    <Link to="/login">
-      SIGN IN TO SCHEDULE
+    <Link className="sign-in-to-schedule" to="/login">
+      Sign in to schedule
     </Link>;
   }
 
