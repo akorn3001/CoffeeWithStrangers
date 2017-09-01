@@ -13,6 +13,13 @@
 
 class Meetup < ApplicationRecord
   validates :date, :address, :host, :city_id, presence: true
+  validate :date_cannot_be_in_the_past
+
+  def date_cannot_be_in_the_past
+    if date.present? && date < Date.today
+      errors.add(:date, "cannot be in the past")
+    end
+  end
 
   belongs_to :host,
     primary_key: :id,

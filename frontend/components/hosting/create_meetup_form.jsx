@@ -4,7 +4,7 @@ import { merge } from 'lodash';
 class CreateMeetupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: "", date: "", time: "", host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id };
+    this.state = { address: "", date: "", host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,7 +19,7 @@ class CreateMeetupForm extends React.Component {
     const meetup = merge({}, this.state);
     this.props.createMeetup(meetup)
     .then(() => {
-      this.setState({ address: "", date: "", time: "", host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id });
+      this.setState({ address: "", date: "", host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id });
     })
     .then(() => {
       this.props.history.push('/profile');
@@ -71,6 +71,7 @@ class CreateMeetupForm extends React.Component {
               onChange={this.handleChange('date')}
               type="datetime-local"
               value={this.state.date}
+              min="2017-08-25"
             />
 
             <br/>

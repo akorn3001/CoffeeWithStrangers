@@ -309,6 +309,7 @@ button:focus {
 .city-link {
   color: white;
   text-decoration: none;
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
 }
 
 .city-link:hover {
@@ -511,7 +512,6 @@ button:focus {
 }
 
 .meetup-button {
-  cursor: pointer;
   border-style: solid;
   border-radius: 5px;
   padding: 5px;
@@ -531,7 +531,7 @@ button:focus {
   border: 2px solid red;
 }
 
-.red:hover {
+.red:hover, .orange:hover {
   cursor: pointer;
 }
 
@@ -853,4 +853,27 @@ textarea {
   margin-bottom:8px;
   border-width: 0.5px;
   letter-spacing: 1px;
+}
+
+.about-schpiel {
+  color: #333333;
+  width: 34%;
+  margin: 20px auto 20px auto;
+}
+
+.about-schpiel h2 {
+  font-size: 1.5em;
+  color: #EF6236;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.about-schpiel h3 {
+  font-weight: bold;
+}
+
+.about-schpiel ol {
+  list-style-type: decimal;
+  padding-left: 8%;
+  line-height: 25px;
 }

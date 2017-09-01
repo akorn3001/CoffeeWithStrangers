@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831015506) do
+ActiveRecord::Schema.define(version: 20170831234304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170831015506) do
     t.text "background"
     t.text "topics"
     t.string "tagline"
+    t.text "img_url"
   end
 
 end

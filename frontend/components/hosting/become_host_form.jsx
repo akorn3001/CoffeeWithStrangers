@@ -8,6 +8,7 @@ class BecomeHostForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   componentWillMount(){
@@ -31,6 +32,20 @@ class BecomeHostForm extends React.Component {
     };
   }
 
+  handleUpload(event) {
+    debugger
+    event.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      (error, images) => {
+        debugger
+      if (error === null) {
+        this.props.setImgURL(images[0].url);
+      }
+    });
+  }
+
+
   render() {
     let errorBanner;
     let individualErrors;
@@ -42,7 +57,7 @@ class BecomeHostForm extends React.Component {
     } else {
       errorBanner = null;
     }
-    
+
     return (
       <div>
         {errorBanner}
@@ -98,6 +113,10 @@ class BecomeHostForm extends React.Component {
             <button className="hosting-become-host-button" type="submit">SUBMIT TO BECOME A HOST</button>
 
           </form>
+
+          <button onClick={this.handleUpload}>
+            UPLOAD PROFILE PICTURE
+          </button>
         </div>
       </div>
     );

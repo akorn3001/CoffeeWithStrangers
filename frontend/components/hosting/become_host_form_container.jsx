@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   return  ({
     // clearErrors: () => dispatch(clearErrors())
     setBio: (bio) => dispatch(updateSingleUser({ user:  bio })),
+    setImgURL: (url) => dispatch(updateSingleUser({ user:  { img_url: url } })),
     becomeHost: () => dispatch(updateSingleUser({ user: { host_status: "true" }})),
     clearErrors: () => dispatch(clearErrors())
   });

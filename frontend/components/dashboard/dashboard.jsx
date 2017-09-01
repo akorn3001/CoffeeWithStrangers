@@ -15,6 +15,22 @@ class Dashboard extends React.Component {
 
   render() {
     let dashboardEl;
+    let AttendedMeetupsHeader;
+    let HostedMeetupsHeader;
+
+    if (this.props.attended_meetups.length) {
+      AttendedMeetupsHeader =
+      <h1>Meetups you're attending</h1>;
+    } else {
+      AttendedMeetupsHeader = null;
+    }
+
+    if (this.props.hosted_meetups.length) {
+      HostedMeetupsHeader =
+      <h1>Meetups you're hosting</h1>;
+    } else {
+      AttendedMeetupsHeader = null;
+    }
 
     let aboutMessage =
     <div className="dashboard-welcome">
