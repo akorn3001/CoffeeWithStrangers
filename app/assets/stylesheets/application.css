@@ -876,6 +876,8 @@ textarea {
   color: #EF6236;
   font-size: 1.5em;
   font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .create-meetup-form span {

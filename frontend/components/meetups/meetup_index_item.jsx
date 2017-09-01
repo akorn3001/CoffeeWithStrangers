@@ -50,7 +50,7 @@ const MeetupIndexItem = (props) => {
 
       meetupJoinButton =
       <button className="meetup-button orange" onClick={handleAttend(props.meetup.id)}>
-        SIGN UP
+        ATTEND THIS EVENT
       </button>;
 
 
