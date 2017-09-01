@@ -11,30 +11,36 @@ class About extends React.Component {
         </div>
 
         <div className="about-schpiel">
-          <h2>You like coffee. Other people like coffee. You know that strangers
-            can become friends by talking about their mutual love of coffee.
+          <h2>
+            We all like to feel like we're among friends.
           </h2>
 
           <p>
-            Think you're up to the task of becoming a host and bringing people together over coffee?
-          </p>
-
-          <ol>
-            <li>What would I be doing?</li>
-            <li>What are the perks? (HAHA get it?)</li>
-            <li>Do Ihave the right stuff?</li>
-            <li>How can I become a host?</li>
-          </ol>
-
-          <p>
-            We asked some other hosts and here's their two cents about hosting.
+            Coffee With Strangers aims to make meeting new people a little less
+            scary by reminding us how much we have in common.
           </p>
 
           <h3>
-            CWS hosts bring people together - facilitating an experience that helps
-            coalesce the vapors of human experience into a viable and meaningful
-            comprehension.
+            I still don't get it? How will having coffee with a stranger make the world a better place?
           </h3>
+
+          <p>
+            There are lots of reasons we choose not to look up at each other from our phones,
+            strike up a conversation with a person we don't know, or just forget that
+            we're all people with similar hopes and dreams.
+          </p>
+
+          <ol>
+            <li>We're all trying our best to be our best selves. It can be hard getting out of our own heads.</li>
+            <li>We're scared that people will judge us for saying something silly.</li>
+          </ol>
+
+          <p>
+            Not to fear, however! This is precisely why we have a team of wonderful hosts
+            who know this and who strive to break the ice of conversation and bring people
+            together over a completely no-stakes conversation. Every meetup is its own
+            experience and you learn something new every time.
+          </p>
 
           <p>
             Everybody's different and that is what makes us the same. Hosts draw
@@ -44,40 +50,15 @@ class About extends React.Component {
             our big big world just a little bit smaller.
           </p>
 
-          <h3>
-            Our team of hosts is getting bigger all the time.
-          </h3>
-
           <p>
-            Being a CWS host can add a sense of purpose to your life. It can make
-            the ho-hum everyday seem a little more special by knowing you're making
-            a difference by bringing people together who wouldn't otherwise ever
-            meet! Being a host strengthens your listening skills, and makes you a
-            more empathic person.
+            We can make the world a less scary place.
           </p>
 
           <p>
-            Being a CWS host means being part of a global family. Hosting a meetup
-            in Seattle or London or Gravity Falls makes you realize how similar we
-            all really are. Imagine sitting down with people and already knowing you
-            have something in common - the desire to connect and make our world a
-            more understanding and kinder place. That is what a host does.
+            It begins with us.
           </p>
 
-          <h3>
-            You know who you are and what you stand for.
-          </h3>
 
-          <p>
-            If you like coffee, people, and those people's stories then you have
-            what it takes to become a CWS host! What are you waiting for? Click
-            the big button below!
-          </p>
-
-          <h3>
-            Join us!
-          </h3>
-          
         </div>;
       </div>
     );
