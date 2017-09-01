@@ -16,6 +16,7 @@
 #  topics          :text
 #  tagline         :string
 #  img_url         :text
+#  thumbnail       :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

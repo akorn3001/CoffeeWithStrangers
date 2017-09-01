@@ -41,6 +41,7 @@ class BecomeHostForm extends React.Component {
 
       if (error === null) {
         this.props.setImgURL(images[0].url);
+        this.props.setThumbnailURL(images[0].thumbnail_url);
       }
     });
   }

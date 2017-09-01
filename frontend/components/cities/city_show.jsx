@@ -104,11 +104,12 @@ class CityShow extends React.Component {
 
           <div className="city-show-host-message">
             <h2 className="city-show-host-header">The host community is great!</h2>
-            <p>How else would someone end up regularly
-              bringing strangers together for conversations?
-              Before each of them were invited to community,
-              they were attendees that fed their tea times with
-              their questions, open-mindedness, and presence.
+            <p>
+              Hosts are driven by the knowledge that we all have way more in common
+              than we might think. Their goal is to foster an environment in which
+              strangers can connect with one another over what they have in common,
+              and learn about the things they might not otherwise have a great
+              deal of experience with.
             </p>
           </div>
         </div>

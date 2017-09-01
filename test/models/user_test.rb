@@ -16,6 +16,7 @@
 #  topics          :text
 #  tagline         :string
 #  img_url         :text
+#  thumbnail       :text
 #
 
 require 'test_helper'
