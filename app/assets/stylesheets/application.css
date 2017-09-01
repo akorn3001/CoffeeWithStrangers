@@ -668,7 +668,12 @@ button:focus {
   line-height: 25px;
 }
 
-.hosting-become-host-button, .hosting-set-city-button, .hosting-finalize-become-host-button {
+.upload-photo-button {
+  width: 20%;
+  margin: auto;
+}
+
+.hosting-become-host-button, .hosting-set-city-button, .hosting-finalize-become-host-button, .upload-photo-button {
   display: inline-block;
   margin-bottom: 30px;
   margin-top: 16px;
@@ -701,7 +706,7 @@ button:focus {
   color: #C93C10;
 }
 
-.hosting-become-host-button:hover, .hosting-set-city-button:hover, .hosting-finalize-become-host-button:hover {
+.hosting-become-host-button:hover, .hosting-set-city-button:hover, .hosting-finalize-become-host-button:hover, .upload-photo-button:hover {
   background-color: #ED501E;
   border-color: #ED501E;
 }
@@ -713,12 +718,20 @@ button:focus {
   flex-direction: column;
 }
 
-.become-host-form h2 {
-  font-size: 1.5em;
+.become-host-form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.become-host-form-div h2 {
+  font-size: 2em;
   color: #EF6236;
   font-weight: 500;
   margin-bottom: 15px;
+  text-align: center;
 }
+
+
 
 .become-host-form span {
   font-weight: 500;
@@ -884,10 +897,11 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 400px;
+
+  max-width: 500px;
   max-height: 500px;
   margin: 10px;
-  margin-top: -20px;
+  margin-top: -30px;
   border: 1px solid black;
   overflow: hidden;
   padding: 5px;

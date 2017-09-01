@@ -62,8 +62,14 @@ class BecomeHostForm extends React.Component {
       <div>
         {errorBanner}
         <div className="become-host-form-div">
+
+          <h2>Hey {this.props.currentUser.username} - fill out your host details!</h2>
+
+          <button className="upload-photo-button" onClick={this.handleUpload}>
+            UPLOAD PROFILE PICTURE
+          </button>
+
           <form className="become-host-form" onSubmit={this.handleSubmit}>
-            <h2>Hey {this.props.currentUser.username} - fill out your host details!</h2>
 
             <span>Tell us a little about yourself</span>
             <textarea
@@ -114,9 +120,6 @@ class BecomeHostForm extends React.Component {
 
           </form>
 
-          <button onClick={this.handleUpload}>
-            UPLOAD PROFILE PICTURE
-          </button>
         </div>
       </div>
     );
