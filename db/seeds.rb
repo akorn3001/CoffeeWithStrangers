@@ -5,20 +5,50 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+desc = "I couldn’t imagine living far from a city at any point in my life. I probably rely
+on the energy of others to fuel my excitement about the world more than I should, but it’s
+one of the big reasons sitting with people is so cool to me. There are few things so amazing
+as throwing away concepts of time and immersing in someone else’s words. But books don’t do it
+  for me too much, so I resort to tea with strangers. Join me?"
+bgnd = "I’m often too arrogant to let myself be summed up in response to a question like
+this, so I feel a natural obligation to defend my poor online image: ‘There’s much more where
+this came from!’ I’m constantly in fear that I take things for granted. So I try to err on the
+side of being really thankful of my luck. I was really lucky to be born to a family that I love
+to no end, I was lucky to learn from incredible teachers, I was lucky to have friends that love me
+dearly, and I’ve been lucky to live in three bomb cities — New York, Philly and, now, SF. All those
+circumstances alone make me feel hugely indebted to the world around me, so I spend pretty much all
+my time trying to find ways to pay off this massive loan. Fortunately, my payment plan is amortized
+over 100 years or so."
+tpcs = "More than the weather, quirky social norms that everyone seems to follow
+but most of us don’t understand. What is the best thing you that you have done in the
+last year, or ever (intentionally left vague, conversation seems to get more exciting
+this way)! When will we be able to communicate exclusively through emojis and photos?
+Sushi, smoothie recipes (for fellow veggie haters out there who realize we still need
+to eat them), biohacking. What are you passionate about? How many exclamation marks are
+too many, and what is just enough to convey you are stoked to do something?!?!? Where will
+  the world be in 10 years, or next week?"
+tgln = "The sky's the limit"
+u1_img_url = "https://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg"
+u2_img_url = "http://raynfall.com/wp-content/uploads/2016/04/brienne.jpg"
+u3_img_url = "https://thegoodfight.s3.amazonaws.com/uploads/423632e9faa4e8187911e3736ee60b9a.jpg"
+u4_img_url = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/01/11/Untitled-3.jpg"
+u8_img_url = "http://cdn.playbuzz.com/cdn/11787fb1-61db-4b70-bf74-520d52d9547b/5905dfe8-fe4a-4f5f-86ee-354d43b70ea3.jpg"
+u9_img_url = "https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/Daria_580400-MTV_DARIA._RI_SX940_.jpg"
+u10_img_url = "https://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg"
 
 
 User.destroy_all
-u1 = User.create!(username: 'Albert', password: 'einstein1', email: 'example1@hotmail.com', city_id: 1000, host_status: "true")
-u2 = User.create!(username: 'Bertrand', password: 'russell2', email: 'example2@hotmail.com', city_id: 7, host_status: "true")
-u3 = User.create!(username: 'Calvin', password: 'hobbes3', email: 'example3@hotmail.com', city_id: 3, host_status: "true")
-u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com', city_id: 4, host_status: "true")
-u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user', city_id: 5, host_status: "true")
+u1 = User.create!(username: 'Albert', password: 'einstein1', email: 'example1@hotmail.com', city_id: 1000, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u1_img_url)
+u2 = User.create!(username: 'Brienne', password: 'tarth2', email: 'example2@hotmail.com', city_id: 7, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u2_img_url)
+u3 = User.create!(username: 'Cory', password: 'booker3', email: 'example3@hotmail.com', city_id: 3, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u3_img_url)
+u4 = User.create!(username: 'David', password: 'goliath4', email: 'example4@hotmail.com', city_id: 4, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u4_img_url)
+u5 = User.create!(username: 'guest-user', password: 'guest-user', email: 'guest-user', city_id: 5, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln)
 u6 = User.create!(username: 'Glenn', password: 'megaloft', email: 'megaloftG', city_id: 7)
 u7 = User.create!(username: 'Kyle', password: 'megaloft', email: 'megaloftK', city_id: 1000)
-u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloftR', city_id: 2, host_status: "true")
-u9 = User.create!(username: 'Diony', password: 'curtis', email: 'curtisD', city_id: 3, host_status: "true")
-u10 = User.create!(username: 'Brittany', password: 'curtis', email: 'curtisB', city_id: 4, host_status: "true")
-u11 = User.create!(username: 'Elisabetta', password: 'curtissbu', email: 'curtissbu', city_id: 5, host_status: "true")
+u8 = User.create!(username: 'Rob', password: 'megaloft', email: 'megaloftR', city_id: 2, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u8_img_url)
+u9 = User.create!(username: 'Daria', password: 'useruser', email: 'curtisD', city_id: 3, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u9_img_url)
+u10 = User.create!(username: 'Bill', password: 'gatesgates', email: 'curtisB', city_id: 4, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln, img_url: u10_img_url)
+u11 = User.create!(username: 'Elisabetta', password: 'curtissbu', email: 'curtissbu', city_id: 5, host_status: "true", description: desc, background: bgnd, topics: tpcs, tagline: tgln)
 u12 = User.create!(username: 'Bimini', password: 'magnet', email: 'magnetB', city_id: 1)
 u13 = User.create!(username: 'Janelle', password: 'magnet', email: 'magnetJ')
 u14 = User.create!(username: 'Lizzy', password: 'magnet', email: 'magnetL', city_id: 3)

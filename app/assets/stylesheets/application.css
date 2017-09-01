@@ -771,7 +771,7 @@ textarea {
 .user-show-host-bio {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 60%;
   margin: auto;
 
 }
@@ -780,7 +780,7 @@ textarea {
 }
 
 .user-show-container {
-  width: 60%;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: row;
