@@ -20,10 +20,16 @@ class UserShow extends React.Component {
   render() {
 
     let hostBioInfo;
-
+    let profilePic;
 
     if (this.props.thisPageUser) {
       if (this.props.thisPageUser.host_status === "true") {
+
+        if (this.props.thisPageUser.img_url) {
+          profilePic = <img src={this.props.thisPageUser.img_url} />;
+        } else {
+          profilePic = <img src={window.staticImages.defaultPic} />;
+        }
 
         let city = DUMMY_CITIES.find((city) => city.id === this.props.thisPageUser.city_id);
         let cityName = city.name;
@@ -37,6 +43,10 @@ class UserShow extends React.Component {
           </div>
 
           <div className="user-show-container">
+            <div className="user-show-profile-picture">
+              {profilePic}
+            </div>
+
             <div className="user-show-host-bio">
               <p>
                 {this.props.thisPageUser.description}

@@ -33,12 +33,12 @@ class BecomeHostForm extends React.Component {
   }
 
   handleUpload(event) {
-    debugger
+
     event.preventDefault();
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       (error, images) => {
-        debugger
+
       if (error === null) {
         this.props.setImgURL(images[0].url);
       }
