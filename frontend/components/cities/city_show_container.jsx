@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CityShow from './city_show';
-import { changeUserCity } from '../../actions/session_actions';
+import { changeUserCity, updateSingleUser } from '../../actions/user_actions';
 import { requestAllCityMeetups } from '../../actions/meetup_actions';
 
 const mapStateToProps = state => {
@@ -13,6 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return  ({ changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
+            //  changeUserCity: () => dispatch(updateSingleUser({ user: { city_id: city_id }})),
              requestAllCityMeetups: (cityId) => dispatch(requestAllCityMeetups(cityId))
   });
 };

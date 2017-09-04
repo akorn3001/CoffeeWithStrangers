@@ -52,8 +52,8 @@ export const logout = () => dispatch => (
     dispatch(receiveCurrentUser(null))
   ))
 );
-
-export const changeUserCity = (userId, cityId) => (dispatch) => {
-  return SessionAPIUtil.changeUserCity(userId, cityId)
-    .then(user => dispatch(receiveCurrentUser(user)));
-};
+// 
+// export const changeUserCity = (userId, cityId) => (dispatch) => {
+//   return SessionAPIUtil.changeUserCity(userId, cityId)
+//     .then(user => dispatch(receiveCurrentUser(user)));
+// };

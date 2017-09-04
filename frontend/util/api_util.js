@@ -47,7 +47,7 @@ export const updateSingleUser = (user) => (
   $.ajax({
     method: 'PATCH',
     url: `/api/users/${user.id}`,
-    data: user 
+    data: user
   })
 );
 
@@ -79,5 +79,13 @@ export const unattendMeetup = (meetupId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/meetups/${meetupId}/unattend`
+  });
+};
+
+export const changeUserCity = (userId, cityId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${userId}`,
+    data: { user: {city_id: cityId} }
   });
 };

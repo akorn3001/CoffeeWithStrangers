@@ -6,7 +6,6 @@ export const RECEIVE_USERS = 'RECEIVE_ALL_USERS';
 
 // Export synchronous actions
 export const receiveSingleUser = user => {
-
   return ({
     type: RECEIVE_SINGLE_USER,
     user
@@ -27,4 +26,10 @@ export const requestSingleUser = (userId) => (dispatch) => {
 export const updateSingleUser = (user) => (dispatch) => {
   return APIUtil.updateSingleUser(user)
   .then(updatedUser => dispatch(receiveSingleUser(updatedUser)));
+};
+
+
+export const changeUserCity = (userId, cityId) => (dispatch) => {
+  return APIUtil.changeUserCity(userId, cityId)
+    .then(user => dispatch(receiveSingleUser(user)));
 };

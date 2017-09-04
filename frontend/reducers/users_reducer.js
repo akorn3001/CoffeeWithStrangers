@@ -1,3 +1,4 @@
+import merge from 'lodash/merge';
 import { RECEIVE_USERS, RECEIVE_SINGLE_USER } from '../actions/user_actions';
 
 const UsersReducer = (state = {}, action) => {
@@ -8,8 +9,8 @@ const UsersReducer = (state = {}, action) => {
 
     case RECEIVE_SINGLE_USER:
       const user = action.user;
-      // return Object.assign({}, state, {[user.id]: user});
-      return action.user;
+      return merge({}, state, user);
+      // return action.user;
 
     default:
       return state;
