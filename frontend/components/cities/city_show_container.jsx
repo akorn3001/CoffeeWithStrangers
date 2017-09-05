@@ -6,8 +6,6 @@ import { requestAllCityMeetups } from '../../actions/meetup_actions';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    // city: state.entities.cities[state.session.currentUser.city_id]
-
   };
 };
 
@@ -19,6 +17,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityShow);
-
-
-// city: state.entities.cities[state.session.currentUser.city_id]
