@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //TESTING START!!
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.login = login;
-  window.logout = logout;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.login = login;
+  // window.logout = logout;
   //TESTING END!?!?!?!
 
   const root = document.getElementById('root');
