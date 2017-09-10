@@ -12,7 +12,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
     requestSingleUser: (userId) => dispatch(requestSingleUser(userId))
   };
