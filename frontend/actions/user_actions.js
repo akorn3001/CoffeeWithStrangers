@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/api_util';
+import {receiveCurrentUser } from './session_actions'
 
 // Export constants
 export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
@@ -25,11 +26,11 @@ export const requestSingleUser = (userId) => (dispatch) => {
 
 export const updateSingleUser = (user) => (dispatch) => {
   return APIUtil.updateSingleUser(user)
-  .then(updatedUser => dispatch(receiveSingleUser(updatedUser)));
+  .then(updatedUser => dispatch(receiveCurrentUser(updatedUser)));
 };
 
 
-export const changeUserCity = (userId, cityId) => (dispatch) => {
-  return APIUtil.changeUserCity(userId, cityId)
-    .then(user => dispatch(receiveSingleUser(user)));
-};
+// export const changeUserCity = (userId, cityId) => (dispatch) => {
+//   return APIUtil.changeUserCity(userId, cityId)
+//     .then(user => dispatch(receiveCurrentUser(user)));
+// };

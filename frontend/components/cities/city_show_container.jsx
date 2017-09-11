@@ -5,13 +5,14 @@ import { requestAllCityMeetups } from '../../actions/meetup_actions';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser,
+    currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return  ({ changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
-            //  changeUserCity: () => dispatch(updateSingleUser({ user: { city_id: city_id }})),
+  return  ({
+    // changeUserCity: (userId, cityId) => dispatch(changeUserCity(userId, cityId)),
+             changeUserCity: (cityId) => dispatch(updateSingleUser({ user: { city_id: cityId }})),
              requestAllCityMeetups: (cityId) => dispatch(requestAllCityMeetups(cityId))
   });
 };

@@ -23,7 +23,7 @@ class CityShow extends React.Component {
   handleClick(cityId) {
     return (event) => {
       event.preventDefault();
-      this.props.changeUserCity(this.props.currentUser.id, cityId);
+      this.props.changeUserCity(cityId);
     };
   }
 

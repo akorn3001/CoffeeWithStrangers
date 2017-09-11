@@ -82,10 +82,10 @@ export const unattendMeetup = (meetupId) => {
   });
 };
 
-export const changeUserCity = (userId, cityId) => {
-  return $.ajax({
-    method: 'PATCH',
-    url: `/api/users/${userId}`,
-    data: { user: {city_id: cityId} }
-  });
-};
+// export const changeUserCity = (userId, cityId) => {
+//   return $.ajax({
+//     method: 'PATCH',
+//     url: `/api/users/${userId}`,
+//     data: { user: {city_id: cityId} }
+//   });
+// };

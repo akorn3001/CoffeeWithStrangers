@@ -8,6 +8,7 @@ const UsersReducer = (state = {}, action) => {
       return Object.assign({}, state, action.users);
 
     case RECEIVE_SINGLE_USER:
+
       const user = action.user;
       return merge({}, state, user);
       // return action.user;
