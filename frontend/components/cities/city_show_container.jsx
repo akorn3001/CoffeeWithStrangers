@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CityShow from './city_show';
-import { changeUserCity, updateSingleUser } from '../../actions/user_actions';
+import { updateSingleUser } from '../../actions/user_actions';
 import { requestAllCityMeetups } from '../../actions/meetup_actions';
 
 const mapStateToProps = state => {

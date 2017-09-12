@@ -29,13 +29,14 @@ class CityShow extends React.Component {
 
   render() {
     let thisCity;
-    let cityId = parseInt(this.props.match.params.cityId);
     let cityMessage;
+    let cityId = parseInt(this.props.match.params.cityId);
 
     function extractCity (city_id) {
       for (let i = 0; i < DUMMY_CITIES.length; i++) {
         if (DUMMY_CITIES[i].id === city_id) {
-          return thisCity = DUMMY_CITIES[i];
+          thisCity = DUMMY_CITIES[i];
+          return thisCity;
         }
       }
 
@@ -48,7 +49,6 @@ class CityShow extends React.Component {
 
     if (this.props.currentUser) {
       if (this.props.currentUser.city_id) {
-
         homeCityName = extractCity(this.props.currentUser.city_id).name;
         homeCityId = extractCity(this.props.currentUser.city_id).id;
 

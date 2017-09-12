@@ -44,6 +44,7 @@ footer {
 }
 
 #footer-links {
+  align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -52,8 +53,12 @@ footer {
 }
 
 .footer-link-item {
-  margin-top: 10px;
+  margin-top: 40px;
   font-weight: 500;
+}
+
+.footer-link-item:first-child {
+  margin-top: 0;
 }
 
 .footer-link-item > * {
