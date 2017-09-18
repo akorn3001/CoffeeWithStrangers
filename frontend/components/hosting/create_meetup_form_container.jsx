@@ -12,7 +12,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
     createMeetup: (meetup) => dispatch(createMeetup(meetup)),
     attendMeetup: (meetupId) => dispatch(attendMeetup(meetupId)),

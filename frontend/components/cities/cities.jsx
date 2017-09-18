@@ -4,10 +4,12 @@ import DUMMY_CITIES from '../dummy_cities';
 
 
 class Cities extends React.Component {
-
   constructor(props) {
     super(props);
+  }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {

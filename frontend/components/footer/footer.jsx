@@ -14,6 +14,8 @@ class Footer extends React.Component {
       <li className="footer-link-item">{aboutLink}</li>
       <li className="footer-link-item">{hostingLink}</li>
       <li className="footer-link-item">{citiesLink}</li>
+      <li className="footer-link-item"><a href="alex-kornfeld.com">PORTFOLIO</a></li>
+      <li className="footer-link-item"><a href="https://github.com/akorn3001"><i className="devicon-github-plain"></i> GITHUB</a></li>
     </ul>;
 
     return (
@@ -39,7 +41,13 @@ class Footer extends React.Component {
               unintentional.
             </p>
           </div>
+
+
         </div>
+        <div id="footer-alex">
+          <span>© Alex Kornfeld 2017</span>
+        </div>
+
       </footer>
     );
   }

@@ -15,10 +15,10 @@
  */
  /*@import "reset.scss";*/
 
- body {
-   background-color: #FAF6E8;
-   font-family: "canada-type-gibson", "Gibson", "Helvetica Neue";
- }
+body {
+ background-color: #FAF6E8;
+ font-family: "canada-type-gibson", "Gibson", "Helvetica Neue";
+}
 
 header {
   margin-top: 0;
@@ -35,7 +35,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #F7C661;
   height: 333.25px;
   box-sizing: border-box;
@@ -43,7 +43,16 @@ footer {
   color: white;
 }
 
+#footer-alex > * {
+  margin-right: 20px;
+}
+
+#footer-alex a {
+  color: white;
+}
+
 #footer-links {
+  margin-top: 15px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -733,7 +742,10 @@ button:focus {
   color: #C93C10;
 }
 
-.hosting-become-host-button:hover, .hosting-set-city-button:hover, .hosting-finalize-become-host-button:hover, .upload-photo-button:hover {
+.hosting-become-host-button:hover,
+.hosting-set-city-button:hover,
+.hosting-finalize-become-host-button:hover,
+.upload-photo-button:hover {
   background-color: #ED501E;
   border-color: #ED501E;
 }
@@ -757,8 +769,6 @@ button:focus {
   margin-bottom: 15px;
   text-align: center;
 }
-
-
 
 .become-host-form span {
   font-weight: 500;
@@ -929,8 +939,7 @@ textarea {
 
   max-width: 500px;
   max-height: 500px;
-  margin: 10px;
-  margin-top: -30px;
+  margin: -30px 30px;
   border: 1px solid black;
   overflow: hidden;
   padding: 5px;

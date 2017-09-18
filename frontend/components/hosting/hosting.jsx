@@ -13,6 +13,10 @@ class Hosting extends React.Component {
     this.handleSubmitHostForm = this.handleSubmitHostForm.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleSetCity() {
     return(event) => {
       event.preventDefault();
