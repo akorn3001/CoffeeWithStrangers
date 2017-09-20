@@ -487,13 +487,15 @@ button:focus {
 .meetup-index-item {
   padding: 5px;
   margin: 10px;
-  border: 1px solid gray;
+  /*border: 1px solid gray;*/
   display: flex;
   flex-direction: column;
   background-color: #FEFEFE;
   min-width: 200px;
   width: 200px;
   height: 230px;
+  box-shadow: 0 0 10px #000;
+  border-radius: 3px;
 }
 
 .city-show-meetups{
@@ -936,11 +938,11 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  box-shadow: 0 0 10px #000;
   max-width: 500px;
   max-height: 500px;
   margin: -30px 30px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   overflow: hidden;
   padding: 5px;
   background-color: white;
