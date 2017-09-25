@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateMeetupForm from './create_meetup_form';
-import { createMeetup, attendMeetup, receiveSingleMeetup } from '../../actions/meetup_actions';
+import { createMeetup, receiveSingleMeetup } from '../../actions/meetup_actions';
 import { withRouter } from 'react-router-dom';
 import { clearErrors } from '../../actions/error_actions';
 
@@ -15,7 +15,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createMeetup: (meetup) => dispatch(createMeetup(meetup)),
-    attendMeetup: (meetupId) => dispatch(attendMeetup(meetupId)),
     clearErrors: () => dispatch(clearErrors())
   };
 };

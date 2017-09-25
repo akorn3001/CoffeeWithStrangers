@@ -43,14 +43,6 @@ export const fetchSingleUser = (userId) => (
   })
 );
 
-export const updateSingleUser = (user) => (
-  $.ajax({
-    method: 'PATCH',
-    url: `/api/users/${user.id}`,
-    data: user
-  })
-);
-
 export const fetchSingleCity = (cityId) => (
   $.ajax({
     method: 'GET',
@@ -79,6 +71,24 @@ export const unattendMeetup = (meetupId) => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/meetups/${meetupId}/unattend`
+  });
+};
+
+// EDIT MEETUP / USER
+
+export const updateSingleUser = (user) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: user
+  })
+);
+
+export const updateSingleMeetup = (meetup) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/meetups/${meetup.id}`,
+    data: meetup
   });
 };
 

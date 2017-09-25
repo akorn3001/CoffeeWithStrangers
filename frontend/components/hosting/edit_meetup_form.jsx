@@ -1,7 +1,7 @@
 import React from 'react';
 import { merge } from 'lodash';
 
-class CreateMeetupForm extends React.Component {
+class EditMeetupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class CreateMeetupForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const meetup = merge({}, this.state);
-    this.props.createMeetup(meetup)
+    this.props.updateSingleMeetup(meetup)
     .then(() => {
       this.setState({
         address: "",
