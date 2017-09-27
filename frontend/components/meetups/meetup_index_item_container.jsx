@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MeetupIndexItem from './meetup_index_item';
-import { attendMeetup, unattendMeetup } from '../../actions/meetup_actions';
+import { attendMeetup, unattendMeetup, requestSingleMeetup } from '../../actions/meetup_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return  {
     attendMeetup: (meetupId) => dispatch(attendMeetup(meetupId)),
-    unattendMeetup: (meetupId) => dispatch(unattendMeetup(meetupId))
+    unattendMeetup: (meetupId) => dispatch(unattendMeetup(meetupId)),
+    requestSingleMeetup: (meetupId) => dispatch(requestSingleMeetup(meetupId))
   };
 };
 

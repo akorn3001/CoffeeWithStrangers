@@ -7,7 +7,6 @@ import { selectAllUsers } from '../../reducers/selectors';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    // thisPageUser: selectAllUsers(state).slice(-1)[0]
     thisPageUser: state.entities.users
   };
 };

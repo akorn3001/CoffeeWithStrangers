@@ -5,6 +5,14 @@ import DUMMY_CITIES from '../dummy_cities';
 
 const MeetupIndexItem = (props) => {
 
+  const handleEdit = (meetupId) => {
+    return(event) => {
+      event.preventDefault();
+      props.requestSingleMeetup(props.meetup.id)
+      .then(() => props.history.push(`/hosting/${props.meetup.id}`));
+    };
+  };
+
   const handleAttend = (meetupId) => {
     return(event) => {
       event.preventDefault();
@@ -29,7 +37,7 @@ const MeetupIndexItem = (props) => {
 
   let meetupJoinButton;
   let meetupCancelButton;
-  let editLink;
+  let meetupEditButton;
 
   if (props.currentUser) {
     if (props.meetup.host_id === props.currentUser.id) {
@@ -38,7 +46,11 @@ const MeetupIndexItem = (props) => {
         YOU'RE HOSTING THIS MEETUP
       </button>;
 
-      // editLink =
+      meetupEditButton =
+      <button className="meetup-edit-button" onClick={handleEdit(props.meetup.id)}>
+        Edit Meetup
+      </button>;
+      // meetupEditButton =
       // <Link to={`/hosting/${props.meetup.id}`}>Edit This Meetup</Link>;
     } else if (props.meetup.guest_ids.includes(props.currentUser.id)) {
       meetupJoinButton =
@@ -46,14 +58,14 @@ const MeetupIndexItem = (props) => {
         YOU JOINED THIS MEETUP
       </button>;
 
-      // editLink = null;
+      meetupEditButton = null;
 
       meetupCancelButton =
       <button className="meetup-button red" onClick={handleUnattend(props.meetup.id)}>
         CANCEL YOUR SPOT
       </button>;
     } else {
-      // editLink = null;
+      meetupEditButton = null;
 
       meetupJoinButton =
       <button className="meetup-button orange" onClick={handleAttend(props.meetup.id)}>
@@ -85,7 +97,7 @@ const MeetupIndexItem = (props) => {
 
       {meetupJoinButton}
       {meetupCancelButton}
-      // {editLink}
+      {meetupEditButton}
     </div>
   );
 };
