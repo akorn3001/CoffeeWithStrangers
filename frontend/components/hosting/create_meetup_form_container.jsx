@@ -8,6 +8,7 @@ import { clearErrors } from '../../actions/error_actions';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
+    // meetup: state.entities.meetups,
     errors: state.errors
   };
 };

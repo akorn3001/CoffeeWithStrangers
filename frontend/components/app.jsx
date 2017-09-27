@@ -27,7 +27,8 @@ const App = () => {
 
         <Route path="/" exact component={SplashPage} />
         <Route path={`/users/:userId`} component={UserShowContainer} />
-        <Route path="/hosting" component={HostingContainer}/>
+        <Route path="/hosting" exact component={HostingContainer}/>
+        <Route path="/hosting/:meetupId" exact component={HostingContainer}/>
         <Route path="/about" component={About}/>
 
         <ProtectedRoute path="/profile" component={DashboardContainer}/>

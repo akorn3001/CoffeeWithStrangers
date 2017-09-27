@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Hosting from './hosting';
 import { updateSingleUser } from '../../actions/user_actions';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
 
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hosting);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Hosting));

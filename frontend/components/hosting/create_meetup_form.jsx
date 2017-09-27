@@ -4,12 +4,18 @@ import { merge } from 'lodash';
 class CreateMeetupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      address: "",
-      date: "",
-      host_id: this.props.currentUser.id,
-      city_id: this.props.currentUser.city_id
-    };
+
+    if (this.props.meetup) {
+      this.state = {
+        address: this.props.meetup.address,
+        date: this.props.meetup.date
+      };
+    } else {
+      this.state = {
+        address: "",
+        date: ""
+      };
+    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -21,14 +27,12 @@ class CreateMeetupForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const meetup = merge({}, this.state);
+    const meetup = merge({}, this.state, {host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id});
     this.props.createMeetup(meetup)
     .then(() => {
       this.setState({
         address: "",
-        date: "",
-        host_id: this.props.currentUser.id,
-        city_id: this.props.currentUser.city_id
+        date: ""
       });
     })
     .then(() => {
@@ -48,6 +52,7 @@ class CreateMeetupForm extends React.Component {
   }
 
   render() {
+    debugger
     let errorBanner;
     let individualErrors;
 
