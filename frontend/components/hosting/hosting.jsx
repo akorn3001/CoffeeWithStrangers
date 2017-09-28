@@ -137,12 +137,19 @@ class Hosting extends React.Component {
     if (this.props.currentUser) {
       if (this.props.currentUser.host_status === "false") {
         hostingContent = hostingSchpiel;
-      } else if (this.props.currentUser.host_status === "true") {
+      } else if ((this.props.currentUser.host_status === "true") && Object.keys(this.props.match.params).length === 0) {
         hostingContent =
         <div className="hosting-below-banner">
           <CreateMeetupFormContainer />
         </div>;
-      } else {
+      } else if ((this.props.currentUser.host_status === "true") && Object.keys(this.props.match.params).length !== 0) {
+        hostingContent =
+        <div className="hosting-below-banner">
+          <EditMeetupFormContainer />
+        </div>;
+      }
+
+      else {
         hostingContent =
         <div className="hosting-below-banner">
           <BecomeHostFormContainer />

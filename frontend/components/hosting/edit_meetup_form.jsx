@@ -8,7 +8,7 @@ class EditMeetupForm extends React.Component {
     if (this.props.meetup) {
       this.state = {
         address: this.props.meetup.address,
-        date: this.props.meetup.date
+        date: ""
       };
     } else {
       this.state = {
@@ -28,7 +28,7 @@ class EditMeetupForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const meetup = merge({}, this.state, {host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id});
-    this.props.updateSingleMeetup(this.props.meetup.meetupId)
+    this.props.updateSingleMeetup(this.props.meetup)
     .then(() => {
       this.setState({
         address: "",
@@ -68,7 +68,7 @@ class EditMeetupForm extends React.Component {
         {errorBanner}
         <div className="create-meetup-form-div">
           <form className="create-meetup-form" onSubmit={this.handleSubmit}>
-            <h2>Hey {this.props.currentUser.username} - let's edit a meetup!</h2>
+            <h2>Hey {this.props.currentUser.username} - let's edit this meetup!</h2>
 
             <span>Pick an address:</span>
             <input

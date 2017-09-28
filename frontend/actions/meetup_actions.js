@@ -28,7 +28,7 @@ export const requestSingleMeetup = (id) => (dispatch) => {
 };
 
 export const updateSingleMeetup = (meetup) => (dispatch) => {
-  return APIUtil.updateSingleMeetup(meetup)
+  return MeetupAPIUtil.updateSingleMeetup(meetup)
   .then(updatedMeetup => dispatch(receiveSingleMeetup(updatedMeetup)));
 };
 

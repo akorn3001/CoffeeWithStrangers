@@ -47,8 +47,8 @@ const MeetupIndexItem = (props) => {
       </button>;
 
       meetupEditButton =
-      <button className="meetup-edit-button" onClick={handleEdit(props.meetup.id)}>
-        Edit Meetup
+      <button className="meetup-edit-button meetup-button orange" onClick={handleEdit(props.meetup.id)}>
+        EDIT MEETUP
       </button>;
       // meetupEditButton =
       // <Link to={`/hosting/${props.meetup.id}`}>Edit This Meetup</Link>;
@@ -69,7 +69,7 @@ const MeetupIndexItem = (props) => {
 
       meetupJoinButton =
       <button className="meetup-button orange" onClick={handleAttend(props.meetup.id)}>
-        ATTEND THIS EVENT
+        ATTEND THIS MEETUP
       </button>;
 
 

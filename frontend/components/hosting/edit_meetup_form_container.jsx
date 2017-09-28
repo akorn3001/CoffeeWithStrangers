@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateSingleMeetup: (meetupId) => dispatch(updateSingleMeetup(meetupId)),
+    updateSingleMeetup: (meetup) => dispatch(updateSingleMeetup(meetup)),
     clearErrors: () => dispatch(clearErrors())
   };
 };

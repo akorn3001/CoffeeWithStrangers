@@ -88,14 +88,6 @@ export const updateSingleMeetup = (meetup) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/meetups/${meetup.id}`,
-    data: meetup
+    data: { meetup }
   });
 };
-
-// export const changeUserCity = (userId, cityId) => {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `/api/users/${userId}`,
-//     data: { user: {city_id: cityId} }
-//   });
-// };
