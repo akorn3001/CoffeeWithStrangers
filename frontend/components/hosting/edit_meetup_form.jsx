@@ -90,7 +90,7 @@ class EditMeetupForm extends React.Component {
 
             <br/>
 
-            <button className="hosting-create-meetup-button" type="submit">EDIT MEETUP</button>
+            <button className="hosting-meetup-button" type="submit">EDIT MEETUP</button>
 
           </form>
         </div>

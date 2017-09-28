@@ -869,7 +869,7 @@ textarea {
   flex-direction: column;
 }
 
-.hosting-create-meetup-button {
+.hosting-meetup-button {
   cursor: pointer;
   font-size: 25px;
   background-color: #EF6236;
@@ -882,7 +882,7 @@ textarea {
   letter-spacing: 1px;
 }
 
-.hosting-create-meetup-button:hover {
+.hosting-meetup-button:hover {
   background-color: #ED501E;
 }
 
