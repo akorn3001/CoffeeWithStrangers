@@ -1,7 +1,7 @@
 import React from 'react';
 import { merge } from 'lodash';
 
-class CreateMeetupForm extends React.Component {
+class EditMeetupForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,7 +28,7 @@ class CreateMeetupForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const meetup = merge({}, this.state, {host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id});
-    this.props.createMeetup(meetup)
+    this.props.updateSingleMeetup(this.props.meetup.meetupId)
     .then(() => {
       this.setState({
         address: "",
@@ -68,7 +68,7 @@ class CreateMeetupForm extends React.Component {
         {errorBanner}
         <div className="create-meetup-form-div">
           <form className="create-meetup-form" onSubmit={this.handleSubmit}>
-            <h2>Hey {this.props.currentUser.username} - let's create a meetup!</h2>
+            <h2>Hey {this.props.currentUser.username} - let's edit a meetup!</h2>
 
             <span>Pick an address:</span>
             <input
@@ -90,7 +90,7 @@ class CreateMeetupForm extends React.Component {
 
             <br/>
 
-            <button className="hosting-create-meetup-button" type="submit">CREATE MEETUP</button>
+            <button className="hosting-create-meetup-button" type="submit">EDIT MEETUP</button>
 
           </form>
         </div>
@@ -99,4 +99,4 @@ class CreateMeetupForm extends React.Component {
   }
 }
 
-export default CreateMeetupForm;
+export default EditMeetupForm;

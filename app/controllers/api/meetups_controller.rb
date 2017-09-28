@@ -4,7 +4,6 @@ class Api::MeetupsController < ApplicationController
       @meetups = Meetup.where(city_id: params[:city_id])
     else
       @meetups = Meetup.joins("LEFT OUTER JOIN attendances on attendances.meetup_id = meetups.id").where("attendances.attendee_id = #{current_user.id} or host_id = #{current_user.id}")
-      # @meetups = current_user.invitations
     end
 
     render "api/meetups/index"
@@ -25,6 +24,15 @@ class Api::MeetupsController < ApplicationController
       render "api/meetups/show"
     else
       render json: ["Meetup does not exist"], status: 404
+    end
+  end
+
+  def update
+    @meetup = Meetup.find(params[:id])
+    if @meetup.update(meetup_params)
+      render "api/meetups/show"
+    else
+      render json: @meetup.errors.full_messages, status: 422
     end
   end
 

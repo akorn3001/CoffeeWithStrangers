@@ -1,6 +1,7 @@
 import React from 'react';
 import BecomeHostFormContainer from './become_host_form_container';
 import CreateMeetupFormContainer from './create_meetup_form_container';
+import EditMeetupFormContainer from './edit_meetup_form_container';
 import { Link } from 'react-router-dom';
 
 class Hosting extends React.Component {
