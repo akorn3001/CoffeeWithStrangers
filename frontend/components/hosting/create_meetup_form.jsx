@@ -52,7 +52,6 @@ class CreateMeetupForm extends React.Component {
   }
 
   render() {
-    debugger
     let errorBanner;
     let individualErrors;
 

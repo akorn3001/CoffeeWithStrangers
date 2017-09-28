@@ -21,20 +21,14 @@ class EditMeetupForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const meetup = merge({}, this.state, {host_id: this.props.currentUser.id, city_id: this.props.currentUser.city_id});
-    this.props.updateSingleMeetup(this.props.meetup)
-    .then(() => {
-      this.setState({
-        address: "",
-        date: ""
-      });
-    })
+    const meetup = merge({}, this.state, {host_id: this.props.currentUser.id, id: this.props.meetup.id, city_id: this.props.currentUser.city_id});
+    this.props.updateSingleMeetup(meetup)
     .then(() => {
       this.props.history.push('/profile');
     });
@@ -52,7 +46,7 @@ class EditMeetupForm extends React.Component {
   }
 
   render() {
-    debugger
+
     let errorBanner;
     let individualErrors;
 
