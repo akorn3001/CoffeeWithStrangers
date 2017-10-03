@@ -6,7 +6,7 @@ class UploadButton extends React.Component {
       event.preventDefault();
       cloudinary.openUploadWidget(
         window.cloudinary_options,
-        function(error, images){
+        function(error, images) {
         if (error === null) {
           this.props.setImgURL(images[0].url);
         }
