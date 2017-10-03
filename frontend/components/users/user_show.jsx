@@ -18,7 +18,6 @@ class UserShow extends React.Component {
 
 
   render() {
-
     let hostBioInfo;
     let profilePic;
 

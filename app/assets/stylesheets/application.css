@@ -964,3 +964,10 @@ textarea {
   text-decoration: none;
   color: #EF6236;
 }
+
+.preview {
+  max-width: 300px;
+  height: auto;
+  box-shadow: 0 0 10px #000;
+  margin: 20px;
+}

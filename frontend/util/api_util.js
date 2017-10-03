@@ -91,3 +91,15 @@ export const updateSingleMeetup = (meetup) => {
     data: { meetup }
   });
 };
+
+export const addHostParams = (user, formData, callback) => {
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    dataType: 'json',
+    contentType: false,
+    processData: false,
+    data: formData,
+    success: () => callback()
+  });
+};
