@@ -2,21 +2,24 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  city_id         :integer
-#  host_status     :string           default("false")
-#  description     :text
-#  background      :text
-#  topics          :text
-#  tagline         :string
-#  img_url         :text
-#  thumbnail       :text
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  city_id            :integer
+#  host_status        :string           default("false")
+#  description        :text
+#  background         :text
+#  topics             :text
+#  tagline            :string
+#  img_url            :text
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -27,6 +30,9 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :host_status, inclusion: HOST_STATUS_STATES
+
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "blank-user.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
 
