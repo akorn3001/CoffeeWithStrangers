@@ -45,7 +45,6 @@ class BecomeHostForm extends React.Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault();
     let formData = new FormData();
 
@@ -55,7 +54,7 @@ class BecomeHostForm extends React.Component {
     formData.append("user[tagline]", this.state.tagline);
     formData.append("user[image]", this.state.imageFile);
 
-    this.props.addHostParams(formData, this.props.becomeHost);
+    this.props.addHostParams(this.props.currentUser, formData, this.props.becomeHost);
   }
 
   updateFile(event) {
@@ -96,7 +95,7 @@ class BecomeHostForm extends React.Component {
           <form className="become-host-form" onSubmit={this.handleSubmit}>
 
             <input type="file" onChange={this.updateFile} />
-            <img className="preview" src={this.state.imageURL}/>
+            <img className="preview" src={this.state.imageURL} />
 
             <span>Tell us a little about yourself</span>
             <textarea

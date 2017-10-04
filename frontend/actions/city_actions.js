@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util'
+import * as APIUtil from '../util/session_api_util';
 
 // Export constants
 export const RECEIVE_CURRENT_CITY = 'RECEIVE_CURRENT_CITY';
@@ -15,7 +15,7 @@ export const receiveCurrentCity = currentCity => ({
 export const receiveAllCities = cities => ({
   type: RECEIVE_ALL_CITIES,
   cities
-})
+});
 
 // export const receiveErrors = errors => ({
 //   type: RECEIVE_ERRORS,

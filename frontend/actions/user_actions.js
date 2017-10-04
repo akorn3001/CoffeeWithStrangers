@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/api_util';
-import {receiveCurrentUser } from './session_actions'
+import { receiveCurrentUser } from './session_actions';
 
 // Export constants
 export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
@@ -26,6 +26,11 @@ export const requestSingleUser = (userId) => (dispatch) => {
 
 export const updateSingleUser = (user) => (dispatch) => {
   return APIUtil.updateSingleUser(user)
+  .then(updatedUser => dispatch(receiveCurrentUser(updatedUser)));
+};
+
+export const addHostParams = (user, formData, callback) => (dispatch) => {
+  return APIUtil.addHostParams(user, formData, callback)
   .then(updatedUser => dispatch(receiveCurrentUser(updatedUser)));
 };
 

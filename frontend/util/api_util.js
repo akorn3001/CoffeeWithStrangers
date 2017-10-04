@@ -93,13 +93,13 @@ export const updateSingleMeetup = (meetup) => {
 };
 
 export const addHostParams = (user, formData, callback) => {
-  $.ajax({
+  return $.ajax({
     method: 'PATCH',
     url: `/api/users/${user.id}`,
     dataType: 'json',
     contentType: false,
     processData: false,
     data: formData,
-    success: () => callback()
+    success: callback
   });
 };
