@@ -45,15 +45,16 @@ class BecomeHostForm extends React.Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault();
-    const formData = new FormData();
+    let formData = new FormData();
 
     formData.append("user[description]", this.state.description);
     formData.append("user[background]", this.state.background);
     formData.append("user[topics]", this.state.topics);
     formData.append("user[tagline]", this.state.tagline);
     formData.append("user[image]", this.state.imageFile);
-    
+
     this.props.addHostParams(formData, this.props.becomeHost);
   }
 
