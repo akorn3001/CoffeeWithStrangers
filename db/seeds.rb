@@ -28,13 +28,13 @@ to eat them), biohacking. What are you passionate about? How many exclamation ma
 too many, and what is just enough to convey you are stoked to do something?!?!? Where will
   the world be in 10 years, or next week?"
 tgln = "The sky's the limit"
-u1_img_url = "https://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg"
-u2_img_url = "https://pbs.twimg.com/profile_images/742764508960153600/84biTbZb.jpg"
-u3_img_url = "https://thegoodfight.s3.amazonaws.com/uploads/423632e9faa4e8187911e3736ee60b9a.jpg"
-u4_img_url = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/01/11/Untitled-3.jpg"
+u1_img_url = "http://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg"
+u2_img_url = "http://pbs.twimg.com/profile_images/742764508960153600/84biTbZb.jpg"
+u3_img_url = "http://thegoodfight.s3.amazonaws.com/uploads/423632e9faa4e8187911e3736ee60b9a.jpg"
+u4_img_url = "http://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/01/11/Untitled-3.jpg"
 u8_img_url = "http://cdn.playbuzz.com/cdn/11787fb1-61db-4b70-bf74-520d52d9547b/5905dfe8-fe4a-4f5f-86ee-354d43b70ea3.jpg"
-u9_img_url = "https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/Daria_580400-MTV_DARIA._RI_SX940_.jpg"
-u10_img_url = "https://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg"
+u9_img_url = "http://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/Daria_580400-MTV_DARIA._RI_SX940_.jpg"
+u10_img_url = "http://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg"
 
 
 
@@ -96,6 +96,6 @@ c4 = City.create!(name: 'London', url: 'http://s3.amazonaws.com/tws-production-p
 c5 = City.create!(name: 'DC', url: 'http://s3.amazonaws.com/tws-production-paperclip/cities/header_bgs/000/000/007/small/dc.jpg?1409550580')
 c6 = City.create!(name: 'Chicago', url: 'http://s3.amazonaws.com/tws-production-paperclip/cities/header_bgs/000/000/010/small/chicago.jpg?1409550585')
 c7 = City.create!(name: 'Gravity Falls', url: 'https://vignette4.wikia.nocookie.net/gravityfalls/images/0/08/Opening_Main_characters_of_Gravity_Falls.png/revision/latest?cb=20160119145809')
-c8 = City.create!(name: 'Ba Sing Se', url: 'https://vignette2.wikia.nocookie.net/avatar/images/f/f7/Modern_Ba_Sing_Se.png/revision/latest?cb=20140730154445')
+c8 = City.create!(name: 'Ba Sing Se', url: 'http://vignette2.wikia.nocookie.net/avatar/images/f/f7/Modern_Ba_Sing_Se.png/revision/latest?cb=20140730154445')
 c9 = City.create!(name: 'New New York', url: 'http://vignette2.wikia.nocookie.net/en.futurama/images/5/55/160_planet-express-building_1024.png/revision/latest?cb=20090521203416')
 c10 = City.create!(name: 'Seattle', url: 'http://www.sustainableseattle.org/wp-content/uploads/2015/08/SeattleMunicipleArchive-e1488676312333.jpg')
