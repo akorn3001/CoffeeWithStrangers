@@ -5,6 +5,8 @@ import MeetupIndexItemContainer from '../meetups/meetup_index_item_container';
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -12,11 +14,24 @@ class Dashboard extends React.Component {
     this.props.requestAllUserMeetups(this.props.currentUser.id);
   }
 
+  handleClick() {
+    this.props.becomePendingHost();
+    this.props.history.push('/hosting');
+  }
+
 
   render() {
     let dashboardEl;
     let AttendedMeetupsHeader;
     let HostedMeetupsHeader;
+    let editHostInfo;
+
+    if (this.props.currentUser.host_status === "true") {
+      editHostInfo =
+      <button onClick={this.handleClick} className="dashboard-welcome-join-meetup">
+        Edit your host info!
+      </button>;
+    } else editHostInfo = null;
 
     if (this.props.attended_meetups.length) {
       AttendedMeetupsHeader =
@@ -40,6 +55,9 @@ class Dashboard extends React.Component {
       <Link className="dashboard-welcome-join-meetup" to={'/cities'}>
         Sign up for a meetup!
       </Link>
+
+      {editHostInfo}
+
     </div>;
 
     if (this.props.currentUser.city_id) {
