@@ -28,13 +28,13 @@ to eat them), biohacking. What are you passionate about? How many exclamation ma
 too many, and what is just enough to convey you are stoked to do something?!?!? Where will
   the world be in 10 years, or next week?"
 tgln = "The sky's the limit"
-u1_img_url = "http://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg"
-u2_img_url = "http://pbs.twimg.com/profile_images/742764508960153600/84biTbZb.jpg"
-u3_img_url = "http://thegoodfight.s3.amazonaws.com/uploads/423632e9faa4e8187911e3736ee60b9a.jpg"
-u4_img_url = "http://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/01/11/Untitled-3.jpg"
-u8_img_url = "http://cdn.playbuzz.com/cdn/11787fb1-61db-4b70-bf74-520d52d9547b/5905dfe8-fe4a-4f5f-86ee-354d43b70ea3.jpg"
-u9_img_url = "http://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/TVSeries/Daria_580400-MTV_DARIA._RI_SX940_.jpg"
-u10_img_url = "http://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg"
+u1_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/albert.jpg'
+u2_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/brienne.jpg'
+u3_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/cory.jpg'
+u4_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/david.jpg'
+u8_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/rob.jpg'
+u9_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/daria.jpg'
+u10_img_url = 'http://s3.amazonaws.com/cws-dev/users/images/000/Host_Seeds/bill.jpg'
 
 
 
@@ -60,16 +60,16 @@ u17 = User.create!(username: 'Alex', password: 'password', email: 'alex@hotmail.
 
 
 Meetup.destroy_all
-m1 = Meetup.create!(date: DateTime.new(2017, 10, 31, 8, 0), address: "666 Spooky Lane", city_id: 7, host_id: u2.id)
-m2 = Meetup.create!(date: DateTime.new(2017, 12, 24, 18, 30), address: "3 McClean Ave", city_id: 1000, host_id: u1.id)
+m1 = Meetup.create!(date: DateTime.new(2018, 10, 31, 8, 0), address: "666 Spooky Lane", city_id: 7, host_id: u2.id)
+m2 = Meetup.create!(date: DateTime.new(2018, 12, 24, 18, 30), address: "3 McClean Ave", city_id: 1000, host_id: u1.id)
 m3 = Meetup.create!(date: DateTime.new(2018, 5, 18, 17, 0), address: "123 Fake St", city_id: 1000, host_id: u1.id)
 m4 = Meetup.create!(date: DateTime.new(2018, 1, 15, 20, 0), address: "114 Old Circle Rd", city_id: 1, host_id: u10.id)
 m5 = Meetup.create!(date: DateTime.new(2018, 2, 4, 18, 30), address: "259 W 29th St", city_id: 3, host_id: u3.id)
 m6 = Meetup.create!(date: DateTime.new(2018, 3, 19, 16, 30), address: "333 Cherry Orchard Lane", city_id: 3, host_id: u3.id)
 m7 = Meetup.create!(date: DateTime.new(2018, 4, 22, 14, 30), address: "4 Dock Street", city_id: 4, host_id: u4.id)
 m8 = Meetup.create!(date: DateTime.new(2018, 5, 6, 12, 30), address: "18 Hylan Blvd", city_id: 5, host_id: u5.id)
-m9 = Meetup.create!(date: DateTime.new(2017, 9, 22, 19, 0), address: "112 Crooked Hill Rd", city_id: 7, host_id: u2.id)
-m10 = Meetup.create!(date: DateTime.new(2017, 11, 24, 11, 0), address: "414 Industrial Way", city_id: 1000, host_id: u7.id)
+m9 = Meetup.create!(date: DateTime.new(2018, 9, 22, 19, 0), address: "112 Crooked Hill Rd", city_id: 7, host_id: u2.id)
+m10 = Meetup.create!(date: DateTime.new(2018, 11, 24, 11, 0), address: "414 Industrial Way", city_id: 1000, host_id: u7.id)
 m11 = Meetup.create!(date: DateTime.new(2018, 2, 2, 11, 30), address: "77 Old Country Rd", city_id: 2, host_id: u2.id)
 m12 = Meetup.create!(date: DateTime.new(2018, 2, 17, 20, 0), address: "1124 Nicholas St", city_id: 2, host_id: u8.id)
 m13 = Meetup.create!(date: DateTime.new(2018, 4, 1, 18, 30), address: "29 Elm St", city_id: 6, host_id: u7.id)

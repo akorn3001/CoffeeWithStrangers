@@ -857,6 +857,10 @@ textarea {
   text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
 }
 
+.user-show-banner img {
+  filter: sepia(50%);
+}
+
 .create-meetup-form-div {
   display: flex;
   justify-content: center;
@@ -942,10 +946,10 @@ textarea {
   max-width: 500px;
   max-height: 500px;
   margin: -30px 30px;
-  /*border: 1px solid black;*/
   overflow: hidden;
   padding: 5px;
   background-color: white;
+  z-index: 10;
 }
 
 .user-show-profile-picture img {

@@ -88,10 +88,6 @@ class BecomeHostForm extends React.Component {
         <div className="become-host-form-div">
           <h2>Hey {this.props.currentUser.username} - fill out your host details!</h2>
 
-          <button className="upload-photo-button" onClick={this.handleUpload}>
-            UPLOAD PROFILE PICTURE
-          </button>
-
           <form className="become-host-form" onSubmit={this.handleSubmit}>
 
             <input type="file" onChange={this.updateFile} />

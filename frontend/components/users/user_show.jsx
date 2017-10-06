@@ -7,6 +7,7 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 
@@ -18,17 +19,14 @@ class UserShow extends React.Component {
 
 
   render() {
+
     let hostBioInfo;
     let profilePic;
 
     if (this.props.thisPageUser) {
       if (this.props.thisPageUser.host_status === "true") {
 
-        if (this.props.thisPageUser.img_url) {
-          profilePic = <img src={this.props.thisPageUser.img_url} />;
-        } else {
-          profilePic = <img src={window.staticImages.defaultPic} />;
-        }
+        profilePic = <img src={this.props.thisPageUser.image_url} />;
 
         let city = DUMMY_CITIES.find((city) => city.id === this.props.thisPageUser.city_id);
         let cityName = city.name;
