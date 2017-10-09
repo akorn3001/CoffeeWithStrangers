@@ -31,7 +31,6 @@ class BecomeHostForm extends React.Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault();
     let formData = new FormData();
 
