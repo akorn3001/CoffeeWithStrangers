@@ -4,38 +4,24 @@ import { merge } from 'lodash';
 class BecomeHostForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { description: "", background: "", topics: "", tagline: "", imageURL: "", imageFile: null };
+
+    let imageFile = (props.currentUser.image_file_size ? props.currentUser.image : null);
+    let imageURL = (props.currentUser.image_url ? props.currentUser.image_url : "");
+    let description = (props.currentUser.description ? props.currentUser.description : "");
+    let background = (props.currentUser.background ? props.currentUser.background : "");
+    let topics = (props.currentUser.topics ? props.currentUser.topics : "");
+    let tagline = (props.currentUser.tagline ? props.currentUser.tagline : "");
+
+    this.state = { description, background, topics, tagline, imageURL, imageFile: null};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.handleUpload = this.handleUpload.bind(this);
     this.updateFile = this.updateFile.bind(this);
   }
 
   componentWillMount(){
     this.props.clearErrors();
   }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   const bio = merge({}, this.state);
-  //   this.props.setBio(bio)
-  //   .then(() => {
-  //     this.setState({ description: "", background: "", topics: "", tagline: "" });
-  //   })
-  //   .then(() => this.props.becomeHost());
-  // }
-
-  // handleUpload(event) {
-  //   event.preventDefault();
-  //   cloudinary.openUploadWidget(
-  //     window.cloudinary_options,
-  //     (error, images) => {
-  //     if (error === null) {
-  //       this.props.setImgURL(images[0].url);
-  //     }
-  //   });
-  // }
 
   handleChange(attribute) {
     return (event) => {
@@ -45,6 +31,7 @@ class BecomeHostForm extends React.Component {
   }
 
   handleSubmit(event) {
+    debugger
     event.preventDefault();
     let formData = new FormData();
 
@@ -59,7 +46,7 @@ class BecomeHostForm extends React.Component {
 
   updateFile(event) {
     const reader = new FileReader();
-    const file = event.currentTarget.files[0];
+    const file = event.currentTarget.files[0] || this.props.currentUser.image;
     reader.onloadend = () =>
       this.setState({ imageURL: reader.result, imageFile: file });
 
@@ -138,7 +125,7 @@ class BecomeHostForm extends React.Component {
 
             <br/>
 
-            <button className="hosting-become-host-button" type="submit">SUBMIT TO BECOME A HOST</button>
+            <button className="hosting-become-host-button" type="submit">SUBMIT</button>
 
           </form>
 

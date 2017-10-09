@@ -493,7 +493,7 @@ button:focus {
   background-color: #FEFEFE;
   min-width: 200px;
   width: 200px;
-  height: 230px;
+  min-height: 230px;
   box-shadow: 0 0 10px #000;
   border-radius: 3px;
 }
@@ -520,6 +520,7 @@ button:focus {
   color: #333333;
   text-transform: uppercase;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .meetup-day-name {
@@ -547,6 +548,18 @@ button:focus {
 
 .meetup-extra-info span a:hover {
   text-decoration: underline;
+}
+
+.meetup-extra-info img {
+  margin: auto;
+  margin-bottom: 10px;
+  height: 150px;
+  width: auto;
+  cursor: pointer;
+}
+
+.meetup-host-name {
+  margin-bottom: 10px;
 }
 
 .meetup-button {

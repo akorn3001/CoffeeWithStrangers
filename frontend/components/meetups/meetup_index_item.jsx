@@ -5,6 +5,13 @@ import DUMMY_CITIES from '../dummy_cities';
 
 const MeetupIndexItem = (props) => {
 
+  const handleClick = () => {
+    return(event) => {
+      event.preventDefault();
+      props.history.push(`/users/${props.meetup.host_id}`);
+    };
+  };
+
   const handleEdit = (meetupId) => {
     return(event) => {
       event.preventDefault();
@@ -91,8 +98,11 @@ const MeetupIndexItem = (props) => {
 
       <div className="meetup-extra-info">
         <span><strong>Address</strong> {props.meetup.address}</span>
-        <span><strong>Host</strong> <Link to={`/users/${props.meetup.host_id}`}>{props.meetup.host_name}</Link></span>
         <span><strong>City</strong> {DUMMY_CITIES.find((city) => props.meetup.city_id === city.id).name}</span>
+        <span className="meetup-host-name">
+          <strong>Host</strong> <Link to={`/users/${props.meetup.host_id}`}>{props.meetup.host_name}</Link>
+        </span>
+        <img onClick={handleClick()} src={props.meetup.host_thumb} />
       </div>
 
       {meetupJoinButton}
