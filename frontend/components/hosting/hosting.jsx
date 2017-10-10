@@ -18,6 +18,10 @@ class Hosting extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  componentWillUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   handleSetCity() {
     return(event) => {
       event.preventDefault();

@@ -28,9 +28,9 @@ class Dashboard extends React.Component {
 
     if (this.props.currentUser.host_status === "true") {
       editHostInfo =
-      <button onClick={this.handleClick} className="dashboard-welcome-join-meetup">
+      <span className="edit-host-info" onClick={this.handleClick}>
         Edit your host info!
-      </button>;
+      </span>;
     } else editHostInfo = null;
 
     if (this.props.attended_meetups.length) {
