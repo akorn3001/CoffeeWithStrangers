@@ -5,14 +5,14 @@ class BecomeHostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    let imageFile = (props.currentUser.image_file_size ? props.currentUser.image : null);
+    // let imageFile = (props.currentUser.image_file_size ? props.currentUser.image : null);
     let imageURL = (props.currentUser.image_url ? props.currentUser.image_url : "");
     let description = (props.currentUser.description ? props.currentUser.description : "");
     let background = (props.currentUser.background ? props.currentUser.background : "");
     let topics = (props.currentUser.topics ? props.currentUser.topics : "");
     let tagline = (props.currentUser.tagline ? props.currentUser.tagline : "");
 
-    this.state = { description, background, topics, tagline, imageURL, imageFile: null};
+    this.state = { description, background, topics, tagline, imageURL, imageFile: null };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -38,14 +38,19 @@ class BecomeHostForm extends React.Component {
     formData.append("user[background]", this.state.background);
     formData.append("user[topics]", this.state.topics);
     formData.append("user[tagline]", this.state.tagline);
-    formData.append("user[image]", this.state.imageFile);
+
+    if (this.state.imageFile) {
+      formData.append("user[image]", this.state.imageFile);
+    }
+
 
     this.props.addHostParams(this.props.currentUser, formData, this.props.becomeHost);
   }
 
   updateFile(event) {
+    // debugger
     const reader = new FileReader();
-    const file = event.currentTarget.files[0] || this.props.currentUser.image;
+    const file = event.currentTarget.files[0];
     reader.onloadend = () =>
       this.setState({ imageURL: reader.result, imageFile: file });
 
