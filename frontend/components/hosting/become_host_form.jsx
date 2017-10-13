@@ -5,7 +5,6 @@ class BecomeHostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    // let imageFile = (props.currentUser.image_file_size ? props.currentUser.image : null);
     let imageURL = (props.currentUser.image_url ? props.currentUser.image_url : "");
     let description = (props.currentUser.description ? props.currentUser.description : "");
     let background = (props.currentUser.background ? props.currentUser.background : "");
@@ -48,7 +47,6 @@ class BecomeHostForm extends React.Component {
   }
 
   updateFile(event) {
-    // debugger
     const reader = new FileReader();
     const file = event.currentTarget.files[0];
     reader.onloadend = () =>

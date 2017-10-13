@@ -19,7 +19,6 @@ class UserShow extends React.Component {
 
 
   render() {
-
     let hostBioInfo;
     let profilePic;
 
@@ -81,7 +80,6 @@ class UserShow extends React.Component {
     } else {
       hostBioInfo = null;
     }
-
 
     return (
       <div>
