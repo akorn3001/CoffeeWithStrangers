@@ -22,7 +22,7 @@ class UserShow extends React.Component {
     let hostBioInfo;
     let profilePic;
 
-    if (this.props.thisPageUser) {
+    if (this.props.thisPageUser ) {
       if (this.props.thisPageUser.host_status === "true") {
 
         profilePic = <img src={this.props.thisPageUser.image_url} />;

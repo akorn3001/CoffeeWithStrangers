@@ -1,5 +1,7 @@
 # COFFEE WITH STRANGERS
 
+[![Build Status](https://travis-ci.org/akorn3001/CoffeeWithStrangers.svg?branch=master)](https://travis-ci.org/akorn3001/CoffeeWithStrangers)
+
 [Coffee With Strangers](https://coffee-with-strangers.herokuapp.com/) is
 a full-stack web application modeled after Tea With Strangers. It uses Ruby on
 Rails as a back-end framework in conjunction with a PostgreSQL database, and React
