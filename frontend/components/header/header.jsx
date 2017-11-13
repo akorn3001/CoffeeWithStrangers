@@ -67,10 +67,12 @@ class Header extends React.Component {
 
     return (
       <header>
-        <div id="logo-and-name">
-          <img id="navbar-logo-image" src={window.staticImages.coffeeBeans}/>
-          <span id="navbar-logo-text">Coffee With Strangers</span>
-        </div>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <div id="logo-and-name">
+            <img id="navbar-logo-image" src={window.staticImages.coffeeBeans}/>
+            <span id="navbar-logo-text">Coffee With Strangers</span>
+          </div>
+        </Link>
         {navigation}
       </header>
     );
