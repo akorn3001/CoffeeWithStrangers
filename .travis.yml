@@ -3,8 +3,8 @@ language: ruby
 rvm:
   - 2.3.1
 
-env:
-  -DB=pgsql
+# env:
+#   -DB=pgsql
 
 services:
   - postgresql
