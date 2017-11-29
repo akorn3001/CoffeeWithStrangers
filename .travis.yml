@@ -13,4 +13,5 @@ addons:
   postgresql: "9.6"
 
 before_script:
+  - cp config/database.yml.travis config/database.yml
   - psql -c 'create database FullstackProject_test;' -U postgres
