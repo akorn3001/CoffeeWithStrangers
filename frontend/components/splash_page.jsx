@@ -18,7 +18,7 @@ class SplashPage extends React.Component {
           <blockquote>
             "A leaf fluttered in through the window this morning, as if supported
             by the rays of the sun, a bird settled on the fire escape, joy in the
-            task of coffee, joy accompanied me as I walked" ~ Anais Nin
+            task of coffee, joy accompanied me as I walked" <strong>~ Anais Nin</strong>
           </blockquote>
         </div>
       </div>
