@@ -993,3 +993,20 @@ textarea {
 .edit-host-info {
   cursor: pointer;
 }
+
+.below-splash-banner {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 40px auto 40px auto;
+  justify-content: space-around;
+}
+
+.below-splash-banner img {
+  height: 350px;
+  max-width: auto;
+}
+
+.below-splash-banner blockquote {
+  width: 400px;
+}
