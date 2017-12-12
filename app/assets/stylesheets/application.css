@@ -999,7 +999,8 @@ textarea {
   flex-direction: row;
   width: 80%;
   margin: 60px auto 40px auto;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .below-splash-banner img {
@@ -1008,7 +1009,7 @@ textarea {
 }
 
 .below-splash-banner blockquote {
-  width: 400px;
-  font-size: 25px;
+  width: 380px;
+  font-size: 24px;
   font-family: garamond;
 }
