@@ -7,7 +7,7 @@ class Greeting extends React.Component {
     return (event) => {
       event.preventDefault();
       this.props.logout();
-    }
+    };
   }
 
   render() {
